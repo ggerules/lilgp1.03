@@ -1,0 +1,2 @@
+#!/bin/sh
+./gp -f ant_rs1.file

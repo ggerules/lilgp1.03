@@ -1,0 +1,2 @@
+#!/bin/bash
+./gp -p random_seed=1 -p app.lawn_width=10 -p app.lawn_height=10 -p max_depth=17 -p output.basename=tmp/bee-1-4 -f input.file

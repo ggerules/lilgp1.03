@@ -1,0 +1,62 @@
+Constraints -> Before generateNF
+
+tr= 0, MAIN
+Function "prog2" [#0]:
+	F_prog2 [#Fs=1:#Ts=0] = frog
+	F_prog2_0 [#Fs=1:#Ts=0] = frog ||
+	F_prog2_1 [#Fs=1:#Ts=0] = frog ||
+	T_prog2_0 [#Fs=4:#Ts=4] = prog2 vma adf1 frog || Rvm adf0 left mow
+	T_prog2_1 [#Fs=4:#Ts=4] = prog2 vma adf1 frog || Rvm adf0 left mow
+Function "vma" [#1]:
+	F_vma [#Fs=1:#Ts=0] = frog
+	F_vma_0 [#Fs=1:#Ts=0] = frog ||
+	F_vma_1 [#Fs=1:#Ts=0] = frog ||
+	T_vma_0 [#Fs=4:#Ts=4] = prog2 vma adf1 frog || Rvm adf0 left mow
+	T_vma_1 [#Fs=4:#Ts=4] = prog2 vma adf1 frog || Rvm adf0 left mow
+Function "adf1" [#2]:
+	F_adf1 [#Fs=1:#Ts=0] = frog
+	F_adf1_0 [#Fs=1:#Ts=0] = frog ||
+	T_adf1_0 [#Fs=4:#Ts=4] = prog2 vma adf1 frog || Rvm adf0 left mow
+Function "frog" [#3]:
+	F_frog [#Fs=1:#Ts=0] = frog
+	F_frog_0 [#Fs=1:#Ts=0] = frog ||
+	T_frog_0 [#Fs=4:#Ts=4] = prog2 vma adf1 frog || Rvm adf0 left mow
+Root:4
+	F_Root [#Fs=1:#Ts=0] =  frog ||
+	T_Root [#Fs=4:#Ts=4] =  prog2 vma adf1 frog || Rvm adf0 left mow
+tr= 1, ADF0
+Function "prog2" [#0]:
+	F_prog2 [#Fs=0:#Ts=0] =
+	F_prog2_0 [#Fs=0:#Ts=0] = ||
+	F_prog2_1 [#Fs=0:#Ts=0] = ||
+	T_prog2_0 [#Fs=2:#Ts=3] = prog2 vma || Rvm left mow
+	T_prog2_1 [#Fs=2:#Ts=3] = prog2 vma || Rvm left mow
+Function "vma" [#1]:
+	F_vma [#Fs=0:#Ts=0] =
+	F_vma_0 [#Fs=0:#Ts=0] = ||
+	F_vma_1 [#Fs=0:#Ts=0] = ||
+	T_vma_0 [#Fs=2:#Ts=3] = prog2 vma || Rvm left mow
+	T_vma_1 [#Fs=2:#Ts=3] = prog2 vma || Rvm left mow
+Root:2
+	F_Root [#Fs=0:#Ts=0] =  ||
+	T_Root [#Fs=2:#Ts=3] =  prog2 vma || Rvm left mow
+tr= 2, ADF1
+Function "prog2" [#0]:
+	F_prog2 [#Fs=1:#Ts=0] = frog
+	F_prog2_0 [#Fs=1:#Ts=0] = frog ||
+	F_prog2_1 [#Fs=1:#Ts=0] = frog ||
+	T_prog2_0 [#Fs=3:#Ts=5] = prog2 vma frog || Rvm a0 adf0 left mow
+	T_prog2_1 [#Fs=3:#Ts=5] = prog2 vma frog || Rvm a0 adf0 left mow
+Function "vma" [#1]:
+	F_vma [#Fs=1:#Ts=0] = frog
+	F_vma_0 [#Fs=1:#Ts=0] = frog ||
+	F_vma_1 [#Fs=1:#Ts=0] = frog ||
+	T_vma_0 [#Fs=3:#Ts=5] = prog2 vma frog || Rvm a0 adf0 left mow
+	T_vma_1 [#Fs=3:#Ts=5] = prog2 vma frog || Rvm a0 adf0 left mow
+Function "frog" [#2]:
+	F_frog [#Fs=1:#Ts=0] = frog
+	F_frog_0 [#Fs=1:#Ts=0] = frog ||
+	T_frog_0 [#Fs=3:#Ts=5] = prog2 vma frog || Rvm a0 adf0 left mow
+Root:3
+	F_Root [#Fs=1:#Ts=0] =  frog ||
+	T_Root [#Fs=3:#Ts=5] =  prog2 vma frog || Rvm a0 adf0 left mow

@@ -1,0 +1,44 @@
+TYPE
+TYPELIST = float 
+(mul)(float float)=float
+(div)(float float)=float
+(add)(float float)=float
+(sin)(float)=float
+(x)=float
+(a)=float
+(p)=float
+(s)=float
+(R)=float
+ROOT=float
+ENDSECTION
+
+FTSPEC
+F_(*)=
+F_(*)[*]=
+#F_(sin)[0]=add
+#F_ROOT=sin
+#must specify some TSpecs
+#T_(*)[*]=  ADF2 x1
+T_(*)[*]=
+#gwgnote the next line will cause the a crash, the imfamouse 0,5,0 trying to find a random T error
+#T_ROOT= ADF2 
+T_ROOT=
+ENDSECTION
+
+
+WEIGHT
+#All unspecified weights default to 1.0
+#If I desire to reduce the odds of everything but that which
+# I explicitly specify, I could do the following
+#(*)[*](*)=0
+#ROOT(*)=0
+#
+#Set the weights for the functions: add sin 1 PI x y,
+#as the arguments for the add & asin functions.
+#(+ asin)[*](*)=.25 .25 .5 .2 .2 .3 .4
+#similarly for the sin function
+#(sin)[0](*)=.5 .4 .3 .6 .4 .3 .1
+ROOT(*)=1             #not really needed as default is 1.0
+ENDSECTION
+ENDFILE
+

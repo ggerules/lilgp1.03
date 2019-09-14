@@ -1,0 +1,2 @@
+#!/bin/bash
+gdbtui --args ./bee

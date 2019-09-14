@@ -1,0 +1,3 @@
+#!/bin/sh
+./gp -p random_seed=1 -p max_generations=50 -p pop_size=$1 -p acgp.what=0 -p max_depth=7 -p app.use_ercs=0 -p app.save_pop=1 -p output.basename=./tmp/reg_rs1 -f input.file 
+

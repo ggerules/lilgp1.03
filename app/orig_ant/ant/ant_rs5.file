@@ -1,0 +1,35 @@
+###
+### sample input parameter file for the artificial ant.
+###
+
+# app-specific parameters
+app.trail = santafe.trl
+app.maxtime = 400
+
+max_generations = 100
+pop_size = 1000
+random_seed = 5
+
+output.basename = ant_rs5
+
+# how to generate the initial population
+init.method = half_and_half
+init.depth = 2-8
+
+# limits on tree size.
+max_depth = 15
+
+## breeding parameters (emulates Koza Ch. 7)
+
+breed_phases = 3
+
+breed[1].operator = crossover, select=(tournament, size=7)
+breed[1].rate = 0.85
+
+breed[2].operator = reproduction, select=(tournament, size=7)
+breed[2].rate = 0.05
+
+breed[3].operator = mutation, select=(tournament, size=7)
+breed[3].rate = 0.05
+
+

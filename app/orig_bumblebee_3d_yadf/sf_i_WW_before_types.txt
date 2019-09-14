@@ -1,0 +1,103 @@
+Weights Wheels -> After call to readWeightsSetWheels
+
+tr= 0, MAIN
+
+
+These are weights/wheels...
+
+Function "prog2" [#0]: 2 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+	Argument 1: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "vadd" [#1]: 2 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+	Argument 1: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "vsub" [#2]: 2 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+	Argument 1: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "adf0" [#3]: 1 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "gox" [#4]: 1 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "goy" [#5]: 1 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "goz" [#6]: 1 arguments
+	Argument 0: F [7 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Root: F [7 members, used] and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+tr= 1, ADF0
+
+
+These are weights/wheels...
+
+Function "prog2" [#0]: 2 arguments
+	Argument 0: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+	Argument 1: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "vadd" [#1]: 2 arguments
+	Argument 0: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+	Argument 1: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "vsub" [#2]: 2 arguments
+	Argument 0: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+	Argument 1: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "gox" [#3]: 1 arguments
+	Argument 0: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "goy" [#4]: 1 arguments
+	Argument 0: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Function "goz" [#5]: 1 arguments
+	Argument 0: F [6 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+
+Root: F [6 members, used] and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.100 0.200 0.300 0.400 0.500 0.600 0.700 0.800 0.900 1.000
+

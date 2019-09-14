@@ -1,0 +1,57 @@
+fset -> beginning of create_MS_czj
+
+evaltree: 0:
+ fset[0]:
+  .function_count=4
+  .terminal_count=4
+  .num_args=0
+  .size=8
+   .cset[0]
+    .string=add   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=0
+   .cset[1]
+    .string=div   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=1
+   .cset[2]
+    .string=mul   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=2
+   .cset[3]
+    .string=sin   
+    .arity=1
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=3
+   .cset[4]
+    .string=a     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=4
+   .cset[5]
+    .string=p     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=5
+   .cset[6]
+    .string=s     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=6
+   .cset[7]
+    .string=x     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=7
+

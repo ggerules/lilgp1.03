@@ -1,0 +1,83 @@
+#!/bin/bash
+
+#lawnsize of 64
+my_func_noadf_8x8() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=8 -p max_depth=$2 -p output.basename=tmp_8x8/mower-$2-$1 -f input.file
+}
+export -f my_func_noadf_8x8
+
+my_func_adf_8x8() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=8 -p max_depth=$2 -p output.basename=adf_tmp_8x8/mower-$2-$1 -f adf_input.file
+}
+export -f my_func_adf_8x8
+
+my_func_adm_8x8() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=8 -p max_depth=$2 -p output.basename=adm_tmp8x8/mower-$2-$1 -f adm_input.file
+}
+export -f my_func_adm_8x8
+
+#lawnsize of 32
+my_func_noadf_8x4() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=4 -p max_depth=$2 -p output.basename=tmp_8x4/mower-$2-$1 -f input.file
+}
+export -f my_func_noadf_8x4
+
+my_func_adf_8x4() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=4 -p max_depth=$2 -p output.basename=adf_tmp_8x4/mower-$2-$1 -f adf_input.file
+}
+export -f my_func_adf_8x4
+
+my_func_adm_8x4() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=4 -p max_depth=$2 -p output.basename=adm_tmp8x4/mower-$2-$1 -f adm_input.file
+}
+export -f my_func_adm_8x4
+
+#lawnsize of 80 
+my_func_noadf_8x10() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=10 -p max_depth=$2 -p output.basename=tmp_8x10/mower-$2-$1 -f input.file
+}
+export -f my_func_noadf_8x10
+
+my_func_adf_8x10() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=10 -p max_depth=$2 -p output.basename=adf_tmp_8x10/mower-$2-$1 -f adf_input.file
+}
+export -f my_func_adf_8x10
+
+my_func_adm_8x10() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=10 -p max_depth=$2 -p output.basename=adm_tmp8x10/mower-$2-$1 -f adm_input.file
+}
+export -f my_func_adm_8x10
+
+#lawnsize of 96 
+my_func_noadf_8x12() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=12 -p max_depth=$2 -p output.basename=tmp_8x12/mower-$2-$1 -f input.file
+}
+export -f my_func_noadf_8x12
+
+my_func_adf_8x12() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=12 -p max_depth=$2 -p output.basename=adf_tmp_8x12/mower-$2-$1 -f adf_input.file
+}
+export -f my_func_adf_8x12
+
+my_func_adm_8x12() {
+./gp -q -p random_seed=$1 -p app.lawn_width=8 -p app.lawn_height=12 -p max_depth=$2 -p output.basename=adm_tmp8x10/mower-$2-$1 -f adm_input.file
+}
+export -f my_func_adm_8x12
+
+
+#lawnsize of 64
+time parallel --eta -j 4  --colsep ' ' my_func_noadf_8x8 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adf_8x8 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adm_8x8 $1 $2 :::: rfile
+#lawnsize of 32 
+time parallel --eta -j 4  --colsep ' ' my_func_noadf_8x4 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adf_8x4 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adm_8x4 $1 $2 :::: rfile
+#lawnsize of 80 
+time parallel --eta -j 4  --colsep ' ' my_func_noadf_8x10 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adf_8x10 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adm_8x10 $1 $2 :::: rfile
+#lawnsize of 96 
+time parallel --eta -j 4  --colsep ' ' my_func_noadf_8x12 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adf_8x12 $1 $2 :::: rfile
+time parallel --eta -j 4  --colsep ' ' my_func_adm_8x12 $1 $2 :::: rfile

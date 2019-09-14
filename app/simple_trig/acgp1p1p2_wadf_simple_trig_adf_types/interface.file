@@ -1,0 +1,79 @@
+FTSPEC=RPB
+F_(*)=
+F_(*)[*]=
+F_ROOT=
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+#z=a*sin(p*x+s)
+
+TYPE=RPB
+TYPELIST = amp per rad shft 
+(mul)(amp amp)=amp
+(mul)(per rad )=rad
+(div)(rad rad)=rad
+(add)(rad shft)=rad
+(add)(rad rad)=rad
+(sin)(rad)=amp
+(ADF3)(per rad shft)=rad
+(a)=amp
+(p)=per
+(x)=rad
+(s)=shft
+ROOT=amp
+ENDSECTION
+
+WEIGHT=RPB
+#All unspecified weights default to 1.0
+#If I desire to reduce the odds of everything but that which
+# I explicitly specify, I could do the following
+#(*)[*](*)=0
+#ROOT(*)=0
+#
+#Set the weights for the functions: add sin 1 PI x y,
+#as the arguments for the add & asin functions.
+#(+ asin)[*](*)=.25 .25 .5 .2 .2 .3 .4
+#similarly for the sin function
+#(sin)[0](*)=.5 .4 .3 .6 .4 .3 .1
+ROOT(*)=1             #not really needed as default is 1.0
+ENDSECTION
+
+FTSPEC=ADF3
+F_(*)=
+F_(*)[*]=
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+#z=a*sin(p*x+s)
+
+TYPE=ADF3
+TYPELIST = per rad shft
+(mul)(per rad )=rad
+(div)(rad rad )=rad
+(add)(rad shft)=rad
+(sin)(rad)=rad
+(ap)=per
+(ax)=rad
+(as)=shft
+ROOT=rad
+ENDSECTION
+
+WEIGHT=ADF3
+#All unspecified weights default to 1.0
+#If I desire to reduce the odds of everything but that which
+# I explicitly specify, I could do the following
+#(*)[*](*)=0
+#ROOT(*)=0
+#
+#Set the weights for the functions: add sin 1 PI x y,
+#as the arguments for the add & asin functions.
+#(+ asin)[*](*)=.25 .25 .5 .2 .2 .3 .4
+#similarly for the sin function
+#(sin)[0](*)=.5 .4 .3 .6 .4 .3 .1
+ROOT(*)=1             #not really needed as default is 1.0
+ENDSECTION
+
+ENDFILE
+

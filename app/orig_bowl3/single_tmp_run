@@ -1,0 +1,2 @@
+#!/bin/sh
+./gp -p random_seed=1 -p output.basename=./tmp/reg_rs1 -f input.file

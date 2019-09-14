@@ -1,0 +1,187 @@
+TP -> created
+
+TP_czj ->  TP -> created
+
+Tree[0]=MAIN:
+ TP_czj[0] numFT+1 = 9
+ process functions:
+   pTS[0].numF=4
+    prog2:
+     TP_czj[0][0].f.numA=2 (function arguments)
+     FTp[0]->TypeCount=1
+     if(FTp[0]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[0][0].f.numTypeVecs=1
+     TP_czj[0][0].f.numA+1=3 
+      TP_czj[0][0].f.typeVecs[0][0]=0
+      TP_czj[0][0].f.typeVecs[0][1]=0
+      TP_czj[0][0].f.typeVecs[0][2]=0
+     Index(s) for Function:
+      FTp[0]->TypeCount=1
+       TP_czj[0][0].f.indexes[0].len=1
+        TP_czj[0][0].f.indexes[0].indexes[0]=0
+    vma:
+     TP_czj[0][1].f.numA=2 (function arguments)
+     FTp[0]->TypeCount=1
+     if(FTp[0]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[0][1].f.numTypeVecs=1
+     TP_czj[0][1].f.numA+1=3 
+      TP_czj[0][1].f.typeVecs[0][0]=0
+      TP_czj[0][1].f.typeVecs[0][1]=0
+      TP_czj[0][1].f.typeVecs[0][2]=0
+     Index(s) for Function:
+      FTp[0]->TypeCount=1
+       TP_czj[0][1].f.indexes[0].len=1
+        TP_czj[0][1].f.indexes[0].indexes[0]=0
+    adf1:
+     TP_czj[0][2].f.numA=1 (function arguments)
+     FTp[0]->TypeCount=1
+     if(FTp[0]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[0][2].f.numTypeVecs=1
+     TP_czj[0][2].f.numA+1=2 
+      TP_czj[0][2].f.typeVecs[0][0]=0
+      TP_czj[0][2].f.typeVecs[0][1]=0
+     Index(s) for Function:
+      FTp[0]->TypeCount=1
+       TP_czj[0][2].f.indexes[0].len=1
+        TP_czj[0][2].f.indexes[0].indexes[0]=0
+    frog:
+     TP_czj[0][3].f.numA=1 (function arguments)
+     FTp[0]->TypeCount=1
+     if(FTp[0]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[0][3].f.numTypeVecs=1
+     TP_czj[0][3].f.numA+1=2 
+      TP_czj[0][3].f.typeVecs[0][0]=0
+      TP_czj[0][3].f.typeVecs[0][1]=0
+     Index(s) for Function:
+      FTp[0]->TypeCount=1
+       TP_czj[0][3].f.indexes[0].len=1
+        TP_czj[0][3].f.indexes[0].indexes[0]=0
+ process terminals:
+ Rvm:
+  One Type:
+   TP_czj[0][4].retType=0
+ adf0:
+  One Type:
+   TP_czj[0][5].retType=0
+ left:
+  One Type:
+   TP_czj[0][6].retType=0
+ mow:
+  One Type:
+   TP_czj[0][7].retType=0
+ process root:
+  One Type:
+   TP_czj[0][pTS[0].numF+pTS[0].numT].retType=0
+Tree[1]=ADF0:
+ TP_czj[1] numFT+1 = 6
+ process functions:
+   pTS[1].numF=2
+    prog2:
+     TP_czj[1][0].f.numA=2 (function arguments)
+     FTp[1]->TypeCount=1
+     if(FTp[1]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[1][0].f.numTypeVecs=1
+     TP_czj[1][0].f.numA+1=3 
+      TP_czj[1][0].f.typeVecs[0][0]=0
+      TP_czj[1][0].f.typeVecs[0][1]=0
+      TP_czj[1][0].f.typeVecs[0][2]=0
+     Index(s) for Function:
+      FTp[1]->TypeCount=1
+       TP_czj[1][0].f.indexes[0].len=1
+        TP_czj[1][0].f.indexes[0].indexes[0]=0
+    vma:
+     TP_czj[1][1].f.numA=2 (function arguments)
+     FTp[1]->TypeCount=1
+     if(FTp[1]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[1][1].f.numTypeVecs=1
+     TP_czj[1][1].f.numA+1=3 
+      TP_czj[1][1].f.typeVecs[0][0]=0
+      TP_czj[1][1].f.typeVecs[0][1]=0
+      TP_czj[1][1].f.typeVecs[0][2]=0
+     Index(s) for Function:
+      FTp[1]->TypeCount=1
+       TP_czj[1][1].f.indexes[0].len=1
+        TP_czj[1][1].f.indexes[0].indexes[0]=0
+ process terminals:
+ Rvm:
+  One Type:
+   TP_czj[1][2].retType=0
+ left:
+  One Type:
+   TP_czj[1][3].retType=0
+ mow:
+  One Type:
+   TP_czj[1][4].retType=0
+ process root:
+  One Type:
+   TP_czj[1][pTS[1].numF+pTS[1].numT].retType=0
+Tree[2]=ADF1:
+ TP_czj[2] numFT+1 = 9
+ process functions:
+   pTS[2].numF=3
+    prog2:
+     TP_czj[2][0].f.numA=2 (function arguments)
+     FTp[2]->TypeCount=1
+     if(FTp[2]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[2][0].f.numTypeVecs=1
+     TP_czj[2][0].f.numA+1=3 
+      TP_czj[2][0].f.typeVecs[0][0]=0
+      TP_czj[2][0].f.typeVecs[0][1]=0
+      TP_czj[2][0].f.typeVecs[0][2]=0
+     Index(s) for Function:
+      FTp[2]->TypeCount=1
+       TP_czj[2][0].f.indexes[0].len=1
+        TP_czj[2][0].f.indexes[0].indexes[0]=0
+    vma:
+     TP_czj[2][1].f.numA=2 (function arguments)
+     FTp[2]->TypeCount=1
+     if(FTp[2]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[2][1].f.numTypeVecs=1
+     TP_czj[2][1].f.numA+1=3 
+      TP_czj[2][1].f.typeVecs[0][0]=0
+      TP_czj[2][1].f.typeVecs[0][1]=0
+      TP_czj[2][1].f.typeVecs[0][2]=0
+     Index(s) for Function:
+      FTp[2]->TypeCount=1
+       TP_czj[2][1].f.indexes[0].len=1
+        TP_czj[2][1].f.indexes[0].indexes[0]=0
+    frog:
+     TP_czj[2][2].f.numA=1 (function arguments)
+     FTp[2]->TypeCount=1
+     if(FTp[2]->TypCount==1) -> 1 (True)
+    One Type:
+     TP_czj[2][2].f.numTypeVecs=1
+     TP_czj[2][2].f.numA+1=2 
+      TP_czj[2][2].f.typeVecs[0][0]=0
+      TP_czj[2][2].f.typeVecs[0][1]=0
+     Index(s) for Function:
+      FTp[2]->TypeCount=1
+       TP_czj[2][2].f.indexes[0].len=1
+        TP_czj[2][2].f.indexes[0].indexes[0]=0
+ process terminals:
+ Rvm:
+  One Type:
+   TP_czj[2][3].retType=0
+ a0:
+  One Type:
+   TP_czj[2][4].retType=0
+ adf0:
+  One Type:
+   TP_czj[2][5].retType=0
+ left:
+  One Type:
+   TP_czj[2][6].retType=0
+ mow:
+  One Type:
+   TP_czj[2][7].retType=0
+ process root:
+  One Type:
+   TP_czj[2][pTS[2].numF+pTS[2].numT].retType=0

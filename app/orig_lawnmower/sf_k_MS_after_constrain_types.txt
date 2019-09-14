@@ -1,0 +1,194 @@
+MS -> generateMS after types constrained
+
+tr= 0, MAIN
+ Function 'prog2': arity 2 
+  Argument 0
+   Type 'float'
+    F [3 members] = prog2 vma adf1
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'float'
+    F [3 members] = prog2 vma adf1
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vma': arity 2 
+  Argument 0
+   Type 'float'
+    F [3 members] = prog2 vma adf1
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'float'
+    F [3 members] = prog2 vma adf1
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'adf1': arity 1 
+  Argument 0
+   Type 'float'
+    F [3 members] = prog2 vma adf1
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'frog': arity 1 
+  Argument 0
+   Type 'float'
+    F [0 members] =
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [4 members] =  0 0 0 0
+    Wheel: F is not used and T is used
+     1.000000 2.000000 3.000000 4.000000
+    Weights: F is not used and T is used
+     -1.000000 -1.000000 -1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+ Root:
+   Type 'prog2'
+    F [3 members] = prog2 vma adf1
+    T [4 members] = Rvm adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+   Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+   Weights: F is used and T is used
+     1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000
+tr= 1, ADF0
+ Function 'prog2': arity 2 
+  Argument 0
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [3 members] = Rvm left mow
+    counters_tot = 0
+    counters [5 members] =  0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [3 members] = Rvm left mow
+    counters_tot = 0
+    counters [5 members] =  0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vma': arity 2 
+  Argument 0
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [3 members] = Rvm left mow
+    counters_tot = 0
+    counters [5 members] =  0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [3 members] = Rvm left mow
+    counters_tot = 0
+    counters [5 members] =  0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000
+ Root:
+   Type 'prog2'
+    F [2 members] = prog2 vma
+    T [3 members] = Rvm left mow
+    counters_tot = 0
+    counters [5 members] =  0 0 0 0 0
+   Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000
+   Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000
+tr= 2, ADF1
+ Function 'prog2': arity 2 
+  Argument 0
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [5 members] = Rvm a0 adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [5 members] = Rvm a0 adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vma': arity 2 
+  Argument 0
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [5 members] = Rvm a0 adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'float'
+    F [2 members] = prog2 vma
+    T [5 members] = Rvm a0 adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'frog': arity 1 
+  Argument 0
+   Type 'float'
+    F [0 members] =
+    T [5 members] = Rvm a0 adf0 left mow
+    counters_tot = 0
+    counters [5 members] =  0 0 0 0 0
+    Wheel: F is not used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000
+    Weights: F is not used and T is used
+     -1.000000 -1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Root:
+   Type 'prog2'
+    F [2 members] = prog2 vma
+    T [5 members] = Rvm a0 adf0 left mow
+    counters_tot = 0
+    counters [7 members] =  0 0 0 0 0 0 0
+   Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000
+   Weights: F is used and T is used
+     1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 1.000000 1.000000

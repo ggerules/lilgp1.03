@@ -1,0 +1,2 @@
+#!/bin/sh
+time ./gp -p max_depth=10 -p output.basename=tmp/regress -f input.file

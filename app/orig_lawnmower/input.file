@@ -1,0 +1,28 @@
+
+#dirname=acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat2
+output.detail = 90
+cgp_interface = interface.file
+
+init.method = half_and_half
+init.depth = 2-7 
+
+init.depth_abs = true
+init.random_attempts=200
+
+
+acgp.use_trees_prct = 0.02
+acgp.select_all = 0
+acgp.gen_start_pct = 0.0125
+acgp.gen_step = 20
+acgp.gen_slope = 1
+acgp.stop_on_term = 1
+
+breed_phases = 2
+
+breed[1].operator = crossover, select=(tournament, size=7)
+breed[1].rate = 0.90
+
+breed[2].operator = reproduction, select=(tournament, size=7)
+breed[2].rate = 0.1
+
+ 

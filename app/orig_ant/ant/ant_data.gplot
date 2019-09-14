@@ -1,0 +1,10 @@
+set term pdf enhanced 
+#set term x11
+set title "Ant Mean and Average of runs";
+set xlabel "Generations";
+set ylabel "Fitness";
+set yrange [0: 0.1];
+set key top left;
+#!./script.sh > output.stt
+plot "./output.stt" using 1:3 title 'Mean' with linespoints, \
+     "./output.stt" using 1:4 title 'Best' with linespoints;

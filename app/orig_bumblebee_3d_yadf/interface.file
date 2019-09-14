@@ -1,0 +1,53 @@
+
+#dirname=acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat2
+FTSPEC=main
+F_(*)=
+F_(*)[*]=
+F_ROOT=
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+FTSPEC=adf0
+F_(*)=
+F_(*)[*]=
+F_ROOT=
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+
+
+TYPE=main
+TYPELIST=vector 
+(vadd)(vector vector)=vector
+(vsub)(vector vector)=vector
+(gox)(vector)=vector
+(goy)(vector)=vector
+(goz)(vector)=vector
+(prog2)(vector vector)=vector
+(adf0)(vector)=vector
+(bee)=vector
+(nf)=vector
+(rv)=vector
+ROOT=vector
+ENDSECTION
+
+TYPE=adf0
+TYPELIST=vector 
+(vadd)(vector vector)=vector
+(vsub)(vector vector)=vector
+(gox)(vector)=vector
+(goy)(vector)=vector
+(goz)(vector)=vector
+(prog2)(vector vector)=vector
+(bee)=vector
+(nf)=vector
+(a0)=vector
+(rv)=vector
+ROOT=vector
+ENDSECTION
+
+
+ENDFILE
+ 

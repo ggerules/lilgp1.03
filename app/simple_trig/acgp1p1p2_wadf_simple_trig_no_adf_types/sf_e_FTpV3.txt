@@ -1,0 +1,27 @@
+FTp ->  FTp -> created V3
+
+Tree[0]=TREE:
+ Func[0] (add): 
+  Func[0] (add) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+ Func[1] (div): 
+  Func[1] (div) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+ Func[2] (mul): 
+  Func[2] (mul) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+ Func[3] (sin): 
+  Func[3] (sin) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin a p s x 
+ F_Root names:
+ T_Root names: add div mul sin a p s x 

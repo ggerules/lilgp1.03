@@ -1,0 +1,17 @@
+#!/bin/bash
+rm -fR $PWD/base.out
+rm -fR $PWD/cbase.out
+rm -fR $PWD/checklines_stt
+rm -fR $PWD/cntln
+rm -fR $PWD/complex_script.sh
+rm -fR $PWD/cplt
+rm -fR $PWD/filloutstt
+rm -fR $PWD/fixlines_stt
+rm -fR $PWD/isok
+rm -fR $PWD/plt
+rm -fR $PWD/rmll
+rm -fR $PWD/script.sh
+rm -fR $PWD/seed
+rm -fR $PWD/seed10
+rm -fR $PWD/seed20
+rm -fR $PWD/seed30

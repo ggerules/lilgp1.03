@@ -1,0 +1,13 @@
+tmp
+real	1m11.888s
+user	7m39.916s
+sys	0m23.704s
+lotmp
+real	1m39.124s
+user	11m3.748s
+sys	0m23.280s
+fasttmpold
+real	1m10.656s
+user	7m18.224s
+sys	0m24.784s
+

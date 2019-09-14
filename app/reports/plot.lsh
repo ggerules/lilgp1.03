@@ -1,0 +1,7 @@
+(libload "libplot/plotter")
+(let ((window (ps-window "/tmp/curve.ps")))
+  (setq psp (new Plotter))
+  (==> psp PlotFunc "log" log 0 10 0.1 (alloccolor 0 0 1))
+  (==> psp Redisplay))
+
+

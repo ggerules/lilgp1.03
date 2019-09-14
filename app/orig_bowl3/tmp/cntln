@@ -1,0 +1,7 @@
+#!/bin/bash
+for y in {4..15}; do
+  for x in {1..30}; do
+    wc -l regress-$y-$x.stt | sed '/51/d'  > ./fout
+  done;
+done;
+

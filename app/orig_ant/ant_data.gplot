@@ -1,0 +1,17 @@
+set term pdf
+#set term x11
+set title "Ant Mean and Average of runs";
+set xlabel "Generations";
+set ylabel "Fitness";
+set yrange [0: 0.1];
+set key outside
+plot "ant_rs1.stt" using 1:3 title 'R1 Mean' with linespoints, \
+     "ant_rs1.stt" using 1:4 title 'R1 Best' with linespoints, \
+     "ant_rs2.stt" using 1:3 title 'R2 Mean' with linespoints, \
+     "ant_rs2.stt" using 1:4 title 'R2 Best' with linespoints, \
+     "ant_rs3.stt" using 1:3 title 'R3 Mean' with linespoints, \
+     "ant_rs3.stt" using 1:4 title 'R3 Best' with linespoints, \
+     "ant_rs4.stt" using 1:3 title 'R4 Mean' with linespoints, \
+     "ant_rs4.stt" using 1:4 title 'R4 Best' with linespoints, \
+     "ant_rs5.stt" using 1:3 title 'R5 Mean' with linespoints, \
+     "ant_rs5.stt" using 1:4 title 'R5 Best' with linespoints;

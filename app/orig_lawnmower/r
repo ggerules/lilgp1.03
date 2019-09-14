@@ -1,0 +1,2 @@
+#!/bin/bash
+./gp -p random_seed=1 -p app.lawn_width=8 -p app.lawn_height=8 -p max_depth=4 -p output.basename=tmp_8x8/mower-1-4 -f input.file

@@ -1,0 +1,6 @@
+#!/bin/sh
+./gp -f ant_rs1.file
+./gp -f ant_rs2.file
+./gp -f ant_rs3.file
+./gp -f ant_rs4.file
+./gp -f ant_rs5.file

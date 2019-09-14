@@ -1,0 +1,961 @@
+cgp_czj.h:typedef struct
+cgp_czj.h:  int   treeNo;                    /* Tree Number */
+cgp_czj.h:  char* treeName;                  /* Tree Name */
+cgp_czj.h:  int   numF;                      /* Number of functions for this tree */
+cgp_czj.h:  int   numT;                      /* Numebr of Terminals for this tree */
+cgp_czj.h:} treeStats;
+cgp_czj.h:treeStats* pTS;
+cgp_czj.h:typedef struct instNode
+cgp_czj.h:  struct instNode *next;
+cgp_czj.h:typedef struct
+cgp_czj.h:typedef struct
+cgp_czj.h:typedef struct
+cgp_czj.h:  int     treeNo;                    /* Tree Number */
+cgp_czj.h:  char*   treeName;                  /* Tree Name */
+cgp_czj.h:  char   **TypList;                   /* Array of type strings */
+cgp_czj.h:typedef struct
+cgp_czj.h:  int treeN;                                                     /* tree num */
+cgp_czj.h:typedef struct
+cgp_czj.h:  struct
+cgp_czj.h:int random_F_czj(int tr);
+cgp_czj.h:int random_T_czj(int tr);
+cgp_czj.h:int random_FT_czj(int tr);
+cgp_czj.h:int verify_tree_czj (int tr, lnode *tree );
+cgp_czj.h:/* return #times the tree pointed by tree violates MS_czj constraints*/
+cgp_czj.h:int markXNodes_czj(int tr, lnode *data );
+cgp_czj.h:/* mark all nodes in tree which are feasible sources with their wghts */
+cgp_czj.h:int markXNodesNoRoot_czj(int tr, lnode *data );
+cgp_czj.h:lnode *getSubtreeMarked_czj(int tr, lnode *data, int intExt);
+cgp_czj.h:/* assume tree is filled with both internal and external wheels */
+cgp_czj.c:/* cgp_czj.c version 2.0, for function- anada data type-based constraints */
+cgp_czj.c:   as hash index in MST_czj - lats entry (index=NumF) is for the Root */
+cgp_czj.c:   index in fset - last entry (index=NumFT) is for the Root */
+cgp_czj.c:#include <string.h>
+cgp_czj.c:#define error(str) errorIndir(str,__LINE__,__FILE__)
+cgp_czj.c:#define warning(str) warningIndir(str,__LINE__,__FILE__)
+cgp_czj.c:#define funcTermName(tr, i) fset[tr].cset[(i)].string
+cgp_czj.c:#define funcArity(tr, i) fset[tr].cset[(i)].arity
+cgp_czj.c:   and the corresponding depth_abs=true, this is used to grow only
+cgp_czj.c:   trees at least as deep as 'm' (if possible) */
+cgp_czj.c:/**************** now local structures */
+cgp_czj.c://static int treeCnt;                                            /* tree count */
+cgp_czj.c://gwgfix: need to change into an array WghtsExt per tree?
+cgp_czj.c:static float WghtsExt;    /* sum of wghts of cross-feasible leaves of a tree */
+cgp_czj.c://static char **TypeNames;         /* array of NumTypes ragged dynamic strings */
+cgp_czj.c:typedef struct
+cgp_czj.c:typedef struct
+cgp_czj.c:  specArrs_t Tspecs;    /* dynamic array of ptrs to specArr_t for Tspecs */
+cgp_czj.c:} constraint_t;                     /* NOTE: Root will use Tspecs and Fspecs */
+cgp_czj.c:static constraint_t** Cons;/* dynamic array for functions and Root */
+cgp_czj.c:static int funNumber(const char* funName, int treeNumber)
+cgp_czj.c:/* given funName, return its index in fset[treeNumber] or -1 if not found */
+cgp_czj.c:  for (i=0; i<fset[treeNumber].size; i++)
+cgp_czj.c:    if (!strcmp(funName,fset[treeNumber].cset[i].string))
+cgp_czj.c:  printf("\n\n\n\n\tThis is distributed as an addition to lil-gp 1.02\n");
+cgp_czj.c:  int tr, fun, arg, entry, numF, numT, numFT;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:      printf("Function '%s' [#%d]:\n",fset[tr].cset[fun].string,fun);
+cgp_czj.c:        printf("\tF_%s [#Fs=%d:#Ts=%d] =",fset[tr].cset[fun].string,
+cgp_czj.c:               Cons[tr][fun].Fspec[0].numF,Cons[tr][fun].Fspec[0].numT);
+cgp_czj.c:        for (entry=0; entry<numF; entry++)
+cgp_czj.c:          if (Cons[tr][fun].Fspec[0].mbs[entry])
+cgp_czj.c:            printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:        for (; entry<numFT; entry++)
+cgp_czj.c:          if (Cons[tr][fun].Fspec[0].mbs[entry])
+cgp_czj.c:            printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:        for (arg=0; arg<Cons[tr][fun].arity; arg++)
+cgp_czj.c:          printf("\tF_%s_%d [#Fs=%d:#Ts=%d] =",fset[tr].cset[fun].string,arg,
+cgp_czj.c:                 Cons[tr][fun].Fspecs[arg].numF,Cons[tr][fun].Fspecs[arg].numT);
+cgp_czj.c:          for (entry=0; entry<numF; entry++)
+cgp_czj.c:            if (Cons[tr][fun].Fspecs[arg].mbs[entry])
+cgp_czj.c:              printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:          for (; entry<numFT; entry++)
+cgp_czj.c:            if (Cons[tr][fun].Fspecs[arg].mbs[entry])
+cgp_czj.c:              printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:        for (arg=0; arg<Cons[tr][fun].arity; arg++)
+cgp_czj.c:          printf("\tT_%s_%d [#Fs=%d:#Ts=%d] =",fset[tr].cset[fun].string,arg,
+cgp_czj.c:                 Cons[tr][fun].Tspecs[arg].numF,Cons[tr][fun].Tspecs[arg].numT);
+cgp_czj.c:          for (entry=0; entry<numF; entry++)
+cgp_czj.c:            if (Cons[tr][fun].Tspecs[arg].mbs[entry])
+cgp_czj.c:              printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:          for (; entry<numFT; entry++)
+cgp_czj.c:            if (Cons[tr][fun].Tspecs[arg].mbs[entry])
+cgp_czj.c:              printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:             Cons[tr][numF].Fspecs[0].numF,Cons[tr][numF].Fspecs[0].numT);
+cgp_czj.c:      for (entry=0; entry<numF; entry++)
+cgp_czj.c:        if (Cons[tr][numF].Fspecs[0].mbs[entry])
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:      for (; entry<numFT; entry++)
+cgp_czj.c:        if (Cons[tr][numF].Fspecs[0].mbs[entry])
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:             Cons[tr][numF].Tspecs[0].numF,Cons[tr][numF].Tspecs[0].numT);
+cgp_czj.c:      for (entry=0; entry<numF; entry++)
+cgp_czj.c:        if (Cons[tr][numF].Tspecs[0].mbs[entry])
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:      for (; entry<numFT; entry++)
+cgp_czj.c:        if (Cons[tr][numF].Tspecs[0].mbs[entry])
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[entry].string);
+cgp_czj.c:/* if uncMs the include unconstrained mut set */
+cgp_czj.c:  int tr, i,j,k,t, numF, numT, numFT, NumTypes;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:    NumTypes=FTp[tr]->TypCount;
+cgp_czj.c:             fset[tr].cset[i].string,fset[tr].cset[i].arity);
+cgp_czj.c:      for (j=0; j<fset[tr].cset[i].arity; j++)
+cgp_czj.c:          if (MST_czj[tr][i][j][t].numFT!=0)             /* mutation set not empty */
+cgp_czj.c:            printf("\t\tType '%s'\n",funcTermName(tr,t));
+cgp_czj.c:            printf("\t\t\tF [%d members] =",MST_czj[tr][i][j][t].numF);
+cgp_czj.c:            for (k=0; k<MST_czj[tr][i][j][t].numF; k++)
+cgp_czj.c:              printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][t].mbs[k]].string);
+cgp_czj.c:            printf("\n\t\t\tT [%d members] =",MST_czj[tr][i][j][t].numT);
+cgp_czj.c:            for (k=0; k<MST_czj[tr][i][j][t].numT; k++)
+cgp_czj.c:              printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][t].
+cgp_czj.c:                                           mbs[MST_czj[tr][i][j][t].numF+k]].string);
+cgp_czj.c:                     MST_czj[tr][i][j][t].areFs ? "used":"not used",
+cgp_czj.c:                     MST_czj[tr][i][j][t].areTs ? "used":"not used");
+cgp_czj.c:              for (k=0; k<MST_czj[tr][i][j][t].numFT; k++)
+cgp_czj.c:                printf(" %.6f",MST_czj[tr][i][j][t].wheel[k]);
+cgp_czj.c:                     MST_czj[tr][i][j][t].areFs ? "used":"not used",
+cgp_czj.c:                     MST_czj[tr][i][j][t].areTs ? "used":"not used");
+cgp_czj.c:                printf(" %.6f",MST_czj[tr][i][j][t].weights[k]);
+cgp_czj.c:          printf("\t\tType unconstrained mutation set\n");
+cgp_czj.c:          printf("\t\t\tF [%d members] =",MST_czj[tr][i][j][NumTypes].numF);
+cgp_czj.c:          for (k=0; k<MST_czj[tr][i][j][NumTypes].numF; k++)
+cgp_czj.c:            printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][NumTypes].mbs[k]].string);
+cgp_czj.c:          printf("\n\t\t\tT [%d members] =",MST_czj[tr][i][j][NumTypes].numT);
+cgp_czj.c:          for (k=0; k<MST_czj[tr][i][j][NumTypes].numT; k++)
+cgp_czj.c:            printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][NumTypes].
+cgp_czj.c:                                         mbs[MST_czj[tr][i][j][NumTypes].numF+k]].string);
+cgp_czj.c:                   MST_czj[tr][i][j][t].areFs ? "used":"not used",
+cgp_czj.c:                   MST_czj[tr][i][j][t].areTs ? "used":"not used");
+cgp_czj.c:            for (k=0; k<MST_czj[tr][i][j][t].numFT; k++)
+cgp_czj.c:              printf(" %.6f",MST_czj[tr][i][j][t].wheel[k]);
+cgp_czj.c:                   MST_czj[tr][i][j][t].areFs ? "used":"not used",
+cgp_czj.c:                   MST_czj[tr][i][j][t].areTs ? "used":"not used");
+cgp_czj.c:              printf(" %.6f",MST_czj[tr][i][j][t].weights[k]);
+cgp_czj.c:      if (MST_czj[tr][numF][0][t].numFT!=0)
+cgp_czj.c:        printf("\t\tType '%s'\n",funcTermName(tr,t));
+cgp_czj.c:        printf("\t\t\tF [%d members] =",MST_czj[tr][numF][0][t].numF);
+cgp_czj.c:        for (k=0; k<MST_czj[tr][numF][0][t].numF; k++)
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[MST_czj[tr][numF][0][t].mbs[k]].string);
+cgp_czj.c:        printf("\n\t\t\tT [%d members] =",MST_czj[tr][numF][0][t].numT);
+cgp_czj.c:        for (k=0; k<MST_czj[tr][numF][0][t].numT; k++)
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[MST_czj[tr][numF][0][t].
+cgp_czj.c:                                       mbs[MST_czj[tr][numF][0][t].numF+k]].string);
+cgp_czj.c:                 MST_czj[tr][numF][0][t].areFs ? "used":"not used",
+cgp_czj.c:                 MST_czj[tr][numF][0][t].areTs ? "used":"not used");
+cgp_czj.c:          for (k=0; k<MST_czj[tr][numF][0][t].numFT; k++)
+cgp_czj.c:            printf(" %.6f",MST_czj[tr][numF][0][t].wheel[k]);
+cgp_czj.c:                 MST_czj[tr][numF][0][t].areFs ? "used":"not used",
+cgp_czj.c:                 MST_czj[tr][numF][0][t].areTs ? "used":"not used");
+cgp_czj.c:            printf(" %.6f",MST_czj[tr][numF][0][t].weights[k]);
+cgp_czj.c:      printf("\t\tType unconstrained mutation set\n");
+cgp_czj.c:      printf("\t\t\tF [%d members] =",MST_czj[tr][numF][0][NumTypes].numF);
+cgp_czj.c:      for (k=0; k<MST_czj[tr][numF][0][NumTypes].numF; k++)
+cgp_czj.c:        printf(" '%s'",fset[tr].cset[MST_czj[tr][numF][0][NumTypes].mbs[k]].string);
+cgp_czj.c:      printf("\n\t\t\tT [%d members] =",MST_czj[tr][numF][0][NumTypes].numT);
+cgp_czj.c:      for (k=0; k<MST_czj[tr][numF][0][NumTypes].numT; k++)
+cgp_czj.c:        printf(" '%s'",fset[tr].cset[MST_czj[tr][numF][0][NumTypes].
+cgp_czj.c:                                     mbs[MST_czj[tr][numF][0][NumTypes].numF+k]].string);
+cgp_czj.c:               MST_czj[tr][numF][0][t].areFs ? "used":"not used",
+cgp_czj.c:               MST_czj[tr][numF][0][t].areTs ? "used":"not used");
+cgp_czj.c:        for (k=0; k<MST_czj[tr][numF][0][t].numFT; k++)
+cgp_czj.c:          printf(" %.6f",MST_czj[tr][numF][0][t].wheel[k]);
+cgp_czj.c:               MST_czj[tr][numF][0][t].areFs ? "used":"not used",
+cgp_czj.c:               MST_czj[tr][numF][0][t].areTs ? "used":"not used");
+cgp_czj.c:          printf(" %.6f",MST_czj[tr][numF][0][t].weights[k]);
+cgp_czj.c:  int i,j,k,tr, numFT, numF, numT;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:      printf("Function '%s': numArg=%d, numTypeVecs=%d\n", fset[tr].cset[i].string, TP_czj[tr][i].f.numA,TP_czj[tr][i].f.numTypeVecs);
+cgp_czj.c:      if (TP_czj[tr][i].f.numTypeVecs)
+cgp_czj.c:        for (j=0; j<TP_czj[tr][i].f.numTypeVecs; j++)
+cgp_czj.c:          for (k=0; k<TP_czj[tr][i].f.numA; k++)
+cgp_czj.c:            printf("%d:'%s' ",k,FTp[tr]->TypList[TP_czj[tr][i].f.typeVecs[j][k]]);
+cgp_czj.c:          printf("-> '%s'",FTp[tr]->TypList[TP_czj[tr][i].f.typeVecs[j][TP_czj[tr][i].f.numA]]);
+cgp_czj.c:        for (j=0; j<FTp[tr]->TypCount; j++)
+cgp_czj.c:          if (TP_czj[tr][i].f.indexes[j].len>0)
+cgp_czj.c:            printf("\tType '%s' returned from vectors: ",FTp[tr]->TypList[j]);
+cgp_czj.c:            for (k=0; k<TP_czj[tr][i].f.indexes[j].len; k++)
+cgp_czj.c:              printf("%d ",TP_czj[tr][i].f.indexes[j].indexes[k]);
+cgp_czj.c:      printf("Terminal '%s': -> '%s'\n",fset[tr].cset[i].string, FTp[tr]->TypList[TP_czj[tr][i].retType]);
+cgp_czj.c:    printf("Root: -> '%s'\n",FTp[tr]->TypList[TP_czj[tr][numFT].retType]);
+cgp_czj.c:/* read (0,1], and if entry < MINWGHT then set it as MINWGHT */
+cgp_czj.c:/* read weights for mutation set entries and construct wheels for the */
+cgp_czj.c:/*   no-type constraints only (MST_czj[*][*][NumTypes] structures */
+cgp_czj.c:/* areFs and areTs members of MST_czj are set to true if at least one */
+cgp_czj.c:  int tr, i,j,k, numF, NumTypes;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++ )
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    NumTypes=FTp[tr]->TypCount;
+cgp_czj.c:    i = FTp[tr]->DefaultType;
+cgp_czj.c:             fset[tr].cset[i].string,fset[tr].cset[i].arity);
+cgp_czj.c:      for (j=0; j<fset[tr].cset[i].arity; j++)
+cgp_czj.c:        printf("\tF [%d members] =",MST_czj[tr][i][j][NumTypes].numF);
+cgp_czj.c:        for (k=0; k<MST_czj[tr][i][j][NumTypes].numF; k++)
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][NumTypes].mbs[k]].string);
+cgp_czj.c:        printf("\n\tT [%d members] =",MST_czj[tr][i][j][NumTypes].numT);
+cgp_czj.c:        for (k=0; k<MST_czj[tr][i][j][NumTypes].numT; k++)
+cgp_czj.c:          printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][NumTypes].mbs[
+cgp_czj.c:                                         MST_czj[tr][i][j][NumTypes].numF+k]].string);
+cgp_czj.c:        for (k=0; k<MST_czj[tr][i][j][NumTypes].numF; k++)
+cgp_czj.c:          printf("\tFunction '%s': ", fset[tr].cset[MST_czj[tr][i][j][NumTypes].mbs[k]].string);
+cgp_czj.c:          //writeFuncWeight(i, j, MST_czj[tr][i][j][NumTypes].mbs[k]);
+cgp_czj.c:          // FTp[tr]->Func[i].Arg[j].W[MST_czj[tr][i][j][NumTypes].mbs[k]]
+cgp_czj.c:          //MST_czj[tr][i][j][NumTypes].weights[MST_czj[tr][i][j][NumTypes].mbs[k]]= readMinWghtto1("give weight (0,1]");
+cgp_czj.c:          what = FTp[tr]->Func[i].Arg[j].W[MST_czj[tr][i][j][NumTypes].mbs[k]];
+cgp_czj.c:          MST_czj[tr][i][j][NumTypes].weights[MST_czj[tr][i][j][NumTypes].mbs[k]] = what;
+cgp_czj.c:        for (k=0; k<MST_czj[tr][i][j][NumTypes].numT; k++)
+cgp_czj.c:          printf("\tTerminal '%s': ",fset[tr].cset[MST_czj[tr][i][j][ NumTypes].mbs[MST_czj[tr][i][j][NumTypes].numF+k]].string);
+cgp_czj.c:          //writeFuncWeight(i, j, MST_czj[tr][i][j][NumTypes].mbs[MST_czj[tr][i][j][NumTypes].numF+k]);
+cgp_czj.c:          // FTp[tr]->Func[i].Arg[j].W[MST_czj[tr][i][j][NumTypes].numF+k]
+cgp_czj.c:          //MST_czj[tr][i][j][NumTypes].weights[MST_czj[tr][i][j][NumTypes].mbs[MST_czj[tr][i][j][NumTypes].numF+k]]=readMinWghtto1("give weight (0,1]");
+cgp_czj.c:          what = FTp[tr]->Func[i].Arg[j].W[MST_czj[tr][i][j][NumTypes].numF+k];
+cgp_czj.c:          MST_czj[tr][i][j][NumTypes].weights[MST_czj[tr][i][j][NumTypes].mbs[MST_czj[tr][i][j][NumTypes].numF+k]]=what;
+cgp_czj.c:        for (k=0; k<MST_czj[tr][i][j][NumTypes].numFT; k++)
+cgp_czj.c:          if (MST_czj[tr][i][j][NumTypes].weights[MST_czj[tr][i][j][NumTypes].mbs[k]] <MINWGHT+SMALL)
+cgp_czj.c:              MST_czj[tr][i][j][NumTypes].weights[MST_czj[tr][i][j][NumTypes].mbs[k]];
+cgp_czj.c:            if (k<MST_czj[tr][i][j][NumTypes].numF)
+cgp_czj.c:          MST_czj[tr][i][j][NumTypes].wheel[k]= (k==0) ? adjWght :
+cgp_czj.c:                                                MST_czj[tr][i][j][NumTypes].wheel[k-1]+adjWght;
+cgp_czj.c:        MST_czj[tr][i][j][NumTypes].areFs=areFs;
+cgp_czj.c:        MST_czj[tr][i][j][NumTypes].areTs=areTs;
+cgp_czj.c:    printf("\t\tF [%d members] =",MST_czj[tr][numF][0][NumTypes].numF);
+cgp_czj.c:    for (k=0; k<MST_czj[tr][numF][0][NumTypes].numF; k++)
+cgp_czj.c:      printf(" '%s'",fset[tr].cset[MST_czj[tr][numF][0][NumTypes].mbs[k]].string);
+cgp_czj.c:    printf("\n\t\tT [%d members] =",MST_czj[tr][numF][0][NumTypes].numT);
+cgp_czj.c:    for (k=0; k<MST_czj[tr][numF][0][NumTypes].numT; k++)
+cgp_czj.c:      printf(" '%s'",fset[tr].cset[MST_czj[tr][numF][0][NumTypes].mbs[
+cgp_czj.c:                                     MST_czj[tr][numF][0][NumTypes].numF+k]].string);
+cgp_czj.c:    for (k=0; k<MST_czj[tr][numF][0][NumTypes].numF; k++)
+cgp_czj.c:      printf("\tFunction '%s': ", fset[tr].cset[MST_czj[tr][numF][0][NumTypes].mbs[k]].string);
+cgp_czj.c:      //MST_czj[tr][numF][0][NumTypes].weights[MST_czj[tr][numF][0][NumTypes].mbs[k]]= readMinWghtto1("give weight (0,1]");
+cgp_czj.c:      what = FTp[tr]->WRoot[k];
+cgp_czj.c:      MST_czj[tr][numF][0][NumTypes].weights[MST_czj[tr][numF][0][NumTypes].mbs[k]]=what;
+cgp_czj.c:    for (k=0; k<MST_czj[tr][numF][0][NumTypes].numT; k++)
+cgp_czj.c:      printf("\tTerminal '%s': ",fset[tr].cset[MST_czj[tr][numF][0][ NumTypes].mbs[MST_czj[tr][numF][0][NumTypes].numF+k]].string);
+cgp_czj.c:      //MST_czj[tr][numF][0][NumTypes].weights[MST_czj[tr][numF][0][NumTypes].mbs[MST_czj[tr][numF][0][NumTypes].numF+k]]=readMinWghtto1("give weight (0,1]");
+cgp_czj.c:      what = FTp[tr]->WRoot[k+numF];
+cgp_czj.c:      MST_czj[tr][numF][0][NumTypes].weights[MST_czj[tr][numF][0][NumTypes].mbs[MST_czj[tr][numF][0][NumTypes].numF+k]]=what;
+cgp_czj.c:    for (k=0; k<MST_czj[tr][numF][0][NumTypes].numFT; k++)
+cgp_czj.c:      if (MST_czj[tr][numF][0][NumTypes].weights[
+cgp_czj.c:            MST_czj[tr][numF][0][NumTypes].mbs[k]]<MINWGHT+SMALL)
+cgp_czj.c:        adjWght=MST_czj[tr][numF][0][NumTypes].weights[MST_czj[tr][numF][0][NumTypes].mbs[k]];
+cgp_czj.c:        if (k<MST_czj[tr][numF][0][NumTypes].numF)
+cgp_czj.c:      MST_czj[tr][numF][0][NumTypes].wheel[k]= (k==0) ? adjWght :
+cgp_czj.c:          MST_czj[tr][numF][0][NumTypes].wheel[k-1]+adjWght;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].areFs=areFs;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].areTs=areTs;
+cgp_czj.c:static void constrain1Type(int t, int tr, int numF, int numFT, mutSet_czj_t ms, mutSet_czj_t *newMs)
+cgp_czj.c:/* constrains ms for type t into newMs, allocates storage as needed */
+cgp_czj.c:    if (TP_czj[tr][f].f.indexes[t].len>0)             /* function f gives type t */
+cgp_czj.c:    if (TP_czj[tr][f].retType==t)                 /* term f gives the right type */
+cgp_czj.c:      if (TP_czj[tr][e].f.indexes[t].len>0)
+cgp_czj.c:      if (TP_czj[tr][e].retType==t)
+cgp_czj.c:static void constrainTypes(void)
+cgp_czj.c:/* combine type-unconstrained mutation sets in MST_czj[*][*][NumTypes] */
+cgp_czj.c:  int tr, f, a, t, v, numF, numT, numFT, NumTypes;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:    NumTypes = FTp[tr]->TypCount;
+cgp_czj.c:    { for (a=0; a<fset[tr].cset[f].arity; a++)
+cgp_czj.c:        { for (v=0; v<TP_czj[tr][f].f.numTypeVecs; v++)
+cgp_czj.c:          { if (TP_czj[tr][f].f.typeVecs[v][a]==t)
+cgp_czj.c:            { constrain1Type(t,tr, numF, numFT, MST_czj[tr][f][a][NumTypes],&MST_czj[tr][f][a][t]);
+cgp_czj.c:      if (TP_czj[tr][numFT].retType==t)
+cgp_czj.c:        constrain1Type(t,tr, numF, numFT, MST_czj[tr][numF][0][NumTypes],&MST_czj[tr][numF][0][t]);
+cgp_czj.c:static void displayFTNames(int tr, int numF, int numT)
+cgp_czj.c:  printf("TREE: %s",FTp[tr]->treeName);
+cgp_czj.c:    printf("%s ",fset[tr].cset[i].string);
+cgp_czj.c:    printf("%s ",fset[tr].cset[i].string);
+cgp_czj.c:  printf("\nSeparate entries by [ ,;]\nHit <ENTER> for empty set\n");
+cgp_czj.c:  printf("Separate entries by [ ,;]  Hit <ENTER> for empty set\n");
+cgp_czj.c:  int entry;
+cgp_czj.c:  for (entry=0; entry<numF+numT; entry++)
+cgp_czj.c:    setP->mbs[entry]=0;                            /* reset set to empty */
+cgp_czj.c:    fprintf(stderr,"ERROR: failed reading constrained\n");
+cgp_czj.c:  p=strtok(buf,sep);
+cgp_czj.c:    if ((entry=funNumber(p,0))<0)
+cgp_czj.c:    else if (entry>max)
+cgp_czj.c:      setP->mbs[entry]=1;
+cgp_czj.c:      if (entry<numF)
+cgp_czj.c:    p=strtok(NULL,sep);
+cgp_czj.c:  int entry;
+cgp_czj.c:  for (entry=0; entry<numF+numT; entry++)
+cgp_czj.c:    setP->mbs[entry]=0;                            /* reset set to empty */
+cgp_czj.c:  for (entry = 0; entry <= max; entry++ )
+cgp_czj.c:    setP->mbs[entry] = 1;
+cgp_czj.c:    if (entry<numF)
+cgp_czj.c:  int entry;
+cgp_czj.c:  for (entry=0; entry<numF+numT; entry++)
+cgp_czj.c:    setP->mbs[entry]=0;                            /* reset set to empty */
+cgp_czj.c:/* read FT specs, set up Cons structure */
+cgp_czj.c:  int i, j, k, numF, numT, numFT,tr;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++ )
+cgp_czj.c:    printf("Treename: %s\n", FTp[tr]->treeName);
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:    for(i = 0; i < FTp[tr]->TypCount; i++)
+cgp_czj.c:      printf(" %s", FTp[tr]->TypList[i] );
+cgp_czj.c:      printf("Function instCount -> %d \n",FTp[tr]->Func[i].instCount);
+cgp_czj.c:      for (j = 0; j < funcArity(tr,i); j++)
+cgp_czj.c:          printf("  bool  F[%d]-> %d \n", k, FTp[tr]->Func[i].Arg[j].F[k]);
+cgp_czj.c:          printf("  bool  T[%d]-> %d \n", k, FTp[tr]->Func[i].Arg[j].T[k]);
+cgp_czj.c:          printf("  float W[%d]-> %f \n", k, FTp[tr]->Func[i].Arg[j].W[k]);
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++ )
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:        if ( FTp[tr]->Func[fnum].F[snum] )
+cgp_czj.c:          printf("%s ", funcTermName(tr,snum));         /* printf F_func */
+cgp_czj.c:      for ( anum = 0; anum < funcArity(tr,fnum); anum++ )
+cgp_czj.c:          if ( FTp[tr]->Func[fnum].Arg[anum].F[snum] )
+cgp_czj.c:            printf("%s ", funcTermName(tr,snum));      /*printf F_func[arg]*/
+cgp_czj.c:          if ( FTp[tr]->Func[fnum].Arg[anum].T[snum] )
+cgp_czj.c:            printf("%s ", funcTermName(tr,snum));      /*printf T_func[arg]*/
+cgp_czj.c:      if ( FTp[tr]->FRoot[snum] )
+cgp_czj.c:        printf( "%s ", funcTermName(tr,snum));          /* printf F_Root */
+cgp_czj.c:      if ( FTp[tr]->TRoot[snum] )
+cgp_czj.c:        printf("%s ", funcTermName(tr,snum));          /* printf T_Root */
+cgp_czj.c:  Cons = (constraint_t**)malloc( tree_count * sizeof(constraint_t*));
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++ )
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:    i = FTp[tr]->DefaultType;
+cgp_czj.c:      Cons[tr]=(constraint_t*)getVec((size_t)(numF+1),sizeof(constraint_t));
+cgp_czj.c:        Cons[tr][i].arity=fset[tr].cset[i].arity;
+cgp_czj.c:        Cons[tr][i].Fspec=(specArrs_t)getVec((size_t)1,sizeof(specArrArg_t));
+cgp_czj.c:        Cons[tr][i].Fspec[0].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:        //reset1ConSet(&(Cons[tr][i].Fspec[0]),numF-1, numF, numT);
+cgp_czj.c:          Cons[tr][i].Fspec->mbs[k]=0;
+cgp_czj.c:        Cons[tr][i].Fspec->numF=0;
+cgp_czj.c:        Cons[tr][i].Fspec->numT=0;
+cgp_czj.c:        Cons[tr][i].Tspecs=(specArrs_t)getVec((size_t)Cons[tr][i].arity,sizeof(specArrArg_t));
+cgp_czj.c:        Cons[tr][i].Fspecs=(specArrs_t)getVec((size_t)Cons[tr][i].arity,sizeof(specArrArg_t));
+cgp_czj.c:        for(j=0; j<Cons[tr][i].arity; j++)
+cgp_czj.c:          Cons[tr][i].Tspecs[j].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:          Cons[tr][i].Fspecs[j].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:          //reset1ConSet(&(Cons[tr][i].Fspecs[j]),numFT-1, numF, numT);
+cgp_czj.c:            Cons[tr][i].Fspecs[j].mbs[k]=0;
+cgp_czj.c:          Cons[tr][i].Fspecs[j].numF=0;
+cgp_czj.c:          Cons[tr][i].Fspecs[j].numT=0;
+cgp_czj.c:            Cons[tr][i].Fspecs[j].mbs[k] = 1;
+cgp_czj.c:              Cons[tr][i].Fspecs[j].numF++;
+cgp_czj.c:              Cons[tr][i].Fspecs[j].numT++;
+cgp_czj.c:          //set1ConSet(&(Cons[tr][i].Tspecs[j]),numFT-1, numF, numT);
+cgp_czj.c:            Cons[tr][i].Tspecs[j].mbs[k]=0;    /* reset set to empty */
+cgp_czj.c:          Cons[tr][i].Tspecs[j].numF=0;
+cgp_czj.c:          Cons[tr][i].Tspecs[j].numT=0;        /* reset member counters */
+cgp_czj.c:            Cons[tr][i].Tspecs[j].mbs[k] = 1;
+cgp_czj.c:              Cons[tr][i].Tspecs[j].numF++;
+cgp_czj.c:              Cons[tr][i].Tspecs[j].numT++;
+cgp_czj.c:      Cons[tr][numF].arity=1;
+cgp_czj.c:      Cons[tr][numF].Fspec=NULL;
+cgp_czj.c:      Cons[tr][i].Tspecs=(specArrs_t)getVec((size_t)1,sizeof(specArrArg_t));
+cgp_czj.c:      Cons[tr][i].Fspecs=(specArrs_t)getVec((size_t)1,sizeof(specArrArg_t));
+cgp_czj.c:      Cons[tr][i].Tspecs[0].mbs=(specArr_t)getVec((size_t)(numFT),sizeof(int));
+cgp_czj.c:      Cons[tr][i].Fspecs[0].mbs=(specArr_t)getVec((size_t)(numFT),sizeof(int));
+cgp_czj.c:      //reset1ConSet(&(Cons[tr][numF].Fspecs[0]), numF+numT-1, numF, numT);
+cgp_czj.c:        Cons[tr][i].Fspecs[0].mbs[k]=0;
+cgp_czj.c:      Cons[tr][i].Fspecs[0].numF=0;
+cgp_czj.c:      Cons[tr][i].Fspecs[0].numT=0;
+cgp_czj.c:      //set1ConSet(&(Cons[tr][numF].Tspecs[0]), numF+numT-1, numF, numT);
+cgp_czj.c:        Cons[tr][i].Tspecs[0].mbs[k]=0;   /* reset set to empty */
+cgp_czj.c:      Cons[tr][i].Tspecs[0].numF=0;
+cgp_czj.c:      Cons[tr][i].Tspecs[0].numT=0;        /* reset member counters */
+cgp_czj.c:        Cons[tr][i].Tspecs[0].mbs[k] = 1;
+cgp_czj.c:          Cons[tr][i].Tspecs[0].numF++;
+cgp_czj.c:          Cons[tr][i].Tspecs[0].numT++;
+cgp_czj.c:      Cons[tr]=(constraint_t*)getVec((size_t)(numF+1),sizeof(constraint_t));
+cgp_czj.c:        displayFTNames(tr, numF, numT);
+cgp_czj.c:        printf("Tree: %s -> Function '%s':\n",FTp[tr]->treeName,fset[tr].cset[i].string);
+cgp_czj.c:        Cons[tr][i].arity=fset[tr].cset[i].arity;
+cgp_czj.c:        Cons[tr][i].Fspec=(specArrs_t)getVec((size_t)1,sizeof(specArrArg_t));
+cgp_czj.c:        Cons[tr][i].Fspec[0].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:        sprintf(prompt,"\tF_%s (exclusions)",fset[tr].cset[i].string);
+cgp_czj.c:        //read1ConSet(prompt,&(Cons[tr][i].Fspec[0]),numF-1, numF, numT);     /* type I only here */
+cgp_czj.c:          Cons[tr][i].Fspec[0].mbs[k]=0;
+cgp_czj.c:        Cons[tr][i].Fspec[0].numF=0;
+cgp_czj.c:        Cons[tr][i].Fspec[0].numT=0;
+cgp_czj.c:          if ( FTp[tr]->Func[i].F[k] )
+cgp_czj.c:            printf("%s ", funcTermName(tr,k));
+cgp_czj.c:            sprintf(dbgtext, "%s", funcTermName(tr,k));  //gwgdbg
+cgp_czj.c:            Cons[tr][i].Fspec[0].mbs[k]=1;
+cgp_czj.c:              Cons[tr][i].Fspec[0].numF++;
+cgp_czj.c:              Cons[tr][i].Fspec[0].numT++;
+cgp_czj.c:        Cons[tr][i].Tspecs=(specArrs_t)getVec((size_t)Cons[tr][i].arity,sizeof(specArrArg_t));
+cgp_czj.c:        Cons[tr][i].Fspecs=(specArrs_t)getVec((size_t)Cons[tr][i].arity,sizeof(specArrArg_t));
+cgp_czj.c:        for (j=0; j<Cons[tr][i].arity; j++)
+cgp_czj.c:          Cons[tr][i].Tspecs[j].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:          Cons[tr][i].Fspecs[j].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:          sprintf(prompt,"\tF_%s_%d (exclusions)",fset[tr].cset[i].string,j);
+cgp_czj.c:          //read1ConSet(prompt,&(Cons[tr][i].Fspecs[anum]),numFT-1, numF, numT);
+cgp_czj.c:            Cons[tr][i].Fspecs[j].mbs[k]=0;
+cgp_czj.c:          Cons[tr][i].Fspecs[j].numF=0;
+cgp_czj.c:          Cons[tr][i].Fspecs[j].numT=0;
+cgp_czj.c:            if ( FTp[tr]->Func[i].Arg[j].F[k] )
+cgp_czj.c:              printf("%s ", funcTermName(tr,k));
+cgp_czj.c:              sprintf(dbgtext, "%s", funcTermName(tr,k));  //gwgdbg
+cgp_czj.c:              Cons[tr][i].Fspecs[j].mbs[k]=1;
+cgp_czj.c:                Cons[tr][i].Fspecs[j].numF++;
+cgp_czj.c:                Cons[tr][i].Fspec[j].numT++;
+cgp_czj.c:          sprintf(prompt,"\tT_%s_%d (inclusions)",fset[tr].cset[i].string,j);
+cgp_czj.c:          //read1ConSet(prompt,&(Cons[tr][i].Tspecs[anum]),numFT-1, numF, numT);
+cgp_czj.c:            Cons[tr][i].Tspecs[j].mbs[k]=0;
+cgp_czj.c:          Cons[tr][i].Tspecs[j].numF=0;
+cgp_czj.c:          Cons[tr][i].Tspecs[j].numT=0;
+cgp_czj.c:            if ( FTp[tr]->Func[i].Arg[j].T[k] )
+cgp_czj.c:              printf("%s ", funcTermName(tr,k));
+cgp_czj.c:              sprintf(dbgtext, "%s", funcTermName(tr,k));  //gwgdbg
+cgp_czj.c:              Cons[tr][i].Tspecs[j].mbs[k]=1;
+cgp_czj.c:                Cons[tr][i].Tspecs[j].numF++;
+cgp_czj.c:                Cons[tr][i].Tspecs[j].numT++;
+cgp_czj.c:      Cons[tr][numF].arity=1;
+cgp_czj.c:      Cons[tr][numF].Fspec=NULL;
+cgp_czj.c:      Cons[tr][i].Tspecs=(specArrs_t)getVec((size_t)1,sizeof(specArrArg_t));
+cgp_czj.c:      Cons[tr][i].Fspecs=(specArrs_t)getVec((size_t)1,sizeof(specArrArg_t));
+cgp_czj.c:      Cons[tr][i].Tspecs[0].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:      Cons[tr][i].Fspecs[0].mbs=(specArr_t)getVec((size_t)(numF+numT),sizeof(int));
+cgp_czj.c:      displayFTNames(tr, numF, numT);
+cgp_czj.c:      //read1ConSet("\tF^Root (exclusions)",&(Cons[tr][numF].Fspecs[0]),numF+numT-1, numF, numT);
+cgp_czj.c:        Cons[tr][i].Fspecs->mbs[k]=0;
+cgp_czj.c:      Cons[tr][i].Fspecs->numF=0;
+cgp_czj.c:      Cons[tr][i].Fspecs->numT=0;
+cgp_czj.c:        if ( FTp[tr]->FRoot[k] )
+cgp_czj.c:          printf("%s ", funcTermName(tr,k));          /* printf T_Root */
+cgp_czj.c:          sprintf(dbgtext, "%s", funcTermName(tr,k));  //gwgdbg
+cgp_czj.c:          Cons[tr][i].Fspecs->mbs[k]=1;
+cgp_czj.c:            Cons[tr][i].Fspecs->numF++;
+cgp_czj.c:            Cons[tr][i].Fspecs->numT++;
+cgp_czj.c:      //read1ConSet("\tT^Root (inclusions)",&(Cons[tr][numF].Tspecs[0]),numF+numT-1, numF, numT);
+cgp_czj.c:        Cons[tr][i].Tspecs->mbs[k]=0;
+cgp_czj.c:      Cons[tr][i].Tspecs->numF=0;
+cgp_czj.c:      Cons[tr][i].Tspecs->numT=0;
+cgp_czj.c:        if ( FTp[tr]->TRoot[k] )
+cgp_czj.c:          printf("%s ", funcTermName(tr,k));          /* printf T_Root */
+cgp_czj.c:          sprintf(dbgtext, "%s", funcTermName(tr,k));  //gwgdbg
+cgp_czj.c:          Cons[tr][i].Tspecs->mbs[k]=1;
+cgp_czj.c:            Cons[tr][i].Tspecs->numF++;
+cgp_czj.c:            Cons[tr][i].Tspecs->numT++;
+cgp_czj.c:  int tr, fun, arg, entry, numF, numT;
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:      for (arg=0; arg<Cons[tr][fun].arity; arg++)
+cgp_czj.c:        for (entry=0; entry<numF+numT; entry++)
+cgp_czj.c:          if (Cons[tr][fun].Tspecs[arg].mbs[entry]==0)
+cgp_czj.c:            Cons[tr][fun].Fspecs[arg].mbs[entry]=1;
+cgp_czj.c:    for (entry=0; entry<numF+numT; entry++)               /* same for the Root */
+cgp_czj.c:      if (Cons[tr][numF].Tspecs[0].mbs[entry]==0)
+cgp_czj.c:        Cons[tr][numF].Fspecs[0].mbs[entry]=1;
+cgp_czj.c:      for (entry=0; entry<numF; entry++)
+cgp_czj.c:        if (Cons[tr][fun].Fspec[0].mbs[entry]!=0)     /* must extend it */
+cgp_czj.c:          for (arg=0; arg<Cons[tr][entry].arity; arg++)
+cgp_czj.c:            Cons[tr][entry].Fspecs[arg].mbs[fun]=1;
+cgp_czj.c:    for (fun=0; fun<numF+1; fun++)            /* recount set entries in Fspecs */
+cgp_czj.c:      for (arg=0; arg<Cons[tr][fun].arity; arg++)
+cgp_czj.c:        Cons[tr][fun].Fspecs[arg].numF=0;
+cgp_czj.c:        Cons[tr][fun].Fspecs[arg].numT=0;
+cgp_czj.c:        for (entry=0; entry<numF; entry++)
+cgp_czj.c:          if (Cons[tr][fun].Fspecs[arg].mbs[entry]!=0)
+cgp_czj.c:            Cons[tr][fun].Fspecs[arg].numF++;
+cgp_czj.c:        for (; entry<numF+numT; entry++)
+cgp_czj.c:          if (Cons[tr][fun].Fspecs[arg].mbs[entry]!=0)
+cgp_czj.c:            Cons[tr][fun].Fspecs[arg].numT++;
+cgp_czj.c:/*   MST_czj[*][*][NumTypes], which represent type-unconstrained */
+cgp_czj.c:  int tr, f, a, e, k, t, numF, numT, numFT, NumTypes;
+cgp_czj.c:  MST_czj=(void*)malloc(tree_count * sizeof(mutSet_czj_t***));
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numF = pTS[tr].numF;
+cgp_czj.c:    numT = pTS[tr].numT;
+cgp_czj.c:    NumTypes= FTp[tr]->TypCount;
+cgp_czj.c:    MST_czj[tr]=(void*)getVec((size_t)(numF+1),sizeof(mutSet_czj_t**));
+cgp_czj.c:      MST_czj[tr][f]=(mutSet_czj_t**)getVec((size_t)fset[tr].cset[f].arity,sizeof(mutSet_czj_t*));
+cgp_czj.c:      for (a=0; a<fset[tr].cset[f].arity; a++)
+cgp_czj.c:        MST_czj[tr][f][a]=(mutSet_czj_t*)getVec((size_t)(NumTypes+1),sizeof(mutSet_czj_t));
+cgp_czj.c:          MST_czj[tr][f][a][t].numF=0;
+cgp_czj.c:          MST_czj[tr][f][a][t].numT=0;
+cgp_czj.c:          MST_czj[tr][f][a][t].numFT=0;
+cgp_czj.c:          MST_czj[tr][f][a][t].areFs=0;
+cgp_czj.c:          MST_czj[tr][f][a][t].areTs=0;
+cgp_czj.c:          MST_czj[tr][f][a][t].mbs=NULL;
+cgp_czj.c:          MST_czj[tr][f][a][t].wheel=NULL;
+cgp_czj.c:          MST_czj[tr][f][a][t].weights=NULL;
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].numF=numF-Cons[tr][f].Fspecs[a].numF;
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].numT=numT-Cons[tr][f].Fspecs[a].numT;
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].numFT=MST_czj[tr][f][a][NumTypes].numF+MST_czj[tr][f][a][NumTypes].numT;
+cgp_czj.c:        if (MST_czj[tr][f][a][NumTypes].numFT==0)
+cgp_czj.c:                  fset[tr].cset[f].string,a);
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].mbs=(int*)getVec((size_t)(MST_czj[tr][f][a][NumTypes].numFT),sizeof(int));
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].weights=(double*)getVec((size_t)(numFT),sizeof(double));
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].wheel=(double*)getVec((size_t)(MST_czj[tr][f][a][NumTypes].numFT),sizeof(double));
+cgp_czj.c:          if (Cons[tr][f].Fspecs[a].mbs[k]==0)
+cgp_czj.c:            MST_czj[tr][f][a][NumTypes].weights[k]=1.0;
+cgp_czj.c:            MST_czj[tr][f][a][NumTypes].wheel[e]= (e==0) ?
+cgp_czj.c:                                                  MST_czj[tr][f][a][NumTypes].weights[k] :
+cgp_czj.c:                                                  MST_czj[tr][f][a][NumTypes].wheel[e-1]+
+cgp_czj.c:                                                  MST_czj[tr][f][a][NumTypes].weights[k];
+cgp_czj.c:            MST_czj[tr][f][a][NumTypes].mbs[e]=k;
+cgp_czj.c:            MST_czj[tr][f][a][NumTypes].weights[k]= -1.0;
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].areFs= !!MST_czj[tr][f][a][NumTypes].numF;
+cgp_czj.c:        MST_czj[tr][f][a][NumTypes].areTs= !!MST_czj[tr][f][a][NumTypes].numT;
+cgp_czj.c:    MST_czj[tr][numF]=(mutSet_czj_t**)getVec((size_t)1,sizeof(mutSet_czj_t*));
+cgp_czj.c:    MST_czj[tr][numF][0]=(mutSet_czj_t*)getVec((size_t)(NumTypes+1),sizeof(mutSet_czj_t));
+cgp_czj.c:      MST_czj[tr][numF][0][t].numF=0;
+cgp_czj.c:      MST_czj[tr][numF][0][t].numT=0;
+cgp_czj.c:      MST_czj[tr][numF][0][t].numFT=0;
+cgp_czj.c:      MST_czj[tr][numF][0][t].areFs=0;
+cgp_czj.c:      MST_czj[tr][numF][0][t].areTs=0;
+cgp_czj.c:      MST_czj[tr][numF][0][t].mbs=NULL;
+cgp_czj.c:      MST_czj[tr][numF][0][t].wheel=NULL;
+cgp_czj.c:      MST_czj[tr][numF][0][t].weights=NULL;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].numF=numF-Cons[tr][numF].Fspecs[0].numF;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].numT=numT-Cons[tr][numF].Fspecs[0].numT;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].numFT=MST_czj[tr][numF][0][NumTypes].numF+MST_czj[tr][numF][0][NumTypes].numT;
+cgp_czj.c:    if (MST_czj[tr][numF][0][NumTypes].numFT==0)
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].mbs=(int*)getVec((size_t)(MST_czj[tr][numF][0][NumTypes].numFT),sizeof(int));
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].weights=(double*)getVec((size_t)(numFT),sizeof(double));
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].wheel=(double*)getVec((size_t)(MST_czj[tr][numF][0][NumTypes].numFT),sizeof(double));
+cgp_czj.c:      if (Cons[tr][numF].Fspecs[0].mbs[k]==0)
+cgp_czj.c:        MST_czj[tr][numF][0][NumTypes].mbs[e]=k;
+cgp_czj.c:        MST_czj[tr][numF][0][NumTypes].weights[k]=1.0;
+cgp_czj.c:        MST_czj[tr][numF][0][NumTypes].wheel[e]= (e==0) ?
+cgp_czj.c:            MST_czj[tr][numF][0][NumTypes].weights[k] :
+cgp_czj.c:            MST_czj[tr][numF][0][NumTypes].wheel[e-1]+MST_czj[tr][numF][0][NumTypes].weights[k];
+cgp_czj.c:        MST_czj[tr][numF][0][NumTypes].weights[k]= -1.0;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].areFs= !!MST_czj[tr][numF][0][NumTypes].numF;
+cgp_czj.c:    MST_czj[tr][numF][0][NumTypes].areTs= !!MST_czj[tr][numF][0][NumTypes].numT;
+cgp_czj.c:    if (!strcmp(typeName,TypeNames[i]))
+cgp_czj.c:static int read1Type(int tr, int fun)
+cgp_czj.c:  if ((p=strtok(buf,sep))==NULL)
+cgp_czj.c:static int *read1TypeVec(int tr, int fun, int numA)
+cgp_czj.c:         fset[0].cset[fun].string,numA);
+cgp_czj.c:  if ((p=strtok(buf,sep))==NULL)
+cgp_czj.c:    p=strtok(NULL,sep);
+cgp_czj.c:         fset[tr].cset[fun].string,numA); // debugging
+cgp_czj.c:  for (numfunc=0; numfunc < pTS[tr].numF; numfunc++)
+cgp_czj.c:      for ( ip = FTp[tr]->Func[numfunc].head->next; (ip != NULL) && (ip->inst != NULL); ip = ip->next )
+cgp_czj.c:      { for (numarg = 0; numarg < funcArity(tr,numfunc)+1; numarg++)
+cgp_czj.c:        { //fprintf(inputFP, "%s ", FTp[tr]->TypList[ip->inst[numarg]]);
+cgp_czj.c:          sprintf(buf, "fun-> %s, argNo=%d, argType->%s ", fset[tr].cset[fun].string, numarg, FTp[tr]->TypList[ip->inst[numarg]]);
+cgp_czj.c:  for (numterm = 0; numterm < pTS[tr].numT; numterm++)
+cgp_czj.c:    sprintf(buf, "%s\n", FTp[tr]->TypList[FTp[tr]->TypTerm[numterm]]);
+cgp_czj.c:  sprintf(buf, "%s\n", FTp[tr]->TypList[FTp[tr]->TypRoot]);
+cgp_czj.c:  int i,j,k,m,tr;
+cgp_czj.c:    p=strtok(buf,sep);
+cgp_czj.c:          if (!strcmp(TypeNames[i],p))
+cgp_czj.c:        i=strlen(p);
+cgp_czj.c:        strcpy(TypeNames[NumTypes],p);
+cgp_czj.c:        p=strtok(NULL,sep);
+cgp_czj.c:  //TP_czj=(TP_czj_t*)getVec((size_t)(tree_count), sizeof(oneTP_czj_t*));
+cgp_czj.c:  TP_czj=(void*)getVec((size_t)(tree_count), sizeof(oneTP_czj_t*));
+cgp_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp_czj.c:    numFT = pTS[tr].numF+pTS[tr].numT;
+cgp_czj.c:    TP_czj[tr]=(void*)getVec((size_t)(numFT+1),sizeof(oneTP_czj_t));
+cgp_czj.c:    for (i=0; i<pTS[tr].numF; i++)                          /* first process functions */
+cgp_czj.c:      TP_czj[tr][i].f.numA=fset[tr].cset[i].arity;
+cgp_czj.c:      sprintf(buf, "%s", fset[tr].cset[i].string); //gwgdbg
+cgp_czj.c:      if(FTp[tr]->TypCount==1)             /* the generic case or just one type anyway */
+cgp_czj.c:        TP_czj[tr][i].f.typeVecs=(int**)getVec((size_t)1,sizeof(int*));
+cgp_czj.c:        TP_czj[tr][i].f.typeVecs[0]= (int*)getVec((size_t)(TP_czj[tr][i].f.numA+1),sizeof(int));
+cgp_czj.c:        TP_czj[tr][i].f.numTypeVecs=1;
+cgp_czj.c:        for (j=0; j<TP_czj[tr][i].f.numA+1; j++)
+cgp_czj.c:          TP_czj[tr][i].f.typeVecs[0][j]=0;                /* just the only type */
+cgp_czj.c:               fset[tr].cset[i].string,TP_czj[tr][i].f.numA); // debugging
+cgp_czj.c:        ic = FTp[tr]->Func[i].instCount;
+cgp_czj.c:        for ( ip = FTp[tr]->Func[i].head->next; (ip != NULL) && (ip->inst != NULL); ip = ip->next )
+cgp_czj.c:          vec=(int*)getVec((size_t)(fset[tr].cset[i].string,TP_czj[tr][i].f.numA+1),sizeof(int));
+cgp_czj.c:          for (arg = 0; arg < funcArity(tr,i)+1; arg++)
+cgp_czj.c:          { sprintf(buf, "fun-> %s, argNo=%d, argType->%s ", fset[tr].cset[i].string, arg, FTp[tr]->TypList[ip->inst[arg]]);
+cgp_czj.c:          TP_czj[tr][i].f.numTypeVecs=j+1;
+cgp_czj.c:          TP_czj[tr][i].f.typeVecs= (int**)getMoreVec(TP_czj[tr][i].f.typeVecs,sizeof(int*)*(j+1));
+cgp_czj.c:          TP_czj[tr][i].f.typeVecs[j]=vec;
+cgp_czj.c:          if (!verify1TypeVec(TP_czj[tr][i].f.typeVecs,TP_czj[tr][i].f.numA,j))
+cgp_czj.c:            free(TP_czj[tr][i].f.typeVecs[j]);
+cgp_czj.c:      TP_czj[tr][i].f.indexes= (typesIndexes_t*)getVec((size_t)FTp[tr]->TypCount,sizeof(typesIndexes_t));
+cgp_czj.c:      for (j=0; j<FTp[tr]->TypCount; j++)
+cgp_czj.c:        for (k=0; k<TP_czj[tr][i].f.numTypeVecs; k++)
+cgp_czj.c:          if (TP_czj[tr][i].f.typeVecs[k][TP_czj[tr][i].f.numA]==j)
+cgp_czj.c:        TP_czj[tr][i].f.indexes[j].len=m;
+cgp_czj.c:          TP_czj[tr][i].f.indexes[j].indexes=NULL;
+cgp_czj.c:          TP_czj[tr][i].f.indexes[j].indexes=(int*)getVec((size_t)m,sizeof(int));
+cgp_czj.c:          for (m=0,k=0; k<TP_czj[tr][i].f.numTypeVecs; k++)
+cgp_czj.c:            if (TP_czj[tr][i].f.typeVecs[k][TP_czj[tr][i].f.numA]==j)
+cgp_czj.c:              TP_czj[tr][i].f.indexes[j].indexes[m]=k;
+cgp_czj.c:    for (i=pTS[tr].numF; i<numFT; i++)                        /* now process terminals */
+cgp_czj.c:      if (FTp[tr]->TypCount==1)
+cgp_czj.c:        TP_czj[tr][i].retType=0;                                  /* the only type */
+cgp_czj.c:        sprintf(buf, "Give ret type for terminal '%s': ",fset[tr].cset[i].string); /*debug info*/
+cgp_czj.c:        /*TP_czj[tr][i].retType=read1Type(tr, i); */
+cgp_czj.c:        TP_czj[tr][i].retType=FTp[tr]->TypTerm[i-pTS[tr].numF];
+cgp_czj.c:    if (FTp[tr]->TypCount==1)                                       /* now process Root */
+cgp_czj.c:      TP_czj[tr][pTS[tr].numF+pTS[tr].numT].retType=0;                                /* the only type */
+cgp_czj.c:      /*TP_czj[tr][pTS[tr].numF+pTS[tr].numT].retType=read1Type(tr,pTS[tr].numF+pTS[tr].numT);*/
+cgp_czj.c:      TP_czj[tr][pTS[tr].numF+pTS[tr].numT].retType=FTp[tr]->TypRoot;
+cgp_czj.c:  printf("\nRead the following constraints...\n");
+cgp_czj.c:  printf("\nThe normal constraints are...\n");
+cgp_czj.c:  constrainTypes();
+cgp_czj.c:  printf("\n##3 After constrainTypes The following typed mutation sets are used...\n");
+cgp_czj.c:int random_F_czj(int tr)
+cgp_czj.c:  randIndex=MST_czj[tr][Function_czj][Argument_czj][Type_czj].numF;
+cgp_czj.c:  if (randIndex==0 || MST_czj[tr][Function_czj][Argument_czj][Type_czj].areFs==0)
+cgp_czj.c:    return(random_FT_czj(tr));
+cgp_czj.c:  randIndex=spinWheel(0,randIndex-1,MST_czj[tr][Function_czj][Argument_czj][Type_czj].wheel);
+cgp_czj.c:  return MST_czj[tr][Function_czj][Argument_czj][Type_czj].mbs[randIndex];
+cgp_czj.c:int random_T_czj(int tr)
+cgp_czj.c:/* as random_F_czj, except that extract members of T */
+cgp_czj.c:  if (MST_czj[tr][Function_czj][Argument_czj][Type_czj].numT==0 ||
+cgp_czj.c:      MST_czj[tr][Function_czj][Argument_czj][Type_czj].areTs==0)
+cgp_czj.c:    return(random_FT_czj(tr));
+cgp_czj.c:  randIndex=spinWheel(MST_czj[tr][Function_czj][Argument_czj][Type_czj].numF,
+cgp_czj.c:                      MST_czj[tr][Function_czj][Argument_czj][Type_czj].numFT-1,
+cgp_czj.c:                      MST_czj[tr][Function_czj][Argument_czj][Type_czj].wheel);
+cgp_czj.c:  return MST_czj[tr][Function_czj][Argument_czj][Type_czj].mbs[randIndex];
+cgp_czj.c:int random_FT_czj(int tr)
+cgp_czj.c:  if (MST_czj[tr][Function_czj][Argument_czj][Type_czj].numFT==0)
+cgp_czj.c:  if (MST_czj[tr][Function_czj][Argument_czj][Type_czj].areFs==0 &&
+cgp_czj.c:      MST_czj[tr][Function_czj][Argument_czj][Type_czj].areTs==0)
+cgp_czj.c:  randIndex=spinWheel(0,MST_czj[tr][Function_czj][Argument_czj][Type_czj].numFT-1,
+cgp_czj.c:                      MST_czj[tr][Function_czj][Argument_czj][Type_czj].wheel);
+cgp_czj.c:  return MST_czj[tr][Function_czj][Argument_czj][Type_czj].mbs[randIndex];
+cgp_czj.c:static int markXNodes_recurse_czj(int tr, lnode **t )
+cgp_czj.c:/* mark and count all feasible source nodes for crossover in tree */
+cgp_czj.c:/* NOTE: wheel entry may be the same as that of the last node if this node */
+cgp_czj.c:      ++*t;                                           /* etra value to skip */
+cgp_czj.c:    wght=MST_czj[tr][Function_czj][Argument_czj][Type_czj].weights[f->index];
+cgp_czj.c:    if (wght<(MINWGHT+SMALL)  || TP_czj[tr][f->index].retType!=Type_czj)
+cgp_czj.c:    wght=MST_czj[tr][Function_czj][Argument_czj][Type_czj].weights[f->index];
+cgp_czj.c:        TP_czj[tr][f->index].f.typeVecs[vector][TP_czj[tr][f->index].f.numA])
+cgp_czj.c:      total+=markXNodes_recurse_czj(tr, t);    /* t has already been advanced */
+cgp_czj.c:    wght=MST_czj[tr][Function_czj][Argument_czj][Type_czj].weights[f->index];
+cgp_czj.c:        TP_czj[tr][f->index].f.typeVecs[vector][TP_czj[tr][f->index].f.numA])
+cgp_czj.c:      total+=markXNodes_recurse_czj(tr,t);
+cgp_czj.c:int markXNodes_czj(int tr, lnode *data )
+cgp_czj.c:/* mark all nodes in tree which are feasible sources with their wghts */
+cgp_czj.c:/*   while contructing the wheels for internal and external nodes */
+cgp_czj.c:  return markXNodes_recurse_czj (tr, &t);
+cgp_czj.c:int markXNodesNoRoot_czj(int tr, lnode *data )
+cgp_czj.c:      total+=markXNodes_recurse_czj(tr, t);    /* t has already been advanced */
+cgp_czj.c:      total+=markXNodes_recurse_czj(tr,t);
+cgp_czj.c:static lnode *getSubtreeMarked_recurse_czj(int tr, lnode **t, double mark)
+cgp_czj.c:/*   and 'mark' determines which wheel entry is used */
+cgp_czj.c:      r=getSubtreeMarked_recurse_czj(tr, t,mark);
+cgp_czj.c:        return r;                                      /* subtree found */
+cgp_czj.c:      r=getSubtreeMarked_recurse_czj(tr, t,mark);
+cgp_czj.c:static lnode *getSubtreeMarkedInt_recurse_czj(int tr, lnode **t, double mark)
+cgp_czj.c:/* same as getSubtreeMarked_recurse_czj except look only internal nodes */
+cgp_czj.c:      r=getSubtreeMarkedInt_recurse_czj(tr, t,mark);
+cgp_czj.c:        return r;                                      /* subtree found */
+cgp_czj.c:      r=getSubtreeMarkedInt_recurse_czj(tr, t,mark);
+cgp_czj.c:static lnode *getSubtreeMarkedExt_recurse_czj(int tr, lnode **t, double mark)
+cgp_czj.c:/* same as getSubtreeMarked_recurse_czj except look only external nodes */
+cgp_czj.c:      r=getSubtreeMarkedExt_recurse_czj(tr,t,mark);
+cgp_czj.c:        return r;                                         /* subtree found */
+cgp_czj.c:      r=getSubtreeMarkedExt_recurse_czj(tr,t,mark);
+cgp_czj.c:lnode *getSubtreeMarked_czj(int tr, lnode *data, int intExt)
+cgp_czj.c:/* assume tree is filled with both internal and external wheels */
+cgp_czj.c:      getSubtreeMarked_recurse_czj(tr,&el,(WghtsInt+WghtsExt)*random_double());
+cgp_czj.c:      getSubtreeMarkedInt_recurse_czj(tr,&el,WghtsInt*random_double());
+cgp_czj.c:    getSubtreeMarkedExt_recurse_czj(tr,&el,WghtsExt*random_double());
+cgp_czj.c:static int verify_tree_czj_recurse (int tr, lnode **t )
+cgp_czj.c:/* return #times the tree pointed by t violates MST_czj constraints */
+cgp_czj.c:  numF = pTS[tr].numF;
+cgp_czj.c:  if (MST_czj[tr][Function_czj][Argument_czj][Type_czj].weights[f->index]<0 ||
+cgp_czj.c:      TP_czj[tr][f->index].f.typeVecs[vecNum][TP_czj[tr][f->index].f.numA])
+cgp_czj.c:      Type_czj=TP_czj[tr][Function_czj].f.typeVecs[vecNum][Argument_czj];
+cgp_czj.c:      total+=verify_tree_czj_recurse (tr,t);
+cgp_czj.c:      Type_czj=TP_czj[tr][Function_czj].f.typeVecs[vecNum][Argument_czj];
+cgp_czj.c:      total+=verify_tree_czj_recurse (tr,t);
+cgp_czj.c:int verify_tree_czj (int tr, lnode *tree )
+cgp_czj.c:/* return #times the tree pointed by tree violates MS_czj */
+cgp_czj.c:  lnode *t = tree;
+cgp_czj.c:  numFT = pTS[tr].numF+pTS[tr].numT;
+cgp_czj.c:  Function_czj = fset[tr].function_count;
+cgp_czj.c:  Type_czj=TP_czj[tr][numFT].retType;
+cgp_czj.c:  total=verify_tree_czj_recurse (tr,&t);
+cgp2_czj.c:   of the interface file and/or to be used to specify the constraints
+cgp2_czj.c:  The instructions in the interface file are used to create the input file,
+cgp2_czj.c:  The instructions in the interface file are used to create a temporary file,
+cgp2_czj.c:#include <string.h>
+cgp2_czj.c:#define error(str) errorIndir(str,linenum,interfaceFile)
+cgp2_czj.c:#define debugerror(str) errorIndir(str,__LINE__,__FILE__)
+cgp2_czj.c:#define warning(str) warningIndir(str,__LINE__,__FILE__)
+cgp2_czj.c:#define funcTermName(tr, i) fset[tr].cset[(i)].string
+cgp2_czj.c:#define funcArity(tr, i) fset[tr].cset[(i)].arity
+cgp2_czj.c:typedef struct instNode
+cgp2_czj.c:  struct instNode *next;
+cgp2_czj.c:typedef struct
+cgp2_czj.c:typedef struct
+cgp2_czj.c:typedef struct
+cgp2_czj.c:  int     treeNo;                    /* Tree Number */
+cgp2_czj.c:  char*   treeName;                  /* Tree Name */
+cgp2_czj.c:  char   **TypList;                   /* Array of type strings */
+cgp2_czj.c://static int treeCnt, numF, numT, linenum;
+cgp2_czj.c:void strtoupper(char* pStr)
+cgp2_czj.c:  if(pStr == NULL)
+cgp2_czj.c:  sz = strlen(pStr);
+cgp2_czj.c:    ch = pStr[i];
+cgp2_czj.c:    pStr[i] = ch;
+cgp2_czj.c:/* buildData() will create the data structure and fill with default values
+cgp2_czj.c:  int i, j, k, tr;
+cgp2_czj.c:  pTS = (treeStats*) malloc( tree_count * sizeof(treeStats));
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    pTS[tr].treeNo = tr;
+cgp2_czj.c:    sz = strlen(tree_map[tr].name);
+cgp2_czj.c:    pTS[tr].treeName = (char*)calloc(sz+1, sizeof(char) );
+cgp2_czj.c:    strcpy(pTS[tr].treeName, tree_map[tr].name);
+cgp2_czj.c:    strtoupper(pTS[tr].treeName);
+cgp2_czj.c:    pTS[tr].numF = fset[tr].function_count;
+cgp2_czj.c:    pTS[tr].numT = fset[tr].terminal_count;
+cgp2_czj.c:  FTp = (Spec_t**)malloc( tree_count * sizeof(Spec_t*));
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    nF = pTS[tr].numF;
+cgp2_czj.c:    nT = pTS[tr].numT;
+cgp2_czj.c:    /* creating primary data structure and arrays in it */
+cgp2_czj.c:    FTp[tr] = (Spec_t *)malloc( sizeof(Spec_t) ); /*allocate the space for FTspecs*/
+cgp2_czj.c:    sz = strlen(tree_map[tr].name);
+cgp2_czj.c:    FTp[tr]->treeName = (char*)calloc(sz+1, sizeof(char) );
+cgp2_czj.c:    strcpy(FTp[tr]->treeName, tree_map[tr].name);
+cgp2_czj.c:    strtoupper(FTp[tr]->treeName);
+cgp2_czj.c:    FTp[tr]->Func = (FuncList_t *)calloc( nF, sizeof(FuncList_t) );
+cgp2_czj.c:    FTp[tr]->FRoot = (boolean *)calloc( ( nFT ), sizeof(boolean) );
+cgp2_czj.c:    FTp[tr]->TRoot = (boolean *)calloc( ( nFT ), sizeof(boolean) );
+cgp2_czj.c:    FTp[tr]->WRoot = (float *)calloc( ( nFT ), sizeof(float) );
+cgp2_czj.c:    FTp[tr]->TypTerm = (typ_t *)calloc( nT, sizeof(typ_t) );
+cgp2_czj.c:    FTp[tr]->TypRoot = TYPEDEFAULT;            /* setting default type */
+cgp2_czj.c:    FTp[tr]->DefaultType = True;               /* will be set to false if */
+cgp2_czj.c:    FTp[tr]->DefaultFT = True;                 /* the appropriate section */
+cgp2_czj.c:    FTp[tr]->DefaultWeight = True;             /* appears in the interface file */
+cgp2_czj.c:      FTp[tr]->TypTerm[i] = TYPEDEFAULT;       /* setting terminal default type */
+cgp2_czj.c:      FTp[tr]->FRoot[i] = False;               /* set default F_Root = empty */
+cgp2_czj.c:      FTp[tr]->TRoot[i] = False;               /* set default T_Root = empty */
+cgp2_czj.c:      FTp[tr]->WRoot[i] = WEIGHTDEFAULT;       /* set default Weight Root = 1 */
+cgp2_czj.c:      FTp[tr]->Func[i].head = (inst_t *)malloc(sizeof(inst_t));
+cgp2_czj.c:      FTp[tr]->Func[i].head->inst = NULL;
+cgp2_czj.c:      FTp[tr]->Func[i].head->next = NULL;
+cgp2_czj.c:      FTp[tr]->Func[i].instCount = 0;
+cgp2_czj.c:      FTp[tr]->Func[i].F = (boolean *)calloc( nF, sizeof(boolean) );
+cgp2_czj.c:        FTp[tr]->Func[i].F[j] = False;           /* set default F_func = empty */
+cgp2_czj.c:      FTp[tr]->Func[i].Arg = (FuncArgList_t *)calloc( funcArity(tr,i), sizeof(FuncArgList_t) );
+cgp2_czj.c:      for (j = 0; j < funcArity(tr,i); j++)
+cgp2_czj.c:        FTp[tr]->Func[i].Arg[j].F = (boolean *)calloc((nFT), sizeof(boolean));
+cgp2_czj.c:        FTp[tr]->Func[i].Arg[j].T = (boolean *)calloc((nFT), sizeof(boolean));
+cgp2_czj.c:        FTp[tr]->Func[i].Arg[j].W = (float *)calloc( (nFT), sizeof(float) );
+cgp2_czj.c:          FTp[tr]->Func[i].Arg[j].F[k] = False; /*set default F_func_[arg] = empty*/
+cgp2_czj.c:          FTp[tr]->Func[i].Arg[j].T[k] = False; /*set default T_func_[arg] = empty*/
+cgp2_czj.c:          FTp[tr]->Func[i].Arg[j].W[k] = WEIGHTDEFAULT; /*set def Weight func_[arg]*/
+cgp2_czj.c:int getFuncNum(int tr, char *f)
+cgp2_czj.c:  for (i=0; i < pTS[tr].numF; i++)
+cgp2_czj.c:    if ( !strcmp( funcTermName(tr,i), f ) )
+cgp2_czj.c:int getTermNum(int tr, char *f)
+cgp2_czj.c:  for (i=pTS[tr].numF; i < pTS[tr].numF+pTS[tr].numT; i++)
+cgp2_czj.c:    if ( !strcmp( funcTermName(tr, i), f ) )
+cgp2_czj.c:int getFuncTermNum(int tr, char *f)
+cgp2_czj.c:  for (i=0; i < pTS[tr].numF+pTS[tr].numT; i++)
+cgp2_czj.c:    if ( !strcmp( funcTermName(tr,i), f ) )
+cgp2_czj.c:int getTypeNum(int tr, char *t)
+cgp2_czj.c:  for ( i = 0; i < FTp[tr]->TypCount; i++)
+cgp2_czj.c:    if ( !strcmp(FTp[tr]->TypList[i], t) )
+cgp2_czj.c:   NULL, cause it to use the existing string.  Passing a string will it
+cgp2_czj.c:   cause it to make the new string the existing sting.
+cgp2_czj.c:   t is the tree number */
+cgp2_czj.c:int nextFunc(int tr, char *list)
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:    sp = token + strlen(token) + 1;
+cgp2_czj.c:      return getFuncNum(tr,token);
+cgp2_czj.c:  if ( num < pTS[tr].numF  )
+cgp2_czj.c:   NULL, cause it to use the existing string.  Passing a string will it
+cgp2_czj.c:   cause it to make the new string the existing sting. */
+cgp2_czj.c:int nextTerm(int tr, char *list)
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    num = pTS[tr].numF;
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:    sp = token + strlen(token) + 1;
+cgp2_czj.c:      return getTermNum(tr, token);
+cgp2_czj.c:  if ( num < pTS[tr].numF + pTS[tr].numT )
+cgp2_czj.c:   NULL, cause it to use the existing string.  Passing a string will it
+cgp2_czj.c:   cause it to make the new string the existing sting. */
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:    sp = token + strlen(token) + 1;
+cgp2_czj.c:   Passing NULL, cause it to use the existing string.  Passing a string
+cgp2_czj.c:   will it cause it to make the new string the existing sting.
+cgp2_czj.c:   t is tree number */
+cgp2_czj.c:int nextFuncTerm(int tr, char *list)
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:    sp = token + strlen(token) + 1;
+cgp2_czj.c:      return getFuncTermNum(tr,token);
+cgp2_czj.c:  if ( num < pTS[tr].numF + pTS[tr].numT )
+cgp2_czj.c:   t is tree number */
+cgp2_czj.c:int nextFuncSpec(int tr, char *list)
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:    sp = token + strlen(token) + 1;
+cgp2_czj.c:      return getFuncNum(tr,token);
+cgp2_czj.c:  if ( num < pTS[tr].numF )
+cgp2_czj.c:   t is tree number. */
+cgp2_czj.c:int nextFuncTermSpec(int tr, char *list)
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:    sp = token + strlen(token) + 1;
+cgp2_czj.c:      return getFuncTermNum(tr,token);
+cgp2_czj.c:  if ( num < pTS[tr].numF + pTS[tr].numT )
+cgp2_czj.c:   Passing NULL, cause it to use the existing string.  Passing a string
+cgp2_czj.c:   will it cause it to make the new string the existing sting.  If the
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:    token = strtok(sp, " \t\n");
+cgp2_czj.c:      sp = token + strlen(token) + 1;
+cgp2_czj.c:   Passing NULL, cause it to use the existing string.  Passing a string
+cgp2_czj.c:   will it cause it to make the new string the existing sting. */
+cgp2_czj.c:int nextType(int tr, char *list)
+cgp2_czj.c:    strcpy(s, list);
+cgp2_czj.c:  token = strtok(sp, " \t\n");
+cgp2_czj.c:  sp = token + strlen(token) + 1;
+cgp2_czj.c:  num = getTypeNum(tr,token);
+cgp2_czj.c:   in the data structure to reflect the user defined F & Tspecs. */
+cgp2_czj.c:  int  tr, numfunc, numarg, numspec;
+cgp2_czj.c:  /* Need to have information for each tree */
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    if(strcmp(FTp[tr]->treeName,brname))
+cgp2_czj.c:    FTp[tr]->DefaultFT = False;                  /* not using default values */
+cgp2_czj.c:        else if ( !strcmp(spec, SECTIONEND) )
+cgp2_czj.c:        if ( !strcmp(spec, "F_") )
+cgp2_czj.c:        else if ( !strcmp(spec, "T_") )
+cgp2_czj.c:        for ( numfunc = nextFunc(tr, fList); numfunc >= 0; numfunc = nextFunc(tr, NULL))
+cgp2_czj.c:          sprintf(dbgtext, "%s", funcTermName(tr,numfunc));  //gwgdbg
+cgp2_czj.c:          for (numarg = nextArg(aList, funcArity(tr,numfunc)); numarg >= 0; numarg = nextArg(NULL, funcArity(tr,numfunc)))
+cgp2_czj.c:            for (numspec = nextFuncTermSpec(tr, sList); numspec >= 0; numspec = nextFuncTermSpec(tr, NULL))
+cgp2_czj.c:                FTp[tr]->Func[numfunc].Arg[numarg].F[numspec] = True;
+cgp2_czj.c:                FTp[tr]->Func[numfunc].Arg[numarg].T[numspec] = True;
+cgp2_czj.c:        if ( !strcmp(spec, "F_") )
+cgp2_czj.c:          for ( numfunc = nextFunc(tr, fList); numfunc >= 0; numfunc = nextFunc(tr, NULL))
+cgp2_czj.c:            sprintf(dbgtext, "%s", funcTermName(tr,numfunc)); //gwgdbg
+cgp2_czj.c:            for (numspec = nextFuncSpec(tr,sList); numspec >= 0; numspec = nextFuncSpec(tr,NULL))
+cgp2_czj.c:              FTp[tr]->Func[numfunc].F[numspec] = True;
+cgp2_czj.c:        if ( !strcmp(spec, "F_ROOT") )
+cgp2_czj.c:        else if ( !strcmp(spec, "T_ROOT") )
+cgp2_czj.c:        for (numspec=nextFuncTermSpec(tr, sList); numspec>=0; numspec=nextFuncTermSpec(tr, NULL))
+cgp2_czj.c:            FTp[tr]->FRoot[numspec] = True;
+cgp2_czj.c:            FTp[tr]->TRoot[numspec] = True;
+cgp2_czj.c:   in the data structure to reflect the user defined Weights. All weights
+cgp2_czj.c:  int  tr, numfunc, numarg, numspec;
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    if(strcmp(FTp[tr]->treeName,brname))
+cgp2_czj.c:    FTp[tr]->DefaultWeight = False;                  /* not using default values */
+cgp2_czj.c:        for (numfunc = nextFuncTerm(tr, fList), nextWeight(wList);
+cgp2_czj.c:             numfunc >= 0; numfunc = nextFuncTerm(tr, NULL))
+cgp2_czj.c:          FTp[tr]->WRoot[numfunc] = nextWeight(NULL);
+cgp2_czj.c:        for (numfunc=nextFunc(tr, fList); numfunc >= 0; numfunc=nextFunc(tr, NULL))
+cgp2_czj.c:          for (numarg=nextArg(aList,funcArity(tr,numfunc));
+cgp2_czj.c:               numarg >= 0; numarg=nextArg(NULL,funcArity(tr,numfunc)))
+cgp2_czj.c:            for (numspec=nextFuncTermSpec(tr, sList), nextWeight(wList);
+cgp2_czj.c:                 numspec>=0; numspec=nextFuncTermSpec(tr, NULL))
+cgp2_czj.c:              FTp[tr]->Func[numfunc].Arg[numarg].W[numspec] = nextWeight(NULL);
+cgp2_czj.c:        else if ( !strcmp(fList, SECTIONEND) )
+cgp2_czj.c:   in the data structure to reflect the user defined Types.
+cgp2_czj.c:   t is tree number */
+cgp2_czj.c:void createTypes(int tr, char *list)
+cgp2_czj.c:  strcpy(st, list);
+cgp2_czj.c:  token = strtok(st, " \t\n");
+cgp2_czj.c:        token = strtok(NULL, " \t\n"), count++ );
+cgp2_czj.c:  strcpy(st, list);
+cgp2_czj.c:  /* Create data structure to hold valid type information */
+cgp2_czj.c:  FTp[tr]->TypCount = count;
+cgp2_czj.c:  FTp[tr]->TypList = (char **)calloc( FTp[tr]->TypCount, sizeof(char *) );
+cgp2_czj.c:  for ( count = 0, token = strtok(st, " \t\n"); count < FTp[tr]->TypCount; count++ )
+cgp2_czj.c:    FTp[tr]->TypList[count] = (char *)malloc( strlen(token) + 1 );
+cgp2_czj.c:    strcpy(FTp[tr]->TypList[count], token);
+cgp2_czj.c:    token = strtok(NULL, " \t\n");
+cgp2_czj.c:   in the data structure to reflect the user defined Types. */
+cgp2_czj.c:  int  tr, numterm, numfunc, numarg, numtype;
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    if(strcmp(FTp[tr]->treeName,brname))
+cgp2_czj.c:    FTp[tr]->DefaultType = False;                  /* not using default values */
+cgp2_czj.c:    createTypes(tr, tList);
+cgp2_czj.c:        numtype = nextType(tr, tList);
+cgp2_czj.c:          FTp[tr]->TypRoot = numtype;
+cgp2_czj.c:        numtype = nextType(tr,NULL);
+cgp2_czj.c:        for (numterm = nextTerm(tr,fList), numtype = nextType(tr,tList);
+cgp2_czj.c:             numterm = nextTerm(tr,NULL))
+cgp2_czj.c:            FTp[tr]->TypTerm[numterm-pTS[tr].numF] = numtype;
+cgp2_czj.c:        numtype = nextType(tr,NULL);
+cgp2_czj.c:        for (numfunc= nextFunc(tr, fList); numfunc>=0; numfunc = nextFunc(tr, NULL))
+cgp2_czj.c:          FTp[tr]->Func[numfunc].instCount++;
+cgp2_czj.c:          for (ip=FTp[tr]->Func[numfunc].head; ip->next != NULL; ip=ip->next );
+cgp2_czj.c:          ip->inst = (typ_t *)calloc(funcArity(tr,numfunc)+1, sizeof(typ_t));
+cgp2_czj.c:          for ( numarg=0, numtype=nextType(tr,sList);
+cgp2_czj.c:                numarg<funcArity(tr,numfunc) && numtype>=0;
+cgp2_czj.c:                numarg++, numtype=nextType(tr,NULL))
+cgp2_czj.c:          if ( numarg < funcArity(tr,numfunc) )
+cgp2_czj.c:          numtype = nextType(tr,tList);                     /* initialize list */
+cgp2_czj.c:          numtype = nextType(tr,NULL);
+cgp2_czj.c:        else if ( !strcmp(fList, SECTIONEND) )
+cgp2_czj.c:             structures are filled with type information */
+cgp2_czj.c:          if ( FTp[tr]->TypRoot == TYPEDEFAULT )
+cgp2_czj.c:          for ( numterm = 0; numterm < pTS[tr].numT; numterm++ )
+cgp2_czj.c:            if ( FTp[tr]->TypTerm[numterm] == TYPEDEFAULT )
+cgp2_czj.c:                      funcTermName(tr,numterm+pTS[tr].numF));
+cgp2_czj.c:          for ( numfunc = 0; numfunc < pTS[tr].numF; numfunc++ )
+cgp2_czj.c:            if ( FTp[tr]->Func[numfunc].instCount == 0 )
+cgp2_czj.c:                      funcTermName(tr,numfunc));
+cgp2_czj.c:void writeFT(int tr)
+cgp2_czj.c:  fprintf(inputFP, "%d\n", FTp[tr]->DefaultFT);
+cgp2_czj.c:  if ( FTp[tr]->DefaultFT )
+cgp2_czj.c:  for ( fnum = 0; fnum < pTS[tr].numF; fnum++ )
+cgp2_czj.c:    for ( snum = 0; snum < pTS[tr].numF; snum++ )
+cgp2_czj.c:      if ( FTp[tr]->Func[fnum].F[snum] )
+cgp2_czj.c:        fprintf(inputFP, "%s ", funcTermName(tr,snum));         /* printf F_func */
+cgp2_czj.c:    for ( anum = 0; anum < funcArity(tr,fnum); anum++ )
+cgp2_czj.c:      for ( snum = 0; snum < pTS[tr].numF + pTS[tr].numT; snum++ )
+cgp2_czj.c:        if ( FTp[tr]->Func[fnum].Arg[anum].F[snum] )
+cgp2_czj.c:          fprintf(inputFP, "%s ", funcTermName(tr,snum));      /*printf F_func[arg]*/
+cgp2_czj.c:      for ( snum = 0; snum < pTS[tr].numF + pTS[tr].numT; snum++ )
+cgp2_czj.c:        if ( FTp[tr]->Func[fnum].Arg[anum].T[snum] )
+cgp2_czj.c:          fprintf(inputFP, "%s ", funcTermName(tr,snum));      /*printf T_func[arg]*/
+cgp2_czj.c:  for ( snum = 0; snum < pTS[tr].numF + pTS[tr].numT; snum++ )
+cgp2_czj.c:    if ( FTp[tr]->FRoot[snum] )
+cgp2_czj.c:      fprintf(inputFP, "%s ", funcTermName(tr,snum));          /* printf F_Root */
+cgp2_czj.c:  for ( snum = 0; snum < pTS[tr].numF + pTS[tr].numT; snum++ )
+cgp2_czj.c:    if ( FTp[tr]->TRoot[snum] )
+cgp2_czj.c:      fprintf(inputFP, "%s ", funcTermName(tr,snum));          /* printf T_Root */
+cgp2_czj.c:void writeWeightHeader(int tr)
+cgp2_czj.c:  fprintf(inputFP, "%d\n", FTp[tr]->DefaultWeight);
+cgp2_czj.c:  static int prevF = -1;            /* for keeping track of where \n's go */
+cgp2_czj.c:  static int tr;
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    if ( FTp == NULL || FTp[tr]->DefaultWeight )
+cgp2_czj.c:    fprintf(inputFP, "%g ", FTp[tr]->Func[f].Arg[a].W[s]);
+cgp2_czj.c:  static int tr;
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    if ( FTp == NULL || FTp[tr]->DefaultWeight )
+cgp2_czj.c:    fprintf(inputFP, "%g ", FTp[tr]->WRoot[s]);
+cgp2_czj.c:  int tr;
+cgp2_czj.c:  for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:    if ( !FTp[tr]->DefaultWeight )
+cgp2_czj.c:void writeType(int tr)
+cgp2_czj.c:  fprintf(inputFP, "%d\n", FTp[tr]->DefaultType);
+cgp2_czj.c:  if ( FTp[tr]->DefaultType )
+cgp2_czj.c:  for (numtype = 0; numtype < FTp[tr]->TypCount; numtype++)
+cgp2_czj.c:    fprintf(inputFP, "%s ", FTp[tr]->TypList[numtype]);
+cgp2_czj.c:  for (numfunc=0; numfunc < pTS[tr].numF; numfunc++)
+cgp2_czj.c:    for ( ip = FTp[tr]->Func[numfunc].head->next;
+cgp2_czj.c:      for (numarg = 0; numarg < funcArity(tr,numfunc)+1; numarg++)
+cgp2_czj.c:        fprintf(inputFP, "%s ", FTp[tr]->TypList[ip->inst[numarg]]);
+cgp2_czj.c:  for (numterm = 0; numterm < pTS[tr].numT; numterm++)
+cgp2_czj.c:    fprintf(inputFP, "%s\n", FTp[tr]->TypList[FTp[tr]->TypTerm[numterm]]);
+cgp2_czj.c:  fprintf(inputFP, "%s\n", FTp[tr]->TypList[FTp[tr]->TypRoot]);
+cgp2_czj.c:      strtoupper(brname);
+cgp2_czj.c:      strtoupper(brname);
+cgp2_czj.c:      strtoupper(brname);
+cgp2_czj.c:    else if ( !strcmp(FILEEND, section) )
+cgp2_czj.c:   the building of the needed data structures. */
+cgp2_czj.c:    for(tr = 0; tr < tree_count; tr++)
+cgp2_czj.c:      writeType(tr);
+cgp2_czj.c:      writeFT(tr);
+cgp2_czj.c:      writeWeightHeader(tr);

@@ -1,0 +1,32 @@
+30 files
+500 generations
+bowl3-acgp2-1.stt
+bowl3-acgp2-2.stt
+bowl3-acgp2-3.stt
+bowl3-acgp2-4.stt
+bowl3-acgp2-5.stt
+bowl3-acgp2-6.stt
+bowl3-acgp2-7.stt
+bowl3-acgp2-8.stt
+bowl3-acgp2-9.stt
+bowl3-acgp2-10.stt
+bowl3-acgp2-11.stt
+bowl3-acgp2-12.stt
+bowl3-acgp2-13.stt
+bowl3-acgp2-14.stt
+bowl3-acgp2-15.stt
+bowl3-acgp2-16.stt
+bowl3-acgp2-17.stt
+bowl3-acgp2-18.stt
+bowl3-acgp2-19.stt
+bowl3-acgp2-20.stt
+bowl3-acgp2-21.stt
+bowl3-acgp2-22.stt
+bowl3-acgp2-23.stt
+bowl3-acgp2-24.stt
+bowl3-acgp2-25.stt
+bowl3-acgp2-26.stt
+bowl3-acgp2-27.stt
+bowl3-acgp2-28.stt
+bowl3-acgp2-29.stt
+bowl3-acgp2-30.stt

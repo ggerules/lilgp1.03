@@ -1,0 +1,72 @@
+FTp ->  FTp -> created V3
+
+Tree[0]=MAIN:
+ Func[0] (prog2): 
+  Func[0] (prog2) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ Func[1] (vadd): 
+  Func[1] (vadd) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ Func[2] (vsub): 
+  Func[2] (vsub) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ Func[3] (adf0): 
+  Func[3] (adf0) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ Func[4] (gox): 
+  Func[4] (gox) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ Func[5] (goy): 
+  Func[5] (goy) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ Func[6] (goz): 
+  Func[6] (goz) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub adf0 gox goy goz bee nf rv 
+ F_Root names:
+ T_Root names: prog2 vadd vsub adf0 gox goy goz bee nf rv 
+Tree[1]=ADF0:
+ Func[0] (prog2): 
+  Func[0] (prog2) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+ Func[1] (vadd): 
+  Func[1] (vadd) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+ Func[2] (vsub): 
+  Func[2] (vsub) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+ Func[3] (gox): 
+  Func[3] (gox) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+ Func[4] (goy): 
+  Func[4] (goy) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+ Func[5] (goz): 
+  Func[5] (goz) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vadd vsub gox goy goz a0 bee nf rv 
+ F_Root names:
+ T_Root names: prog2 vadd vsub gox goy goz a0 bee nf rv 

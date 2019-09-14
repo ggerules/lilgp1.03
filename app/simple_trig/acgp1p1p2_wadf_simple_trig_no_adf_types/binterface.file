@@ -1,0 +1,46 @@
+TYPE
+TYPELIST = float integer
+(add)(float float)=float
+(add)(integer float)=float
+(add)(float integer)=float
+(add)(integer integer)=integer
+(mul)(float float)=float
+(mul)(integer float)=float
+(mul)(float integer)=float
+(mul)(integer integer)=integer
+(ADF2)(float float)=float
+(ADF2)(integer float)=float
+(ADF2)(float integer)=float
+(ADF2)(integer integer)=integer
+(X)=float
+(X)=integer
+ROOT=float
+ENDSECTION
+
+FTSPEC
+F_(*)=
+F_(*)[*]=
+#F_(sin)[0]=add
+#F_ROOT=sin
+#must specify some TSpecs
+T_(*)[*]=*  
+T_ROOT=*   
+ENDSECTION
+
+
+WEIGHT
+#All unspecified weights default to 1.0
+#If I desire to reduce the odds of everything but that which
+# I explicitly specify, I could do the following
+#(*)[*](*)=0
+#ROOT(*)=0
+#
+#Set the weights for the functions: add sin 1 PI x y,
+#as the arguments for the add & asin functions.
+#(+ asin)[*](*)=.25 .25 .5 .2 .2 .3 .4
+#similarly for the sin function
+#(sin)[0](*)=.5 .4 .3 .6 .4 .3 .1
+ROOT(*)=1             #not really needed as default is 1.0
+#ROOT(PI)=.2
+ENDSECTION
+ENDFILE

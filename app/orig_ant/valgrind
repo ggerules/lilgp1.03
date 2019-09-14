@@ -1,0 +1,4 @@
+#!/bin/sh
+#valgrind --tool=memcheck --leak-check=full ./gp -p random_seed=1 -p max_depth=20 -p init.depth=2-6 -p output.basename=./tmp/cart_rs1 -f input.file 1>out.stdout
+valgrind --track-origins=yes --tool=memcheck --leak-check=full ./gp -p random_seed=1 -p max_depth=20 -p init.depth=2-8 -p output.basename=./tmp/ant_rs1 -f input.file >out.stdout 2>out.mem
+

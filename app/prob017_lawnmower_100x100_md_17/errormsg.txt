@@ -1,0 +1,5 @@
+../../../kernel.cgp2.1/memory.c:75:17: runtime error: signed integer overflow: 2147433802 + 264000 cannot be represented in type 'int'
+../../../kernel.cgp2.1/memory.c:109:16: runtime error: signed integer overflow: 2147447064 + 199560 cannot be represented in type 'int'
+../../../kernel.cgp2.1/memory.c:76:15: runtime error: signed integer overflow: 2147347346 + 1239320 cannot be represented in type 'int'
+../../../kernel.cgp2.1/memory.c:108:15: runtime error: signed integer overflow: -2146380630 - 1239320 cannot be represented in type 'int'
+

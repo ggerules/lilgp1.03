@@ -1,0 +1,82 @@
+#!/bin/sh
+
+START=$(date +%s)
+
+#valgrind --track-origins=yes --tool=memcheck --leak-check=full ./gp -p random_seed=1 -p max_depth=20 -p init.depth=2-8 -p output.basename=./tmp/ant_rs1 -f ant_rs1.file >out.stdout 2>out.mem <<EOF
+valgrind --track-origins=yes --tool=memcheck --leak-check=full ./gp -p random_seed=1 -p max_depth=20 -p init.depth=2-8 -p output.basename=./tmp/ant_rs1 -f ant_rs1.file <<EOF
+ 
+ 
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+
+
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+ 
+
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+EOF
+
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+echo "It took $DIFF seconds"
+echo "done"
+

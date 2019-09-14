@@ -1,0 +1,38 @@
+MS -> generateMS
+
+tr= 0, MAIN
+ Function 'prog2': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vadd': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vsub': arity 2 
+  Argument 0
+  Argument 1
+ Function 'adf0': arity 1 
+  Argument 0
+ Function 'gox': arity 1 
+  Argument 0
+ Function 'goy': arity 1 
+  Argument 0
+ Function 'goz': arity 1 
+  Argument 0
+ Root:
+tr= 1, ADF0
+ Function 'prog2': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vadd': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vsub': arity 2 
+  Argument 0
+  Argument 1
+ Function 'gox': arity 1 
+  Argument 0
+ Function 'goy': arity 1 
+  Argument 0
+ Function 'goz': arity 1 
+  Argument 0
+ Root:

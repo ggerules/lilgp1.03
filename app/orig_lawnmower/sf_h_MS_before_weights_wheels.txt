@@ -1,0 +1,32 @@
+MS -> generateMS
+
+tr= 0, MAIN
+ Function 'prog2': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vma': arity 2 
+  Argument 0
+  Argument 1
+ Function 'adf1': arity 1 
+  Argument 0
+ Function 'frog': arity 1 
+  Argument 0
+ Root:
+tr= 1, ADF0
+ Function 'prog2': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vma': arity 2 
+  Argument 0
+  Argument 1
+ Root:
+tr= 2, ADF1
+ Function 'prog2': arity 2 
+  Argument 0
+  Argument 1
+ Function 'vma': arity 2 
+  Argument 0
+  Argument 1
+ Function 'frog': arity 1 
+  Argument 0
+ Root:

@@ -1,0 +1,92 @@
+Weights Wheels -> After call to readWeightsSetWheels
+
+tr= 0, MAIN
+
+
+These are weights/wheels...
+
+Function "prog2" [#0]: 2 arguments
+	Argument 0: F [3 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [3 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "vma" [#1]: 2 arguments
+	Argument 0: F [3 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [3 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "adf1" [#2]: 1 arguments
+	Argument 0: F [3 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "frog" [#3]: 1 arguments
+	Argument 0: F [0 members, not used]  and T [4 members, used]
+	Weights: -1.000 -1.000 -1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.250 0.500 0.750 1.000
+
+Root: F [3 members, used] and T [4 members, used]
+	Weights: 1.000 1.000 1.000 -1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+tr= 1, ADF0
+
+
+These are weights/wheels...
+
+Function "prog2" [#0]: 2 arguments
+	Argument 0: F [2 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.200 0.400 0.600 0.800 1.000
+	Argument 1: F [2 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.200 0.400 0.600 0.800 1.000
+
+Function "vma" [#1]: 2 arguments
+	Argument 0: F [2 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.200 0.400 0.600 0.800 1.000
+	Argument 1: F [2 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.200 0.400 0.600 0.800 1.000
+
+Root: F [2 members, used] and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.200 0.400 0.600 0.800 1.000
+
+tr= 2, ADF1
+
+
+These are weights/wheels...
+
+Function "prog2" [#0]: 2 arguments
+	Argument 0: F [2 members, used]  and T [5 members, used]
+	Weights: 1.000 1.000 -1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [2 members, used]  and T [5 members, used]
+	Weights: 1.000 1.000 -1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "vma" [#1]: 2 arguments
+	Argument 0: F [2 members, used]  and T [5 members, used]
+	Weights: 1.000 1.000 -1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [2 members, used]  and T [5 members, used]
+	Weights: 1.000 1.000 -1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "frog" [#2]: 1 arguments
+	Argument 0: F [0 members, not used]  and T [5 members, used]
+	Weights: -1.000 -1.000 -1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.200 0.400 0.600 0.800 1.000
+
+Root: F [2 members, used] and T [5 members, used]
+	Weights: 1.000 1.000 -1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+

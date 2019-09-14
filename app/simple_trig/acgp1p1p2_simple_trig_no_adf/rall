@@ -1,0 +1,7 @@
+#!/bin/bash
+pop=500
+echo "pop=$pop"
+./r0 $pop
+./r1 $pop
+./r2 $pop
+./r3 $pop

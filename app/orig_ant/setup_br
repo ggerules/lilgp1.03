@@ -1,0 +1,80 @@
+#!/bin/sh
+
+START=$(date +%s)
+
+./gp -p random_seed=1 -p output.basename=base/ant_rs1 -f ant_acgp_w2.file<< EOF
+  
+ 
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+
+
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+ 
+
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+ 
+0 1 2 3 4 5
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+EOF
+
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+echo "It took $DIFF seconds"
+echo "done"

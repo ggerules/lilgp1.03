@@ -1,0 +1,28 @@
+Constraints -> After generateNF
+
+tr= 0, TREE
+Function "add" [#0]:
+	F_add [#Fs=0:#Ts=0] =
+	F_add_0 [#Fs=0:#Ts=0] = ||
+	F_add_1 [#Fs=0:#Ts=0] = ||
+	T_add_0 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+	T_add_1 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+Function "div" [#1]:
+	F_div [#Fs=0:#Ts=0] =
+	F_div_0 [#Fs=0:#Ts=0] = ||
+	F_div_1 [#Fs=0:#Ts=0] = ||
+	T_div_0 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+	T_div_1 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+Function "mul" [#2]:
+	F_mul [#Fs=0:#Ts=0] =
+	F_mul_0 [#Fs=0:#Ts=0] = ||
+	F_mul_1 [#Fs=0:#Ts=0] = ||
+	T_mul_0 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+	T_mul_1 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+Function "sin" [#3]:
+	F_sin [#Fs=0:#Ts=0] =
+	F_sin_0 [#Fs=0:#Ts=0] = ||
+	T_sin_0 [#Fs=4:#Ts=4] = add div mul sin || a p s x
+Root:4
+	F_Root [#Fs=0:#Ts=0] =  ||
+	T_Root [#Fs=4:#Ts=4] =  add div mul sin || a p s x

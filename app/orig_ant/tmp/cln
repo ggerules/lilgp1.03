@@ -1,0 +1,7 @@
+#!/bin/sh
+rm *.bst
+rm *.gen
+rm *.his
+rm *.prg
+rm *.stt
+rm *.sys

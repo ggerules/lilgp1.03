@@ -1,0 +1,1 @@
+RowNum,Kernel,ProblemNum,IndRunNum,wADF,ADF,Types,Constraints,acgpwhat,MaxTreeDepth,Hits

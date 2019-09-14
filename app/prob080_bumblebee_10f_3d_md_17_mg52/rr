@@ -1,0 +1,4 @@
+#!/bin/bash
+x=`basename -s.bind $1`
+cp $x.dat file.dat
+sbcl --noinform --load $1 --quit | sed '/^[[:blank:]]*$/d'

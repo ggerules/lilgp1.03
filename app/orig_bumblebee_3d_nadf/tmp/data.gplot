@@ -1,0 +1,16 @@
+#set term pdf
+#set term x11
+#set term png
+set term jpeg
+#set title "Ant Mean and Average of runs\n{Comparison Fitness Proportional vs Tournament Selection}";
+#set title "FFitness Average Fitness";
+#set title n " Average Fitness";
+set title n; 
+set xlabel "Generations";
+set ylabel "Average Fitness";
+#set yrange [0: 0.9];
+set yrange [0: 1];
+set key top left;
+#plot "./ant_cgp.stt" using 1:4 title 'best fit' with linespoints;
+plot "./base.out" using 1:4 title 'avg fit' with linespoints;
+

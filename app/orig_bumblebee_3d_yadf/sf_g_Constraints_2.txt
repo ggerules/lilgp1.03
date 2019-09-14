@@ -1,0 +1,74 @@
+Constraints -> After generateNF
+
+tr= 0, MAIN
+Function "prog2" [#0]:
+	F_prog2 [#Fs=0:#Ts=0] =
+	F_prog2_0 [#Fs=0:#Ts=0] = ||
+	F_prog2_1 [#Fs=0:#Ts=0] = ||
+	T_prog2_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+	T_prog2_1 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Function "vadd" [#1]:
+	F_vadd [#Fs=0:#Ts=0] =
+	F_vadd_0 [#Fs=0:#Ts=0] = ||
+	F_vadd_1 [#Fs=0:#Ts=0] = ||
+	T_vadd_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+	T_vadd_1 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Function "vsub" [#2]:
+	F_vsub [#Fs=0:#Ts=0] =
+	F_vsub_0 [#Fs=0:#Ts=0] = ||
+	F_vsub_1 [#Fs=0:#Ts=0] = ||
+	T_vsub_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+	T_vsub_1 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Function "adf0" [#3]:
+	F_adf0 [#Fs=0:#Ts=0] =
+	F_adf0_0 [#Fs=0:#Ts=0] = ||
+	T_adf0_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Function "gox" [#4]:
+	F_gox [#Fs=0:#Ts=0] =
+	F_gox_0 [#Fs=0:#Ts=0] = ||
+	T_gox_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Function "goy" [#5]:
+	F_goy [#Fs=0:#Ts=0] =
+	F_goy_0 [#Fs=0:#Ts=0] = ||
+	T_goy_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Function "goz" [#6]:
+	F_goz [#Fs=0:#Ts=0] =
+	F_goz_0 [#Fs=0:#Ts=0] = ||
+	T_goz_0 [#Fs=7:#Ts=3] = prog2 vadd vsub adf0 gox goy goz || bee nf rv
+Root:7
+	F_Root [#Fs=0:#Ts=0] =  ||
+	T_Root [#Fs=7:#Ts=3] =  prog2 vadd vsub adf0 gox goy goz || bee nf rv
+tr= 1, ADF0
+Function "prog2" [#0]:
+	F_prog2 [#Fs=0:#Ts=0] =
+	F_prog2_0 [#Fs=0:#Ts=0] = ||
+	F_prog2_1 [#Fs=0:#Ts=0] = ||
+	T_prog2_0 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+	T_prog2_1 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+Function "vadd" [#1]:
+	F_vadd [#Fs=0:#Ts=0] =
+	F_vadd_0 [#Fs=0:#Ts=0] = ||
+	F_vadd_1 [#Fs=0:#Ts=0] = ||
+	T_vadd_0 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+	T_vadd_1 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+Function "vsub" [#2]:
+	F_vsub [#Fs=0:#Ts=0] =
+	F_vsub_0 [#Fs=0:#Ts=0] = ||
+	F_vsub_1 [#Fs=0:#Ts=0] = ||
+	T_vsub_0 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+	T_vsub_1 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+Function "gox" [#3]:
+	F_gox [#Fs=0:#Ts=0] =
+	F_gox_0 [#Fs=0:#Ts=0] = ||
+	T_gox_0 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+Function "goy" [#4]:
+	F_goy [#Fs=0:#Ts=0] =
+	F_goy_0 [#Fs=0:#Ts=0] = ||
+	T_goy_0 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+Function "goz" [#5]:
+	F_goz [#Fs=0:#Ts=0] =
+	F_goz_0 [#Fs=0:#Ts=0] = ||
+	T_goz_0 [#Fs=6:#Ts=4] = prog2 vadd vsub gox goy goz || a0 bee nf rv
+Root:6
+	F_Root [#Fs=0:#Ts=0] =  ||
+	T_Root [#Fs=6:#Ts=4] =  prog2 vadd vsub gox goy goz || a0 bee nf rv

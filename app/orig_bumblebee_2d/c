@@ -1,0 +1,4 @@
+#!/bin/bash
+rm bee memory.o random.o function.o bee.o
+rm kdmain kdtree_cpp.o kdmain.o
+

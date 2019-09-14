@@ -1,0 +1,56 @@
+###
+### input parameter file for the bowl3 problem [(x^2) - (y^2) - (z^2)].
+###
+
+max_generations = 500
+pop_size = 1000
+
+random_seed = 1
+output.basename = bowl3neg
+
+# how to generate the initial population
+init.method = half_and_half
+init.depth = 2-8
+
+# limits on tree size.
+max_nodes = 1000
+max_depth = 20
+
+# comment these out if seperate runs are used instead of subpops
+# multiple.subpops = 10
+# multiple.exch_gen = 501
+# multiple.exchanges = 10
+
+# acgp parameters
+
+acgp.use_trees_prct=0.01
+acgp.select_all=0
+acgp.extract_quality_prct=0.98
+acgp.gen_start_prct=0.2
+acgp.gen_step=20
+acgp.gen_slope=0
+acgp.gen_slope_prct=0.1
+acgp.0_threshold_prct=0.025
+acgp.what=3
+acgp.stop_on_term=0
+acgp.use_expressed=1
+acgp.level=2
+
+breed_phases = 4
+
+breed[1].operator = crossover2, select=(tournament,size=7)
+breed[1].rate = 0.9
+
+breed[2].operator = mutation2, select=(tournament,size=7), method=half_and_half, depth=0-3
+breed[2].rate = 0.05
+
+breed[3].operator = reproduction, select=(tournament,size=7)
+breed[3].rate = 0.05
+
+# breed[4].operator = uniform_mutate, select=(tournament,size=7)
+# breed[4].rate = 0.01
+
+# this operator for regrowing a tree on specific generations only
+# must be listed last
+breed[4].operator = regrow2, select=worst, method=half_and_half, depth=2-6
+breed[4].rate = 0.00001

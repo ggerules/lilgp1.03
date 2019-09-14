@@ -1,0 +1,10 @@
+On a this note, I wanted to see how to profile the gcc program.  Do the following.
+The example I useed is in app/orig_no_adf/orig_gerules_1
+Modify GNUMakefile to be debug with -g option
+Modify GNUMakefile in ../../../kernel.<whatever>/GNUMakefile and put -pg as last option on CC line, including TARGET
+This will produce a gmon.out file.
+Then type:
+  gprof ./gp gmon.out > profile.out
+
+The results will be in profile.out.  Right now the program is 100% recursive.....  Look into gpcpu speedup.
+

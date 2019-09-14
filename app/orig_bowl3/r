@@ -1,0 +1,15 @@
+#!/bin/bash
+
+START=$(date +%s)
+for x in {1..30}; do
+#for x in {1..5}; do
+for y in {4..17}; do
+echo randseed $x depth $y >> progress.txt
+./gp -q -p random_seed=$x -p max_depth=$y -p output.basename=tmp/regress-$y-$x -f input.file
+done;
+done;
+END=$(date +%s)
+
+DIFF=$(( $END - $START ))
+echo "It took $DIFF seconds"
+echo "done"

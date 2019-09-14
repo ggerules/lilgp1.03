@@ -1,0 +1,112 @@
+fset -> beginning of create_MS_czj
+
+evaltree: 0:
+ fset[0]:
+  .function_count=5
+  .terminal_count=4
+  .num_args=0
+  .size=9
+   .cset[0]
+    .string=ADF3  
+    .arity=3
+    .type=7 EVAL_EXPR
+    .evaltree=1
+    .index=0
+   .cset[1]
+    .string=add   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=1
+   .cset[2]
+    .string=div   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=2
+   .cset[3]
+    .string=mul   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=3
+   .cset[4]
+    .string=sin   
+    .arity=1
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=4
+   .cset[5]
+    .string=a     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=5
+   .cset[6]
+    .string=p     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=6
+   .cset[7]
+    .string=s     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=7
+   .cset[8]
+    .string=x     
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=8
+
+evaltree: 1:
+ fset[1]:
+  .function_count=4
+  .terminal_count=3
+  .num_args=3
+  .size=7
+   .cset[0]
+    .string=add   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=0
+   .cset[1]
+    .string=div   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=1
+   .cset[2]
+    .string=mul   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=2
+   .cset[3]
+    .string=sin   
+    .arity=1
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=3
+   .cset[4]
+    .string=ap    
+    .arity=0
+    .type=5 TERM_ARG
+    .evaltree=0
+    .index=4
+   .cset[5]
+    .string=as    
+    .arity=0
+    .type=5 TERM_ARG
+    .evaltree=0
+    .index=5
+   .cset[6]
+    .string=ax    
+    .arity=0
+    .type=5 TERM_ARG
+    .evaltree=0
+    .index=6
+

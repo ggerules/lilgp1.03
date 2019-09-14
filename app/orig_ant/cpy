@@ -1,0 +1,5 @@
+#!/bin/sh
+cp ant_rs1.file ant_rs2.file
+cp ant_rs1.file ant_rs3.file
+cp ant_rs1.file ant_rs4.file
+cp ant_rs1.file ant_rs5.file

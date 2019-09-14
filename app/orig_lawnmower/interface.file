@@ -1,0 +1,67 @@
+
+#dirname=acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat2
+FTSPEC=main
+F_(*)=frog
+F_(*)[*]=frog
+F_ROOT=frog
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+FTSPEC=adf0
+F_(*)=
+F_(*)[*]=
+F_ROOT=
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+FTSPEC=adf1
+F_(*)=frog
+F_(*)[*]=frog
+F_ROOT=frog
+T_(*)[*]=*
+T_ROOT=*
+ENDSECTION
+
+
+
+TYPE=main
+TYPELIST=float 
+(frog)(float)=float
+(vma)(float float)=float
+(prog2)(float float)=float
+(adf0)=float
+(adf1)(float)=float
+(left)=float
+(mow)=float
+(Rvm)=float
+ROOT=float
+ENDSECTION
+
+TYPE=adf0
+TYPELIST=float 
+(vma)(float float)=float
+(prog2)(float float)=float
+(left)=float
+(mow)=float
+(Rvm)=float
+ROOT=float
+ENDSECTION
+
+TYPE=adf1
+TYPELIST=float 
+(frog)(float)=float
+(vma)(float float)=float
+(prog2)(float float)=float
+(adf0)=float
+(left)=float
+(mow)=float
+(a0)=float
+(Rvm)=float
+ROOT=float
+ENDSECTION
+
+
+ENDFILE
+ 

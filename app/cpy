@@ -1,0 +1,20 @@
+#!/bin/bash
+#converts a java string list in such a way that each word is on a separate line
+#echo "#!/bin/bash" > mkBench1.sh
+#cat mkBench.sh | sed "s/\"/ /g" | sed "s/,//g" | tr ' ' '\n' | sed '/^$/d' >> mkBench1.sh
+
+
+for y in `cat mkBench1.sh`;
+do
+  #echo "cat ./create_rfile1 > ./orig_$y/create_rfile" 
+  z="cp $PWD/create_rfile1 $PWD/orig_$y/create_rfile" 
+  $z
+  x="cd ./orig_$y"
+  $x
+  echo $PWD
+  echo "create_rfile"
+  ./create_rfile
+  cd ..
+done;
+echo Done!
+

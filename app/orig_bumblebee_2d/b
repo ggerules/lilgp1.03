@@ -1,0 +1,6 @@
+#!/bin/bash
+gcc -g -c -I. -I../../kernel_orig/ ../../kernel_orig/random.c 
+gcc -g -c -I. -I../../kernel_orig/ ../../kernel_orig/memory.c 
+gcc -g -c -I. -I../../kernel_orig/ function.c 
+gcc -g -c -I. -I../../kernel_orig/ bee.c 
+gcc -g -o -I. -I../../kernel_orig -o bee bee.o function.o random.o memory.o -L. -lm

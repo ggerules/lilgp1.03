@@ -1,0 +1,318 @@
+gwgnote: this lead to lilgp1.03 increasing size of stats variables from int long
+n: 17-1-50-n-n-y-n-n-17
+
+[ lil-gp Genetic Programming System.
+[ Portions copyright (c) 1995 Michigan State University.  All rights reserved.
+[ kernel version 1.0; 11 July 1995.
+
+
+initialization:
+    parameter database.
+    ephemeral random constants.
+    generation spaces.
+building function set(s):
+    set 0: frog vma prog2 left mow Rvm
+    tree 0 uses function set 0.
+    function set complete.
+    seeding random number generator with 50.
+
+
+		WELCOME TO cgp-lilgp 2.1/1.02
+
+		developed by
+	Cezary Z. Janikow
+	University of Missouri - St. Louis
+	emailto:cjanikow@ola.cs.umsl.edu
+	http://www.cs.umsl.edu/~janikow
+
+		implementation team:
+	Cezary Z. Janikow, leader
+	Scott DeWeese, UMSL student (cgp interface file)
+
+
+
+
+	This is distributed as an addition to lil-gp 1.02
+
+	No explicit/implicit warranty
+
+
+
+
+
+Reading Type information...
+
+
+Default is a single 'generic' type. Accept? [0 to change]: List type names: 
+The following types are used...
+Function 'prog2': numArg=2, numTypeVecs=1
+	vec0: 0:'float' 1:'float' -> 'float'
+	Type 'float' returned from vectors: 0 
+Function 'vma': numArg=2, numTypeVecs=1
+	vec0: 0:'float' 1:'float' -> 'float'
+	Type 'float' returned from vectors: 0 
+Function 'frog': numArg=1, numTypeVecs=1
+	vec0: 0:'float' -> 'float'
+	Type 'float' returned from vectors: 0 
+Terminal 'Rvm': -> 'float'
+Terminal 'left': -> 'float'
+Terminal 'mow': -> 'float'
+Root: -> 'float'
+
+
+
+
+Reading F/Tspec information...
+
+
+Default is empty Fspecs, full Tspecs. Accept? [0 to change]: 
+3 ordinary functions:
+	prog2 vma frog 
+3 terminals (ordinary and ephemeral):
+	Rvm left mow 
+Separate entries by [ ,;]
+Hit <ENTER> for empty set
+Use function names in any order
+
+Function 'prog2':
+	F_prog2 (exclusions) [up to 3 names] = 	F_prog2_0 (exclusions) [up to 6 names] = 	T_prog2_0 (inclusions) [up to 6 names] = 	F_prog2_1 (exclusions) [up to 6 names] = 	T_prog2_1 (inclusions) [up to 6 names] = 
+3 ordinary functions:
+	prog2 vma frog 
+3 terminals (ordinary and ephemeral):
+	Rvm left mow 
+Separate entries by [ ,;]
+Hit <ENTER> for empty set
+Use function names in any order
+
+Function 'vma':
+	F_vma (exclusions) [up to 3 names] = 	F_vma_0 (exclusions) [up to 6 names] = 	T_vma_0 (inclusions) [up to 6 names] = 	F_vma_1 (exclusions) [up to 6 names] = 	T_vma_1 (inclusions) [up to 6 names] = 
+3 ordinary functions:
+	prog2 vma frog 
+3 terminals (ordinary and ephemeral):
+	Rvm left mow 
+Separate entries by [ ,;]
+Hit <ENTER> for empty set
+Use function names in any order
+
+Function 'frog':
+	F_frog (exclusions) [up to 3 names] = 	F_frog_0 (exclusions) [up to 6 names] = 	T_frog_0 (inclusions) [up to 6 names] = 
+3 ordinary functions:
+	prog2 vma frog 
+3 terminals (ordinary and ephemeral):
+	Rvm left mow 
+Separate entries by [ ,;]
+Hit <ENTER> for empty set
+Use function names in any order
+
+Root:	F^Root (exclusions) [up to 6 names] = 	T^Root (inclusions) [up to 6 names] = 
+Read the following constraints...
+
+		CONSTRAINTS
+Function 'prog2' [#0]:
+	F_prog2 [#Fs=0:#Ts=0] = ||
+	F_prog2_0 [#Fs=0:#Ts=0] = ||
+	F_prog2_1 [#Fs=0:#Ts=0] = ||
+	T_prog2_0 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+	T_prog2_1 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+Function 'vma' [#1]:
+	F_vma [#Fs=0:#Ts=0] = ||
+	F_vma_0 [#Fs=0:#Ts=0] = ||
+	F_vma_1 [#Fs=0:#Ts=0] = ||
+	T_vma_0 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+	T_vma_1 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+Function 'frog' [#2]:
+	F_frog [#Fs=0:#Ts=0] = ||
+	F_frog_0 [#Fs=0:#Ts=0] = ||
+	T_frog_0 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+Root:3
+	F_Root [#Fs=0:#Ts=0] =  ||
+	T_Root [#Fs=3:#Ts=3] =  'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+
+The normal constraints are...
+
+		CONSTRAINTS
+Function 'prog2' [#0]:
+	F_prog2 [#Fs=0:#Ts=0] = ||
+	F_prog2_0 [#Fs=0:#Ts=0] = ||
+	F_prog2_1 [#Fs=0:#Ts=0] = ||
+	T_prog2_0 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+	T_prog2_1 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+Function 'vma' [#1]:
+	F_vma [#Fs=0:#Ts=0] = ||
+	F_vma_0 [#Fs=0:#Ts=0] = ||
+	F_vma_1 [#Fs=0:#Ts=0] = ||
+	T_vma_0 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+	T_vma_1 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+Function 'frog' [#2]:
+	F_frog [#Fs=0:#Ts=0] = ||
+	F_frog_0 [#Fs=0:#Ts=0] = ||
+	T_frog_0 [#Fs=3:#Ts=3] = 'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+Root:3
+	F_Root [#Fs=0:#Ts=0] =  ||
+	T_Root [#Fs=3:#Ts=3] =  'prog2' 'vma' 'frog' || 'Rvm' 'left' 'mow'
+
+The following untyped mutation sets are used...
+
+Function 'prog2': arity 2 
+	Argument 0
+		Type unconstrained mutation set
+			F [3 members] = 'prog2' 'vma' 'frog'
+			T [3 members] = 'Rvm' 'left' 'mow'
+			Wheel: F is used and T is used
+			 1.000000 2.000000 3.000000 4.000000 5.000000 6.000000
+			Weights: F is used and T is used
+			 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+	Argument 1
+		Type unconstrained mutation set
+			F [3 members] = 'prog2' 'vma' 'frog'
+			T [3 members] = 'Rvm' 'left' 'mow'
+			Wheel: F is used and T is used
+			 1.000000 2.000000 3.000000 4.000000 5.000000 6.000000
+			Weights: F is used and T is used
+			 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+Function 'vma': arity 2 
+	Argument 0
+		Type unconstrained mutation set
+			F [3 members] = 'prog2' 'vma' 'frog'
+			T [3 members] = 'Rvm' 'left' 'mow'
+			Wheel: F is used and T is used
+			 1.000000 2.000000 3.000000 4.000000 5.000000 6.000000
+			Weights: F is used and T is used
+			 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+	Argument 1
+		Type unconstrained mutation set
+			F [3 members] = 'prog2' 'vma' 'frog'
+			T [3 members] = 'Rvm' 'left' 'mow'
+			Wheel: F is used and T is used
+			 1.000000 2.000000 3.000000 4.000000 5.000000 6.000000
+			Weights: F is used and T is used
+			 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+Function 'frog': arity 1 
+	Argument 0
+		Type unconstrained mutation set
+			F [3 members] = 'prog2' 'vma' 'frog'
+			T [3 members] = 'Rvm' 'left' 'mow'
+			Wheel: F is used and T is used
+			 1.000000 2.000000 3.000000 4.000000 5.000000 6.000000
+			Weights: F is used and T is used
+			 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+Root:
+		Type unconstrained mutation set
+			F [3 members] = 'prog2' 'vma' 'frog'
+			T [3 members] = 'Rvm' 'left' 'mow'
+			Wheel: F is used and T is used
+			 1.000000 2.000000 3.000000 4.000000 5.000000 6.000000
+			Weights: F is used and T is used
+			 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+
+
+Setting initial weights for mutation set members...
+Initial weights are all equal. Do you accept [0 to change]: Send 1 to continue, anything else to quit cgp-lil-gp: 
+
+creating initial population(s):
+    1038 trees were generated to fill the population of 1000 (1000 trees).
+    initial population(s) complete.
+
+
+starting evolution.
+no checkpointing will be done.
+=== generation 0.
+    evaluation complete.  (0.03s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.02s wall, 0.02s user, 0.00s sys)
+=== generation 1.
+    evaluation complete.  (0.04s wall, 0.03s user, 0.00s sys)
+    breeding complete.    (0.04s wall, 0.03s user, 0.00s sys)
+=== generation 2.
+    evaluation complete.  (0.04s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.04s wall, 0.04s user, 0.01s sys)
+=== generation 3.
+    evaluation complete.  (0.04s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.05s wall, 0.05s user, 0.00s sys)
+=== generation 4.
+    evaluation complete.  (0.04s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.07s wall, 0.07s user, 0.00s sys)
+=== generation 5.
+    evaluation complete.  (0.04s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.06s wall, 0.05s user, 0.00s sys)
+=== generation 6.
+    evaluation complete.  (0.04s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.10s wall, 0.10s user, 0.00s sys)
+=== generation 7.
+    evaluation complete.  (0.07s wall, 0.07s user, 0.00s sys)
+    breeding complete.    (0.10s wall, 0.09s user, 0.00s sys)
+=== generation 8.
+    evaluation complete.  (0.04s wall, 0.04s user, 0.00s sys)
+    breeding complete.    (0.32s wall, 0.12s user, 0.02s sys)
+=== generation 9.
+    evaluation complete.  (0.08s wall, 0.09s user, 0.00s sys)
+    breeding complete.    (0.23s wall, 0.22s user, 0.02s sys)
+=== generation 10.
+    evaluation complete.  (0.08s wall, 0.08s user, 0.00s sys)
+    breeding complete.    (0.31s wall, 0.28s user, 0.03s sys)
+=== generation 11.
+    evaluation complete.  (0.10s wall, 0.10s user, 0.00s sys)
+    breeding complete.    (0.70s wall, 0.31s user, 0.05s sys)
+=== generation 12.
+    evaluation complete.  (0.11s wall, 0.11s user, 0.00s sys)
+    breeding complete.    (0.40s wall, 0.40s user, 0.00s sys)
+=== generation 13.
+    evaluation complete.  (0.11s wall, 0.12s user, 0.00s sys)
+    breeding complete.    (0.49s wall, 0.45s user, 0.03s sys)
+=== generation 14.
+    evaluation complete.  (0.15s wall, 0.16s user, 0.00s sys)
+    breeding complete.    (0.62s wall, 0.55s user, 0.04s sys)
+=== generation 15.
+    evaluation complete.  (0.19s wall, 0.18s user, 0.00s sys)
+    breeding complete.    (0.94s wall, 0.84s user, 0.08s sys)
+=== generation 16.
+    evaluation complete.  (0.24s wall, 0.23s user, 0.00s sys)
+    breeding complete.    (1.57s wall, 1.23s user, 0.13s sys)
+=== generation 17.
+    evaluation complete.  (0.34s wall, 0.33s user, 0.00s sys)
+    breeding complete.    (1.62s wall, 1.31s user, 0.13s sys)
+=== generation 18.
+    evaluation complete.  (0.35s wall, 0.33s user, 0.00s sys)
+    breeding complete.    (2.14s wall, 1.89s user, 0.15s sys)
+=== generation 19.
+    evaluation complete.  (0.49s wall, 0.49s user, 0.00s sys)
+    breeding complete.    (4.93s wall, 2.08s user, 0.29s sys)
+=== generation 20.
+    evaluation complete.  (0.53s wall, 0.54s user, 0.00s sys)
+    breeding complete.    (3.14s wall, 2.12s user, 0.22s sys)
+=== generation 21.
+    evaluation complete.  (0.58s wall, 0.58s user, 0.00s sys)
+    breeding complete.    (3.27s wall, 3.09s user, 0.13s sys)
+=== generation 22.
+    evaluation complete.  (0.82s wall, 0.82s user, 0.00s sys)
+    breeding complete.    (4.31s wall, 4.11s user, 0.19s sys)
+=== generation 23.
+    evaluation complete.  (1.08s wall, 1.08s user, 0.00s sys)
+    breeding complete.    (4.96s wall, 4.78s user, 0.18s sys)
+=== generation 24.
+    evaluation complete.  (1.36s wall, 1.36s user, 0.00s sys)
+    breeding complete.    (6.09s wall, 5.89s user, 0.19s sys)
+=== generation 25.
+    evaluation complete.  (1.72s wall, 1.73s user, 0.01s sys)
+    breeding complete.    (7.81s wall, 6.89s user, 0.45s sys)
+=== generation 26.
+    evaluation complete.  (1.64s wall, 1.63s user, 0.00s sys)
+    breeding complete.    (11.42s wall, 8.00s user, 1.16s sys)
+=== generation 27.
+    evaluation complete.  (2.02s wall, 2.01s user, 0.00s sys)
+    breeding complete.    (10.00s wall, 8.70s user, 0.44s sys)
+=== generation 28.
+    evaluation complete.  (1.95s wall, 1.95s user, 0.00s sys)
+    breeding complete.    (30.29s wall, 11.02s user, 3.62s sys)
+=== generation 29.
+    evaluation complete.  (43.80s wall, 8.81s user, 6.69s sys)
+run_end: 17-1-50-n-n-y-n-n-17
+compressing files:
+../../../kernel.cgp2.1/memory.c:75:17: runtime error: signed integer overflow: 2147225098 + 324720 cannot be represented in type 'int'
+../../../kernel.cgp2.1/memory.c:109:16: runtime error: signed integer overflow: 2147302080 + 219920 cannot be represented in type 'int'
+../../../kernel.cgp2.1/memory.c:76:15: runtime error: signed integer overflow: 2147253226 + 1485280 cannot be represented in type 'int'
+../../../kernel.cgp2.1/memory.c:108:15: runtime error: signed integer overflow: -2146228790 - 1485280 cannot be represented in type 'int'
+/bin/bash: line 1: 18783 Killed                  ./$exe -p pop_size=$pop -p max_generations=$maxgen -p random_seed=$1 -p app.lawn_width=$lw -p app.lawn_height=$lh -p app.use_ercs=$useercs -p app.save_pop=$savepop -p acgp.what=$acgpwhat -p output.basename=tmp/$prblm-$frmwrk-$1-$wadf-$adf-$types-$constrained-$acgpwhat-$maxdepth -f input.file
+./tmp/17-1-50-n-n-y-n-n-17.pop: 16.2 MiB / 3,551.7 MiB = 0.005, 68 MiB/s, 0:52
+./tmp/17-1-50-n-n-y-n-n-17.his: 1,398.9 KiB / 193.1 MiB = 0.007, 0:02
+ETA: 1097s Left: 5 AVG: 219.51s  local:5/45/100%/246.0s pop=1000
+

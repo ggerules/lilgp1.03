@@ -1,0 +1,52 @@
+; reads rtime and makes evaltimelong.csv data
+
+(lush-is-quiet t)
+
+;(defconstant hdr_row "RowNum,ProblemNum,Kernel,IndRunNum,wADF,ADF,Types,Constraints,acgpwhat,MaxTreeDepth,EvalTime")
+;(defconstant hdr_row "ProblemNum,Kernel,IndRunNum,wADF,ADF,Types,Constraints,acgpwhat,MaxTreeDepth,EvalTime")
+
+(defvar flist)              ; file list
+;(defvar pth)               ; path to rtime file
+(defvar pthrtime)           ; path with rtime file
+(defvar fnprtime)           ; file name prefix rtime file
+(defvar fnpitems)           ; file name prefix items
+(defvar rtimelns)           ; contents of a rtime file
+(defvar rtimerowitems)      ; items in a rtime row
+(defvar evaltime)           ; holds hits count
+(defvar rtimelongrow)       ; long row
+(defvar cnt)                ; counter
+(defvar fd)                 ; file descriptor for writing
+
+(setq fd (open-write "evaltimelong.csv"))
+(setq cnt 0)
+(setq flist(files "."))
+(do ((it1 flist)) while (<> flist -1)
+ (when (str-find "rtime" it1 0)
+  ;(print it1)      
+  (setq fnprtime (basename it1 "rtime"))
+  ;(print fnprtime)
+  (setq fnpitems (str-split fnprtime "-"))
+  ;(print fnpitems)
+  (setq rtimelns (lines it1))
+  (do ((it2 rtimelns)) while (<> it2 -1)
+   ;(print it2)
+    (setq rtimerowitems(str-split it2 " "))
+    ;(print rtimerowitems)
+    (setq evaltime (nth 0 rtimerowitems))
+  )
+  ;(printf "%s-%s\n" fnprtime evaltime)
+  ;(setq rtimelongrow (sprintf "%d,%s,%s" cnt (str-join "," fnpitems) evaltime))
+  (setq rtimelongrow (sprintf "%s,%s" (str-join "," fnpitems) evaltime))
+  ;(when (= cnt 0)
+  ; (writing fd (printf "%s\n" hdr_row)) 
+  ;)
+  (writing fd (printf "%s\n" rtimelongrow)) 
+  (when (= (modi cnt 100) 0)
+   (printf "%s" "=")
+   (flush)
+  )
+  (incr cnt)
+  ;(exit 0)
+ )  
+) 
+(print "Done!")

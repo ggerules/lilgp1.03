@@ -1,0 +1,89 @@
+Weights Wheels -> After call to readWeightsSetWheels
+
+tr= 0, RPB
+
+
+These are weights/wheels...
+
+Function "ADF3" [#0]: 3 arguments
+	Argument 0: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+	Argument 1: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+	Argument 2: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+
+Function "add" [#1]: 2 arguments
+	Argument 0: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+	Argument 1: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+
+Function "div" [#2]: 2 arguments
+	Argument 0: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+	Argument 1: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+
+Function "mul" [#3]: 2 arguments
+	Argument 0: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+	Argument 1: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+
+Function "sin" [#4]: 1 arguments
+	Argument 0: F [5 members, used]  and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+
+Root: F [5 members, used] and T [4 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.111 0.222 0.333 0.444 0.556 0.667 0.778 0.889 1.000
+
+tr= 1, ADF3
+
+
+These are weights/wheels...
+
+Function "add" [#0]: 2 arguments
+	Argument 0: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "div" [#1]: 2 arguments
+	Argument 0: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "mul" [#2]: 2 arguments
+	Argument 0: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+	Argument 1: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Function "sin" [#3]: 1 arguments
+	Argument 0: F [4 members, used]  and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+
+Root: F [4 members, used] and T [3 members, used]
+	Weights: 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+	Wheels: 0.143 0.286 0.429 0.571 0.714 0.857 1.000
+

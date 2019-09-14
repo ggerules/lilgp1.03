@@ -1,0 +1,1596 @@
+autogen definitions info;
+
+homedir="/home/ggerules/lilgp1.02/app/";
+hitslongdata="/data/hitslong.csv";
+sttlongdata="/data/sttlong.csv";
+probname=prob081_bumblebee_10f_genramp_3d;
+output_detail=90;
+prblm=81;
+maxdepth=17;
+useercs=0;
+exe=gp;
+pop=4000;
+savepop=1;
+maxgen=52;
+numindruns=50;
+lawnwidth=10;
+lawnheight=10;
+lawndepth=10;
+
+dtypestruct = "typedef struct
+{
+     float x;
+     float y;
+     float z;
+} vector;";
+dtype = vector;
+
+additionaldefines ="
+#define APP_DEFAULT_LAWN_WIDTH  10 
+#define APP_DEFAULT_LAWN_HEIGHT 10
+#define APP_DEFAULT_LAWN_DEPTH  10";
+
+nflowers = 10;
+fitcases=10;
+
+comment_app_initialize_vars = " ";
+
+prob = {
+ name = "BumbleBee 10 Flowers 3d";
+ init1 = "ttx = (random_double()*3.0)-1.0;";
+ init2 = "ttx = (random_double()*2.0);";
+ init0 = "ttx = (random_double()*2.0)-1.0;";
+ initn = "ttx = (random_double()*2.0)-1.0;";
+
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel_orig";
+  frmwrk = 0;
+  dirname = "orig_ywadf_nadf_ntypes_ncons_nwhatn" ; 
+  kcat  = orig;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel_orig";
+  frmwrk = 0;
+  dirname = "orig_ywadf_yadf_ntypes_ncons_nwhatn" ; 
+  kcat  = orig;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgp2.1";
+  frmwrk = 1;
+  dirname = "cgp2p1_nwadf_nadf_ntypes_ncons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgp2.1";
+  frmwrk = 1;
+  dirname = "cgp2p1_nwadf_nadf_ntypes_ycons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgp2.1";
+  frmwrk = 1;
+  dirname = "cgp2p1_nwadf_nadf_ytypes_ncons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = y;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgp2.1";
+  frmwrk = 1;
+  dirname = "cgp2p1_nwadf_nadf_ytypes_ycons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = y;
+  cons  = y;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_nadf_ntypes_ncons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_nadf_ntypes_ycons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_nadf_ytypes_ncons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_nadf_ytypes_ycons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = y;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_yadf_ntypes_ncons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_yadf_ntypes_ycons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = y;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_yadf_ytypes_ncons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = n;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.cgpf2.1";
+  frmwrk = 2;
+  dirname = "cgpf2p1_ywadf_yadf_ytypes_ycons_nwhatn" ; 
+  kcat  = cgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = y;
+  what  = n;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ncons_ywhat0" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ncons_ywhat1" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ncons_ywhat2" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ncons_ywhat3" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ycons_ywhat0" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ycons_ywhat1" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ycons_ywhat2" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgp1.1.2";
+  frmwrk = 3;
+  dirname = "acgp1p1p2_nwadf_nadf_ntypes_ycons_ywhat3" ; 
+  kcat  = acgp1p1p2;
+  tmp   = 1;
+  wadf  = n;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ncons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ycons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ncons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = n;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ycons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = y;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ncons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = n;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ycons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = y;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ncons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = n;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat0" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = y;
+  what  = 0;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ncons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ycons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ncons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = n;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ycons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = y;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ncons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = n;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ycons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = y;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ncons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = n;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat1" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = y;
+  what  = 1;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ncons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ycons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ncons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = n;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ycons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = y;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ncons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = n;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ycons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = y;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ncons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = n;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat2" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = y;
+  what  = 2;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ncons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = n;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ntypes_ycons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = n;
+  cons  = y;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ncons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = n;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ntypes_ycons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = n;
+  cons  = y;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ncons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = n;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_nadf_ytypes_ycons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = n;
+  types = y;
+  cons  = y;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ncons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = n;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  datschm = 1;
+  kname = "kernel.acgpf2.1";
+  frmwrk = 4;
+  dirname = "acgpf2p1_ywadf_yadf_ytypes_ycons_ywhat3" ; 
+  kcat  = acgp2p1;
+  tmp   = 1;
+  wadf  = y;
+  adf   = y;
+  types = y;
+  cons  = y;
+  what  = 3;
+  runnable = 1;
+};
+
+objlst = { 
+  dirname = "plots" ; 
+};
+
+nadf = { 
+ maxarg = 2;
+
+ fset = {
+  treename = main;
+
+  ntypes_typelist = { row = vector; }; 
+  ntypes_root = vector;
+
+  ytypes_typelist = { row = vector; }; 
+  ytypes_root = vector;
+
+  ncons = { row = "F_(*)=";};
+  ncons = { row = "F_(*)[*]=";};
+  ncons = { row = "#must specify some TSpecs";};
+  ncons = { row = "T_(*)[*]=*";};
+  ncons = { row = "T_ROOT=*";};
+
+  ycons = { row = "F_(*)="; };
+  ycons = { row = "F_(*)[*]="; };
+  ycons = { row = "F_ROOT="; };
+  ycons = { row = "T_(*)[*]=*"; };
+  ycons = { row = "T_ROOT=*"; };
+
+  strprintfdat = "%f";
+  
+  func = {
+   name = f_add; 
+   altname = vadd;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     v.x = ( args[0].d.x + args[1].d.x );
+     v.y = ( args[0].d.y + args[1].d.y );
+     v.z = ( args[0].d.z + args[1].d.z );
+     return v;";
+  };
+ 
+  func = {
+   name = f_sub; 
+   altname = vsub;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     v.x = ( args[0].d.x - args[1].d.x );
+     v.y = ( args[0].d.y - args[1].d.y );
+     v.z = ( args[0].d.z - args[1].d.z );
+     return v;";
+  };
+ 
+  func = {
+   name = f_gox; 
+   altname = gox;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v; 
+     g.xpos += args[0].d.x;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     { 
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         { 
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+     
+     return v;";
+  };
+ 
+  func = {
+   name = f_goy; 
+   altname = goy;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     g.ypos += args[0].d.y;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     {
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         {
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+   
+     return v;";
+  };
+  
+  func = {
+   name = f_goz; 
+   altname = goz;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     g.zpos += args[0].d.z;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     {
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         {
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+   
+     return v;";
+  };
+  
+  func = {
+   name = f_prog2; 
+   altname = prog2;
+   ercfun = NULL;
+   ercstr = NULL;
+   lispdefun = { row = "(de fsub (x y) (declare (-double-) x) (declare (-double-) y) (- x y))"; };
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   return args[1].d;";
+  };
+
+  vars = {
+   name = f_bee; 
+   altname = bee;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_NORM;
+   evaltree = -1;
+   oper = "   vector bpos;
+     bpos.x = g.xpos;
+     bpos.y = g.ypos;
+     bpos.z = g.zpos;
+     return bpos;";
+  };
+
+  vars = {
+   name = f_nextflower; 
+   altname = nf;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_NORM;
+   evaltree = -1;
+   oper = "   int fl = random_int(g.nNumFlowers);
+     vector v;
+     v.x = g.pfl[fl].x;
+     v.y = g.pfl[fl].y;
+     v.z = g.pfl[fl].z;
+     return v;";
+  };
+
+
+  ercs = {
+   name = NULL; 
+   altname = rv;
+   ercfun = ercvecgen;
+   ercstr = ercvecstr;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_ERC;
+   evaltree = -1;
+   fercgenbody = "   r->x = g.lawn_width * random_double();
+     r->y = g.lawn_height * random_double();
+     r->x = r->x - (g.lawn_width / 2.0);
+     r->y = r->y - (g.lawn_height / 2.0);
+     r->z = r->z - (g.lawn_depth / 2.0); ";
+   fercstrbody = "   static char buffer[100];
+     sprintf ( buffer, \"(make-vec :x %f :y %f :z %f)\", d.x, d.y, d.y );
+     return buffer;";
+  };
+
+ };
+};
+
+yadf = { 
+ maxarg = 2;
+
+ fset = {
+  treename = main;
+
+  ntypes_typelist = { row = vector; }; 
+  ntypes_root = vector;
+
+  ytypes_typelist = { row = vector; }; 
+  ytypes_root = vector;
+
+  ncons = { row = "F_(*)=";};
+  ncons = { row = "F_(*)[*]=";};
+  ncons = { row = "#must specify some TSpecs";};
+  ncons = { row = "T_(*)[*]=*";};
+  ncons = { row = "T_ROOT=*";};
+
+  ycons = { row = "F_(*)="; };
+  ycons = { row = "F_(*)[*]="; };
+  ycons = { row = "F_ROOT="; };
+  ycons = { row = "T_(*)[*]=*"; };
+  ycons = { row = "T_ROOT=*"; };
+
+  strprintfdat = "%f";
+
+  func = {
+   name = f_add; 
+   altname = vadd;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     v.x = ( args[0].d.x + args[1].d.x );
+     v.y = ( args[0].d.y + args[1].d.y );
+     v.z = ( args[0].d.z + args[1].d.z );
+     return v;";
+  };
+ 
+  func = {
+   name = f_sub; 
+   altname = vsub;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     v.x = ( args[0].d.x - args[1].d.x );
+     v.y = ( args[0].d.y - args[1].d.y );
+     v.z = ( args[0].d.z - args[1].d.z );
+     return v;";
+  };
+ 
+  func = {
+   name = f_gox; 
+   altname = gox;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v; 
+     g.xpos += args[0].d.x;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     { 
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         { 
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+     
+     return v;";
+  };
+ 
+  func = {
+   name = f_goy; 
+   altname = goy;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     g.ypos += args[0].d.y;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     {
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         {
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+   
+     return v;";
+  };
+  
+  func = {
+   name = f_goz; 
+   altname = goz;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     g.zpos += args[0].d.z;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     {
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         {
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+   
+     return v;";
+  };
+ 
+  func = {
+   name = f_prog2; 
+   altname = prog2;
+   ercfun = NULL;
+   ercstr = NULL;
+   lispdefun = { row = "(de fsub (x y) (declare (-double-) x) (declare (-double-) y) (- x y))"; };
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   return args[1].d;";
+  };
+
+  vars = {
+   name = f_bee; 
+   altname = bee;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_NORM;
+   evaltree = -1;
+   oper = "   vector bpos;
+     bpos.x = g.xpos;
+     bpos.y = g.ypos;
+     bpos.z = g.zpos;
+     return bpos;";
+  };
+
+  vars = {
+   name = f_nextflower; 
+   altname = nf;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_NORM;
+   evaltree = -1;
+   oper = "   int fl = random_int(g.nNumFlowers);
+     vector v;
+     v.x = g.pfl[fl].x;
+     v.y = g.pfl[fl].y;
+     v.z = g.pfl[fl].z;
+     return v;";
+  };
+
+
+  ercs = {
+   name = NULL; 
+   altname = rv;
+   ercfun = ercvecgen;
+   ercstr = ercvecstr;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_ERC;
+   evaltree = -1;
+   fercgenbody = "   r->x = g.lawn_width * random_double();
+     r->y = g.lawn_height * random_double();
+     r->x = r->x - (g.lawn_width / 2.0);
+     r->y = r->y - (g.lawn_height / 2.0);
+     r->z = r->z - (g.lawn_depth / 2.0); ";
+   fercstrbody = "static char buffer[100];
+     sprintf ( buffer, \"(make-vec :x %f :y %f :z %f)\", d.x, d.y, d.z );
+     return buffer;";
+  };
+
+  adffunc = {
+   name = NULL; 
+   altname = adf0;
+   ercfun = NULL;
+   ercstr = NULL;
+   lispdefun = { row = "(defun adf0(a0)"; };
+   argcnt = -1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   typeb = EVAL_EXPR;
+   type = EVAL_DATA;
+   evaltree = 1;
+   oper = "";
+  };
+
+ };
+
+ fset = {
+  treename = adf0;
+
+  ntypes_typelist = { row = vector; }; 
+  ntypes_root = vector;
+
+  ytypes_typelist = { row = vector; }; 
+  ytypes_root = vector;
+
+  ncons = { row = "F_(*)=";};
+  ncons = { row = "F_(*)[*]=";};
+  ncons = { row = "#must specify some TSpecs";};
+  ncons = { row = "T_(*)[*]=*";};
+  ncons = { row = "T_ROOT=*";};
+
+  ycons = { row = "F_(*)="; };
+  ycons = { row = "F_(*)[*]="; };
+  ycons = { row = "F_ROOT="; };
+  ycons = { row = "T_(*)[*]=*"; };
+  ycons = { row = "T_ROOT=*"; };
+
+  strprintfdat = "%f";
+
+  func = {
+   name = f_add; 
+   altname = vadd;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     v.x = ( args[0].d.x + args[1].d.x );
+     v.y = ( args[0].d.y + args[1].d.y );
+     v.z = ( args[0].d.z + args[1].d.y );
+     return v;";
+  };
+ 
+  func = {
+   name = f_sub; 
+   altname = vsub;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "vector v;
+     v.x = ( args[0].d.x - args[1].d.x );
+     v.y = ( args[0].d.y - args[1].d.y );
+     v.z = ( args[0].d.z - args[1].d.z );
+     return v;";
+  };
+ 
+  func = {
+   name = f_gox; 
+   altname = gox;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v; 
+     g.xpos += args[0].d.x;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     { 
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         { 
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+     
+     return v;";
+  };
+ 
+  func = {
+   name = f_goy; 
+   altname = goy;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     g.ypos += args[0].d.y;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     {
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         {
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+   
+     return v;";
+  };
+  
+  func = {
+   name = f_goz; 
+   altname = goz;
+   ercfun = NULL;
+   ercstr = NULL;
+   
+   argcnt = 1;
+   ntypes_node = { row = "(vector)=vector"; };
+   ytypes_node = { row = "(vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   vector v;
+     g.zpos += args[0].d.z;
+     v.x = 0.0;
+     v.y = 0.0;
+     v.z = 0.0;
+     // check if bee is near a flower
+     for(int i = 0; i < g.nNumFlowers; i++)
+     {
+       if(fabs(g.xpos - g.pfl[i].x) < 0.02)
+       {
+         if(fabs(g.ypos - g.pfl[i].y) < 0.02)
+         {
+           if(fabs(g.zpos - g.pfl[i].z) < 0.02)
+           { 
+             g.pvis[i] = 1;
+           }
+         }
+       }
+     }
+   
+     return v;";
+  };
+
+  func = {
+   name = f_prog2; 
+   altname = prog2;
+   ercfun = NULL;
+   ercstr = NULL;
+   lispdefun = { row = "(de fsub (x y) (declare (-double-) x) (declare (-double-) y) (- x y))"; };
+   argcnt = 2;
+   ntypes_node = { row = "(vector vector)=vector"; };
+   ytypes_node = { row = "(vector vector)=vector"; };
+   type = FUNC_DATA;
+   evaltree = -1;
+   oper = "   return args[1].d;";
+  };
+
+  adfarg = {
+   name = NULL; 
+   altname = a0;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_ARG;
+   evaltree = 0;
+  };
+
+  vars = {
+   name = f_bee; 
+   altname = bee;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_NORM;
+   evaltree = -1;
+   oper = "   vector bpos;
+     bpos.x = g.xpos;
+     bpos.y = g.ypos;
+     bpos.z = g.zpos;
+     return bpos;";
+  };
+
+  vars = {
+   name = f_nextflower; 
+   altname = nf;
+   ercfun = NULL;
+   ercstr = NULL;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_NORM;
+   evaltree = -1;
+   oper = "   int fl = random_int(g.nNumFlowers);
+     vector v;
+     v.x = g.pfl[fl].x;
+     v.y = g.pfl[fl].y;
+     v.z = g.pfl[fl].z;
+     return v;";
+  };
+
+
+  ercs = {
+   name = NULL; 
+   altname = rv;
+   ercfun = ercvecgen;
+   ercstr = ercvecstr;
+   argcnt = 0;
+   ntypes_node = { row = "=vector"; };
+   ytypes_node = { row = "=vector"; };
+   type = TERM_ERC;
+   evaltree = -1;
+   fercgenbody = "   r->x = g.lawn_width * random_double();
+     r->y = g.lawn_height * random_double();
+     r->x = r->x - (g.lawn_width / 2.0);
+     r->y = r->y - (g.lawn_height / 2.0);
+     r->z = r->z - (g.lawn_depth / 2.0); ";
+   fercstrbody = "   static char buffer[100];
+     sprintf ( buffer, \"(make-vec :x %f :y %f :z %f)\", d.x, d.y, d.z );
+     return buffer;";
+  };
+
+ };
+};
+
+
+

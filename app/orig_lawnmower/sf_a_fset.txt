@@ -1,0 +1,149 @@
+fset -> beginning of create_MS_czj
+
+evaltree: 0:
+ fset[0]:
+  .function_count=4
+  .terminal_count=4
+  .num_args=0
+  .size=8
+   .cset[0]
+    .string=prog2 
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=0
+   .cset[1]
+    .string=vma   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=1
+   .cset[2]
+    .string=adf1  
+    .arity=1
+    .type=6 EVAL_DATA
+    .evaltree=2
+    .index=2
+   .cset[3]
+    .string=frog  
+    .arity=1
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=3
+   .cset[4]
+    .string=Rvm   
+    .arity=0
+    .type=4 TERM_ERC
+    .evaltree=-1
+    .index=4
+   .cset[5]
+    .string=adf0  
+    .arity=0
+    .type=8 EVAL_TERM
+    .evaltree=1
+    .index=5
+   .cset[6]
+    .string=left  
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=6
+   .cset[7]
+    .string=mow   
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=7
+
+evaltree: 1:
+ fset[1]:
+  .function_count=2
+  .terminal_count=3
+  .num_args=0
+  .size=5
+   .cset[0]
+    .string=prog2 
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=0
+   .cset[1]
+    .string=vma   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=1
+   .cset[2]
+    .string=Rvm   
+    .arity=0
+    .type=4 TERM_ERC
+    .evaltree=-1
+    .index=2
+   .cset[3]
+    .string=left  
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=3
+   .cset[4]
+    .string=mow   
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=4
+
+evaltree: 2:
+ fset[2]:
+  .function_count=3
+  .terminal_count=5
+  .num_args=1
+  .size=8
+   .cset[0]
+    .string=prog2 
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=0
+   .cset[1]
+    .string=vma   
+    .arity=2
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=1
+   .cset[2]
+    .string=frog  
+    .arity=1
+    .type=1 FUNC_DATA
+    .evaltree=-1
+    .index=2
+   .cset[3]
+    .string=Rvm   
+    .arity=0
+    .type=4 TERM_ERC
+    .evaltree=-1
+    .index=3
+   .cset[4]
+    .string=a0    
+    .arity=0
+    .type=5 TERM_ARG
+    .evaltree=0
+    .index=4
+   .cset[5]
+    .string=adf0  
+    .arity=0
+    .type=8 EVAL_TERM
+    .evaltree=1
+    .index=5
+   .cset[6]
+    .string=left  
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=6
+   .cset[7]
+    .string=mow   
+    .arity=0
+    .type=3 TERM_NORM
+    .evaltree=-1
+    .index=7
+

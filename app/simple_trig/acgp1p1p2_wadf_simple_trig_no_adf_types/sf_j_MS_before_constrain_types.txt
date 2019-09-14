@@ -1,0 +1,15 @@
+MS -> generateMS before types constrained
+
+tr= 0, TREE
+ Function 'add': arity 2 
+  Argument 0
+  Argument 1
+ Function 'div': arity 2 
+  Argument 0
+  Argument 1
+ Function 'mul': arity 2 
+  Argument 0
+  Argument 1
+ Function 'sin': arity 1 
+  Argument 0
+ Root:

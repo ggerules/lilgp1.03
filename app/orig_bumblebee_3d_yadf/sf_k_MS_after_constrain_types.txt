@@ -1,0 +1,227 @@
+MS -> generateMS after types constrained
+
+tr= 0, MAIN
+ Function 'prog2': arity 2 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vadd': arity 2 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vsub': arity 2 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'adf0': arity 1 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'gox': arity 1 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'goy': arity 1 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'goz': arity 1 
+  Argument 0
+   Type 'vector'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Root:
+   Type 'prog2'
+    F [7 members] = prog2 vadd vsub adf0 gox goy goz
+    T [3 members] = bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+   Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+   Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+tr= 1, ADF0
+ Function 'prog2': arity 2 
+  Argument 0
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vadd': arity 2 
+  Argument 0
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'vsub': arity 2 
+  Argument 0
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+  Argument 1
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'gox': arity 1 
+  Argument 0
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'goy': arity 1 
+  Argument 0
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Function 'goz': arity 1 
+  Argument 0
+   Type 'vector'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+    Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+    Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000
+ Root:
+   Type 'prog2'
+    F [6 members] = prog2 vadd vsub gox goy goz
+    T [4 members] = a0 bee nf rv
+    counters_tot = 0
+    counters [10 members] =  0 0 0 0 0 0 0 0 0 0
+   Wheel: F is used and T is used
+     1.000000 2.000000 3.000000 4.000000 5.000000 6.000000 7.000000 8.000000 9.000000 10.000000
+   Weights: F is used and T is used
+     1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000 1.000000

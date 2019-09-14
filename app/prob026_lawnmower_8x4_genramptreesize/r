@@ -1,0 +1,8 @@
+#!/bin/sh
+#./cln.sh
+rm -fR reg_rs1*
+
+#./gp -p random_seed=9 -p max_generations=50 -p pop_size=4000 -p acgp.what=0 -p max_depth=4 -p app.use_ercs=0 -p app.save_pop=1 -p output.basename=./reg_rs1 -f input.file 
+./gp -p random_seed=30 -p max_generations=50 -p pop_size=1000 -p app.lawn_width=8 -p app.lawn_height=8 -p acgp.what=0 -p max_depth=17 -p app.use_ercs=0 -p app.save_pop=1 -p output.basename=./reg_rs1 -f input.file 
+
+

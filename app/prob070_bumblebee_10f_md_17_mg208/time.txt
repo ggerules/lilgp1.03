@@ -1,0 +1,23 @@
+	Command being timed: "./bootstrap.bash"
+	User time (seconds): 208038.12
+	System time (seconds): 5895.22
+	Percent of CPU this job got: 688%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:38:02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 429712
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2089
+	Minor (reclaiming a frame) page faults: 118054104
+	Voluntary context switches: 336197
+	Involuntary context switches: 5983165
+	Swaps: 0
+	File system inputs: 106860392
+	File system outputs: 4485378368
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

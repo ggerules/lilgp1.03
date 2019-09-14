@@ -1,0 +1,4 @@
+#!/bin/bash
+gcc -g -c -I.  kdmain.c  
+gcc -g -c -I.  kdtree.c 
+gcc -g -o -I. -I../../kernel_orig -o kdmain kdmain.o kdtree.o -L.

@@ -1,0 +1,3 @@
+#!/bin/sh
+./script.sh > output.stt
+gnuplot -p ant_data.gplot > gwg_cs6340_ant_runs.pdf

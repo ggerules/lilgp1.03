@@ -1,0 +1,11 @@
+#!/bin/bash
+
+my_func() {
+./gp -q -p random_seed=$1 -p max_depth=$2 -p output.basename=tmp/regress-$2-$1 -f input.file
+
+}
+export -f my_func
+
+#parallel my_func ::: 1 2 3 4
+time parallel --eta -j 8  --colsep ' ' my_func $1 $2 :::: rfile
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ -g -c -I.  kdmain.cpp  
+g++ -g -c -I.  kdtree_cpp.cpp 
+g++ -g -o -I. -I../../kernel_orig -o kdmain kdmain.o kdtree_cpp.o -L.

@@ -1,0 +1,10 @@
+just group 2 reports 
+real	55m14.553s
+user	54m33.692s
+sys	0m32.080s
+
+group 1 and 2 reports
+real	113m26.443s
+user	108m9.944s
+sys	5m6.236s
+

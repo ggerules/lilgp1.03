@@ -1,0 +1,122 @@
+TP -> created
+
+TP_czj ->  TP -> created
+
+Tree[0]=TREE:
+ TP_czj[0] numFT+1 = 9
+ process functions:
+   pTS[0].numF=4
+    add:
+    TP_czj[0][0].f.numA=2 (function arguments)
+    FTp[0]->TypeCount=4
+    if(FTp[0]->TypCount==1) -> 0 (False)
+   Multiple Types:
+   fset[0].cset[0].string=add, TP_czj[0][0].f.numA=2
+   FTp[0]->Func[0].instCount=2
+    arg=0 ip->inst[arg]=2
+    fset[0].cset[0].string=add, arg=0, FTp[0]->TypList[ip->inst[arg]]=rad    arg=1 ip->inst[arg]=3
+    fset[0].cset[0].string=add, arg=1, FTp[0]->TypList[ip->inst[arg]]=shft    arg=2 ip->inst[arg]=2
+    fset[0].cset[0].string=add, arg=2, FTp[0]->TypList[ip->inst[arg]]=rad   TP_czj[0][0].f.numTypeVecs=2
+      TP_czj[0][0].f.typeVecs[0][0]=2
+      TP_czj[0][0].f.typeVecs[0][1]=3
+      TP_czj[0][0].f.typeVecs[0][2]=2
+    arg=0 ip->inst[arg]=2
+    fset[0].cset[0].string=add, arg=0, FTp[0]->TypList[ip->inst[arg]]=rad    arg=1 ip->inst[arg]=2
+    fset[0].cset[0].string=add, arg=1, FTp[0]->TypList[ip->inst[arg]]=rad    arg=2 ip->inst[arg]=2
+    fset[0].cset[0].string=add, arg=2, FTp[0]->TypList[ip->inst[arg]]=rad   TP_czj[0][0].f.numTypeVecs=2
+      TP_czj[0][0].f.typeVecs[1][0]=2
+      TP_czj[0][0].f.typeVecs[1][1]=2
+      TP_czj[0][0].f.typeVecs[1][2]=2
+   Index(s) for Function:
+    FTp[0]->TypeCount=4
+     TP_czj[0][0].f.indexes[0].len=0
+     TP_czj[0][0].f.indexes[1].len=0
+     TP_czj[0][0].f.indexes[2].len=2
+      TP_czj[0][0].f.indexes[2].indexes[0]=0
+      TP_czj[0][0].f.indexes[2].indexes[1]=1
+     TP_czj[0][0].f.indexes[3].len=0
+    div:
+    TP_czj[0][1].f.numA=2 (function arguments)
+    FTp[0]->TypeCount=4
+    if(FTp[0]->TypCount==1) -> 0 (False)
+   Multiple Types:
+   fset[0].cset[1].string=div, TP_czj[0][1].f.numA=2
+   FTp[0]->Func[1].instCount=1
+    arg=0 ip->inst[arg]=2
+    fset[0].cset[1].string=div, arg=0, FTp[0]->TypList[ip->inst[arg]]=rad    arg=1 ip->inst[arg]=2
+    fset[0].cset[1].string=div, arg=1, FTp[0]->TypList[ip->inst[arg]]=rad    arg=2 ip->inst[arg]=2
+    fset[0].cset[1].string=div, arg=2, FTp[0]->TypList[ip->inst[arg]]=rad   TP_czj[0][1].f.numTypeVecs=1
+      TP_czj[0][1].f.typeVecs[0][0]=2
+      TP_czj[0][1].f.typeVecs[0][1]=2
+      TP_czj[0][1].f.typeVecs[0][2]=2
+   Index(s) for Function:
+    FTp[0]->TypeCount=4
+     TP_czj[0][1].f.indexes[0].len=0
+     TP_czj[0][1].f.indexes[1].len=0
+     TP_czj[0][1].f.indexes[2].len=1
+      TP_czj[0][1].f.indexes[2].indexes[0]=0
+     TP_czj[0][1].f.indexes[3].len=0
+    mul:
+    TP_czj[0][2].f.numA=2 (function arguments)
+    FTp[0]->TypeCount=4
+    if(FTp[0]->TypCount==1) -> 0 (False)
+   Multiple Types:
+   fset[0].cset[2].string=mul, TP_czj[0][2].f.numA=2
+   FTp[0]->Func[2].instCount=2
+    arg=0 ip->inst[arg]=0
+    fset[0].cset[2].string=mul, arg=0, FTp[0]->TypList[ip->inst[arg]]=amp    arg=1 ip->inst[arg]=0
+    fset[0].cset[2].string=mul, arg=1, FTp[0]->TypList[ip->inst[arg]]=amp    arg=2 ip->inst[arg]=0
+    fset[0].cset[2].string=mul, arg=2, FTp[0]->TypList[ip->inst[arg]]=amp   TP_czj[0][2].f.numTypeVecs=2
+      TP_czj[0][2].f.typeVecs[0][0]=0
+      TP_czj[0][2].f.typeVecs[0][1]=0
+      TP_czj[0][2].f.typeVecs[0][2]=0
+    arg=0 ip->inst[arg]=1
+    fset[0].cset[2].string=mul, arg=0, FTp[0]->TypList[ip->inst[arg]]=per    arg=1 ip->inst[arg]=2
+    fset[0].cset[2].string=mul, arg=1, FTp[0]->TypList[ip->inst[arg]]=rad    arg=2 ip->inst[arg]=2
+    fset[0].cset[2].string=mul, arg=2, FTp[0]->TypList[ip->inst[arg]]=rad   TP_czj[0][2].f.numTypeVecs=2
+      TP_czj[0][2].f.typeVecs[1][0]=1
+      TP_czj[0][2].f.typeVecs[1][1]=2
+      TP_czj[0][2].f.typeVecs[1][2]=2
+   Index(s) for Function:
+    FTp[0]->TypeCount=4
+     TP_czj[0][2].f.indexes[0].len=1
+      TP_czj[0][2].f.indexes[0].indexes[0]=0
+     TP_czj[0][2].f.indexes[1].len=0
+     TP_czj[0][2].f.indexes[2].len=1
+      TP_czj[0][2].f.indexes[2].indexes[0]=1
+     TP_czj[0][2].f.indexes[3].len=0
+    sin:
+    TP_czj[0][3].f.numA=1 (function arguments)
+    FTp[0]->TypeCount=4
+    if(FTp[0]->TypCount==1) -> 0 (False)
+   Multiple Types:
+   fset[0].cset[3].string=sin, TP_czj[0][3].f.numA=1
+   FTp[0]->Func[3].instCount=1
+    arg=0 ip->inst[arg]=2
+    fset[0].cset[3].string=sin, arg=0, FTp[0]->TypList[ip->inst[arg]]=rad    arg=1 ip->inst[arg]=0
+    fset[0].cset[3].string=sin, arg=1, FTp[0]->TypList[ip->inst[arg]]=amp   TP_czj[0][3].f.numTypeVecs=1
+      TP_czj[0][3].f.typeVecs[0][0]=2
+      TP_czj[0][3].f.typeVecs[0][1]=0
+   Index(s) for Function:
+    FTp[0]->TypeCount=4
+     TP_czj[0][3].f.indexes[0].len=1
+      TP_czj[0][3].f.indexes[0].indexes[0]=0
+     TP_czj[0][3].f.indexes[1].len=0
+     TP_czj[0][3].f.indexes[2].len=0
+     TP_czj[0][3].f.indexes[3].len=0
+ process terminals:
+ a:
+   Multiple Types:
+   TP_czj[0][4].retType=0
+ p:
+   Multiple Types:
+   TP_czj[0][5].retType=1
+ s:
+   Multiple Types:
+   TP_czj[0][6].retType=3
+ x:
+   Multiple Types:
+   TP_czj[0][7].retType=2
+ process root:
+   Multiple Types:
+   TP_czj[0][pTS[0].numF+pTS[0].numT].retType=0

@@ -1,0 +1,58 @@
+column contents
+
+1 generation number
+2 subpopulation number (0 indicates the overall population)
+3 mean standardized fitness of generation
+4 standardized fitness of best-of-generation individual
+5 standardized fitness of worst-of-generation individual
+6 mean tree size of generation
+7 mean tree depth of generation
+8 tree size of best-of-generation individual
+9 tree depth of best-of-generation individual
+10 tree size of worst-of-generation individual
+11 tree depth of worst-of-generation individual
+12 mean standardized fitness of run
+13 standardized fitness of best-of-run individual
+14 standardized fitness of worst-of-run individual
+15 mean tree size of run
+16 mean tree depth of run
+17 tree size of best-of-run individual
+18 tree depth of best-of-run individual
+19 tree size of worst-of-run individual
+20 tree depth of worst-of-run individual
+
+Table 4.1: Columns of the .stt output file.
+
+CREATE TABLE sttlong(
+  "RowNum" INTEGER,
+  "ProblemNum" INTEGER,
+  "Kernel" INTEGER,
+  "IndRunNum" INTEGER,
+  "wADF" TEXT,
+  "ADF" TEXT,
+  "Types" TEXT,
+  "Constraints" TEXT,
+  "acgpwhat" INTEGER,
+  "MaxTreeDepth" INTEGER,
+  "GenNum" INTEGER,
+  "SubPopNum" INTEGER,
+  "MeanStdFitnessOfGen" REAL,
+  "StdFitnessBestOfGenInd" REAL,
+  "StdFitnessWorstOfGenInd" REAL,
+  "MeanTreeSizeOfGen" REAL,
+  "MeanTreeDepthOfGen" REAL,
+  "TreeSizeBestOfGenInd" INTEGER,
+  "TreeDepthBestOfGenInd" INTEGER,
+  "TreeSizeWorstOfGenInd" INTEGER,
+  "TreeDepthWorstOfGenInd" REAL,
+  "MeanStdFitnessOfRun" REAL,
+  "StdFitnessBestOfRunInd" REAL,
+  "StdFitnessWorstOfRunInd" REAL,
+  "MeanTreeSizeOfRun" REAL,
+  "MeanTreeDepthOfRun" REAL,
+  "TreeSizeBestOfRunInd" INTEGER,
+  "TreeDepthBestOfRunInd" INTEGER,
+  "TreeSizeWorstOfRunInd" INTEGER,
+  "TreeDepthWorstOfRunInd" INTEGER
+);
+

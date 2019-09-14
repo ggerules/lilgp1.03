@@ -1,0 +1,7 @@
+./gp -f bowl3-base.input < bowl3-rules-base.txt
+cp bowl3-acgp2.stt bowl3-base.stt
+cp bowl3-acgp2.sys bowl3-base.sys
+
+./gp -f bowl3-2OH.input < bowl3-rules-2OH.txt
+cp bowl3-acgp2.stt bowl3-2OH.stt
+cp bowl3-acgp2.sys bowl3-base.sys

@@ -1,0 +1,60 @@
+FTp ->  FTp -> created V3
+
+Tree[0]=RPB:
+ Func[0] (ADF3): 
+  Func[0] (ADF3) args:
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+ Func[1] (add): 
+  Func[1] (add) args:
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+ Func[2] (div): 
+  Func[2] (div) args:
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+ Func[3] (mul): 
+  Func[3] (mul) args:
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+ Func[4] (sin): 
+  Func[4] (sin) args:
+  F_func[arg] names : 
+  T_func[arg] names : ADF3 add div mul sin a p s x 
+ F_Root names:
+ T_Root names: ADF3 add div mul sin a p s x 
+Tree[1]=ADF3:
+ Func[0] (add): 
+  Func[0] (add) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+ Func[1] (div): 
+  Func[1] (div) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+ Func[2] (mul): 
+  Func[2] (mul) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+ Func[3] (sin): 
+  Func[3] (sin) args:
+  F_func[arg] names : 
+  T_func[arg] names : add div mul sin ap as ax 
+ F_Root names:
+ T_Root names: add div mul sin ap as ax 

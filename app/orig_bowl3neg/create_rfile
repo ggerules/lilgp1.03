@@ -1,0 +1,9 @@
+#!/bin/bash
+rm rfile
+for x in {1..30};
+do
+  for y in {4..20};
+  do
+    echo $x " " $y >> rfile
+  done;
+done;

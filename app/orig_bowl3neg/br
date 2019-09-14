@@ -1,0 +1,13 @@
+#!/bin/sh
+
+START=$(date +%s)
+
+for x in `cat ./seed`; do
+#./gp -p random_seed=1 -p max_depth=$x -p output.basename=tmp/regress$x -f input.file
+./gp -p random_seed=1 -p max_depth=$x -p output.basename=tmp/regress$x -f input.file
+done;
+
+END=$(date +%s)
+DIFF=$(( $END - $START ))
+echo "It took $DIFF seconds"
+echo "done"

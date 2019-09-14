@@ -1,0 +1,16 @@
+#set term pdf
+#set term x11
+#set term png
+set term jpeg
+#set title "CCcomplex Complexity tree size of best-of-generation individual";
+#set title n " Complexity tree size of best-of-generation individual";
+set title n;
+#set title "Ant fitness";
+set xlabel "Generations";
+set ylabel "tree size best-gen";
+#set yrange [0: 0.9];
+set yrange [0: 500];
+set key top left;
+#plot "./ant_cgp.stt" using 1:4 title 'best fit' with linespoints;
+plot "./cbase.out" using 1:6 title 'best gen' with linespoints;
+

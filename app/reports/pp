@@ -1,0 +1,241 @@
+#!/bin/bash
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_sfbgi1.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_sfbgi1.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_sfbgi1.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_sfbgi1.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_sfbgi1.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_sfbgi1.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_sfbgi1.r
+sed -i 's/Lawnmower 8x4/Two Box/g'  group_sfbgi1.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_sfbgi1.r
+sed -i 's/gsfbgi1/3_gsfbgi1/g' group_sfbgi1.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_sfbgi1.r
+sed -i 's/data\//reports\//g' group_sfbgi1.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_sfbgi2.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_sfbgi2.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_sfbgi2.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_sfbgi2.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_sfbgi2.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_sfbgi2.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_sfbgi2.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_sfbgi2.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_sfbgi2.r
+sed -i 's/gsfbgi2/3_gsfbgi2/g' group_sfbgi2.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_sfbgi2.r
+sed -i 's/data\//reports\//g' group_sfbgi2.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_sfbgi3.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_sfbgi3.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_sfbgi3.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_sfbgi3.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_sfbgi3.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_sfbgi3.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_sfbgi3.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_sfbgi3.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_sfbgi3.r
+sed -i 's/gsfbgi3/3_gsfbgi3/g' group_sfbgi3.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_sfbgi3.r
+sed -i 's/data\//reports\//g' group_sfbgi3.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_sfbri1.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_sfbri1.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_sfbri1.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_sfbri1.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_sfbri1.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_sfbri1.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_sfbri1.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_sfbri1.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_sfbri1.r
+sed -i 's/gsfbri1/3_gsfbri1/g' group_sfbri1.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_sfbri1.r
+sed -i 's/data\//reports\//g' group_sfbri1.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_sfbri2.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_sfbri2.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_sfbri2.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_sfbri2.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_sfbri2.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_sfbri2.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_sfbri2.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_sfbri2.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_sfbri2.r
+sed -i 's/gsfbri2/3_gsfbri2/g' group_sfbri2.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_sfbri2.r
+sed -i 's/data\//reports\//g' group_sfbri2.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_sfbri3.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_sfbri3.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_sfbri3.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_sfbri3.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_sfbri3.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_sfbri3.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_sfbri3.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_sfbri3.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_sfbri3.r
+sed -i 's/gsfbri3/3_gsfbri3/g' group_sfbri3.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_sfbri3.r
+sed -i 's/data\//reports\//g' group_sfbri3.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tsbgi1.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tsbgi1.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tsbgi1.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tsbgi1.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tsbgi1.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tsbgi1.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tsbgi1.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tsbgi1.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tsbgi1.r
+sed -i 's/gtsbgi1/3_gtsbgi1/g' group_tsbgi1.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tsbgi1.r
+sed -i 's/data\//reports\//g' group_tsbgi1.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tsbgi2.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tsbgi2.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tsbgi2.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tsbgi2.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tsbgi2.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tsbgi2.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tsbgi2.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tsbgi2.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tsbgi2.r
+sed -i 's/gtsbgi2/3_gtsbgi2/g' group_tsbgi2.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tsbgi2.r
+sed -i 's/data\//reports\//g' group_tsbgi2.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tsbgi3.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tsbgi3.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tsbgi3.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tsbgi3.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tsbgi3.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tsbgi3.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tsbgi3.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tsbgi3.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tsbgi3.r
+sed -i 's/gtsbgi3/3_gtsbgi3/g' group_tsbgi3.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tsbgi3.r
+sed -i 's/data\//reports\//g' group_tsbgi3.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tsbri1.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tsbri1.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tsbri1.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tsbri1.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tsbri1.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tsbri1.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tsbri1.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tsbri1.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tsbri1.r
+sed -i 's/gtsbri1/3_gtsbri1/g' group_tsbri1.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tsbri1.r
+sed -i 's/data\//reports\//g' group_tsbri1.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tsbri2.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tsbri2.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tsbri2.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tsbri2.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tsbri2.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tsbri2.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tsbri2.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tsbri2.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tsbri2.r
+sed -i 's/gtsbri2/3_gtsbri2/g' group_tsbri2.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tsbri2.r
+sed -i 's/data\//reports\//g' group_tsbri2.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tsbri3.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tsbri3.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tsbri3.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tsbri3.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tsbri3.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tsbri3.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tsbri3.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tsbri3.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tsbri3.r
+sed -i 's/gtsbri3/3_gtsbri3/g' group_tsbri3.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tsbri3.r
+sed -i 's/data\//reports\//g' group_tsbri3.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tswgi1.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tswgi1.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tswgi1.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tswgi1.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tswgi1.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tswgi1.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tswgi1.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tswgi1.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tswgi1.r
+sed -i 's/gtswgi1/3_gtswgi1/g' group_tswgi1.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tswgi1.r
+sed -i 's/data\//reports\//g' group_tswgi1.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tswgi2.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tswgi2.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tswgi2.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tswgi2.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tswgi2.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tswgi2.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tswgi2.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tswgi2.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tswgi2.r
+sed -i 's/gtswgi2/3_gtswgi2/g' group_tswgi2.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tswgi2.r
+sed -i 's/data\//reports\//g' group_tswgi2.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tswgi3.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tswgi3.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tswgi3.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tswgi3.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tswgi3.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tswgi3.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tswgi3.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tswgi3.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tswgi3.r
+sed -i 's/gtswgi3/3_gtswgi3/g' group_tswgi3.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tswgi3.r
+sed -i 's/data\//reports\//g' group_tswgi3.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tswri1.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tswri1.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tswri1.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tswri1.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tswri1.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tswri1.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tswri1.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tswri1.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tswri1.r
+sed -i 's/gtswri1/3_gtswri1/g' group_tswri1.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tswri1.r
+sed -i 's/data\//reports\//g' group_tswri1.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tswri2.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tswri2.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tswri2.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tswri2.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tswri2.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tswri2.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tswri2.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tswri2.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tswri2.r
+sed -i 's/gtswri2/3_gtswri2/g' group_tswri2.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tswri2.r
+sed -i 's/data\//reports\//g' group_tswri2.r
+
+sed -i 's/group_by(Kernel/group_by(ProblemNum,Kernel/g' group_tswri3.r
+sed -i 's/Kernel,ProblemNum/ProblemNum,Kernel/g' group_tswri3.r
+sed -i 's/Kernel == 0,/ProblemNum == 3, Kernel == 0,/g' group_tswri3.r
+sed -i 's/Kernel == 1,/ProblemNum == 3, Kernel == 1,/g' group_tswri3.r
+sed -i 's/Kernel == 2,/ProblemNum == 3, Kernel == 2,/g' group_tswri3.r
+sed -i 's/Kernel == 3,/ProblemNum == 3, Kernel == 3,/g' group_tswri3.r
+sed -i 's/Kernel == 4,/ProblemNum == 3, Kernel == 4,/g' group_tswri3.r
+sed -i 's/Lawnmower 8x4/Two Box/g' group_tswri3.r
+sed -i 's/Kernel, ProblemNum/ProblemNum, Kernel/g' group_tswri3.r
+sed -i 's/gtswri3/3_gtswri3/g' group_tswri3.r
+sed -i 's/prob012_lawnmower_8x4\///g' group_tswri3.r
+sed -i 's/data\//reports\//g' group_tswri3.r
+
+sed -i 's/gsfbri/3_gsfbri/g' p1unite.bash
+sed -i 's/gsfbgi/3_gsfbgi/g' p2unite.bash
+sed -i 's/gtsbri/3_gtsbri/g' p3unite.bash
+sed -i 's/gtsbgi/3_gtsbgi/g' p4unite.bash
+sed -i 's/gtswri/3_gtswri/g' p5unite.bash
+sed -i 's/gtswgi/3_gtswgi/g' p6unite.bash

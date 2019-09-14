@@ -1,0 +1,55 @@
+; reads bst and makes hitslong.csv data
+
+(lush-is-quiet t)
+
+;(defconstant hdr_row "RowNum,ProblemNum,Kernel,IndRunNum,wADF,ADF,Types,Constraints,acgpwhat,MaxTreeDepth,Hits")
+;(defconstant hdr_row "ProblemNum,Kernel,IndRunNum,wADF,ADF,Types,Constraints,acgpwhat,MaxTreeDepth,Hits")
+
+(defvar flist)              ; file list
+;(defvar pth)                ; path to bst file
+(defvar pthbst)             ; path with bst file
+(defvar fnpbst)             ; file name prefix bst file
+(defvar fnpitems)           ; file name prefix items
+(defvar bstlns)             ; contents of a bst file
+(defvar bstrowitems)        ; items in a bst row
+(defvar hits)               ; holds hits count
+(defvar bstlongrow)         ; long row
+(defvar cnt)                ; counter
+(defvar fd)                 ; file descriptor for writing
+
+(setq fd (open-write "hitslong.csv"))
+(setq cnt 0)
+(setq flist(files "."))
+(do ((it1 flist)) while (<> flist -1)
+ (when (str-find "bst" it1 0)
+  ;(print it1)      
+  (setq fnpbst (basename it1 "bst"))
+  ;(print fnpbst)
+  (setq fnpitems (str-split fnpbst "-"))
+  ;(print fnpitems)
+  (setq bstlns (lines it1))
+  (do ((it2 bstlns)) while (<> it2 -1)
+   ;(print it2)
+   (when (str-find "hits:" it2 0)
+    (setq bstrowitems(str-split it2 " "))
+    ;(print bstrowitems)
+    ;(printf "%s %s\n"(nth 20 bstrowitems) (nth 21 bstrowitems))
+    (setq hits (nth 21 bstrowitems))
+   )
+  )
+  ;(printf "%s-%s\n" fnpbst hits)
+  ;(setq bstlongrow (sprintf "%d,%s,%s" cnt (str-join "," fnpitems) hits))
+  (setq bstlongrow (sprintf "%s,%s" (str-join "," fnpitems) hits))
+  ;(when (= cnt 0)
+  ; (writing fd (printf "%s\n" hdr_row)) 
+  ;)
+  (writing fd (printf "%s\n" bstlongrow)) 
+  (when (= (modi cnt 100) 0)
+   (printf "%s" "=")
+   (flush)
+  )
+  (incr cnt)
+  ;(exit 0)
+ )  
+) 
+(print "Done!")

@@ -1,0 +1,76 @@
+20180130 
+Note, these are cases where all fitness cases satisfied, which was 21
+Raw data is at the end of this file.  (command ast 21)
+------ analysis ------
+
+cases where ADFS not used in RPB
+0-0-12-y-y-n-n-n-4.bst
+0-0-13-y-y-n-n-n-4.bst
+0-0-24-y-y-n-n-n-4.bst
+0-0-26-y-y-n-n-n-4.bst
+0-0-28-y-y-n-n-n-4.bst
+0-0-5-y-y-n-n-n-4.bst
+0-0-6-y-y-n-n-n-4.bst
+0-0-8-y-y-n-n-n-4.bst
+
+cases where adf just returned arg a1
+ADF0:
+ a1
+0-0-1-y-y-n-n-n-4.bst
+0-0-10-y-y-n-n-n-4.bst
+
+cases where adf just returned arg a0
+ADF0:
+ a0
+0-0-16-y-y-n-n-n-4.bst
+0-0-7-y-y-n-n-n-4.bst
+
+cases where ADF0 used 
+ADF0:
+ (fadd a1 a1)
+0-0-18-y-y-n-n-n-4.bst
+
+cases where ADF0 used 
+ADF0:
+ (fadd a0 a0)
+0-0-30-y-y-n-n-n-4.bst
+
+
+------ raw data ------
+/home/ggerules/lilgp1.02/app/prob004_koza1/orig_ywadf_yadf_ntypes_ncons_nwhatn/tmp
+0-0-1-y-y-n-n-n-4.bst
+       (fsub (ADF0 (fmul x x)
+                   (ADF0 x x))
+ADF0:
+0-0-10-y-y-n-n-n-4.bst
+                   (ADF0 x x))
+ADF0:
+0-0-12-y-y-n-n-n-4.bst
+ADF0:
+0-0-13-y-y-n-n-n-4.bst
+ADF0:
+0-0-16-y-y-n-n-n-4.bst
+                   (ADF0 x x)))
+                   (ADF0 x x))))
+ADF0:
+0-0-18-y-y-n-n-n-4.bst
+       (fsub (ADF0 (fmul x x) x)
+ADF0:
+0-0-24-y-y-n-n-n-4.bst
+ADF0:
+0-0-26-y-y-n-n-n-4.bst
+ADF0:
+0-0-28-y-y-n-n-n-4.bst
+ADF0:
+0-0-30-y-y-n-n-n-4.bst
+ (fmul (fsub (fdiv (ADF0 x x)
+ADF0:
+0-0-5-y-y-n-n-n-4.bst
+ADF0:
+0-0-6-y-y-n-n-n-4.bst
+ADF0:
+0-0-7-y-y-n-n-n-4.bst
+                   (ADF0 x x)))
+ADF0:
+0-0-8-y-y-n-n-n-4.bst
+ADF0:

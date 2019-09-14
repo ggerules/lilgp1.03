@@ -1,0 +1,21 @@
+
+#
+# GNU makefile, application portion.
+#
+# "make" or "make all" to build executable.
+# "make clean" to delete object code.
+#
+#dirname=cgpf2p1_ywadf_nadf_ytypes_ycons_nwhatn
+
+KERNELDIR = ../../../kernel.cgpf2.1
+CC = gcc
+#note -lubsan is added as link library in kernel, for bounds checking
+CFLAGS = -O2 -fsanitize=bounds -fsanitize=undefined 
+#CFLAGS = -g -fsanitize=bounds -fsanitize=undefined 
+TARGET = gp
+
+uobjects = function.o app.o
+uheaders = appdef.h app.h function.h
+
+include $(KERNELDIR)/GNUmakefile.kernel
+ 

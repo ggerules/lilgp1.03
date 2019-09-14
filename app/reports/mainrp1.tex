@@ -1,0 +1,319 @@
+%\documentclass[11pt]{book}
+\documentclass[11pt]{report} % works
+%\documentclass[tikz, border=1mm, oneside]{memoir}
+%\documentclass[letterpaper,11pt]{report}
+%\documentclass[letterpaper,11pt]{article}
+%\usepackage[top=1in,right=1in,bottom=1in,left=1.5in,nohead,nofoot]{geometry}
+\usepackage[top=1in,right=1in,bottom=1in,left=1.5in,nohead]{geometry}
+%\usepackage[cal=rsfso,calscaled=.96]{mathalfa}
+\usepackage[cal=cm,calscaled=.96]{mathalfa}
+
+% PACKAGES
+%**********
+\usepackage{amsmath}            % AMS Math (http://www.ams.org/tex/amslatex.html)
+\usepackage{amssymb}            % AMS Symbols
+\usepackage{amsthm}	        % AMS Theorems
+\usepackage{mathdots}
+\usepackage{stix}
+\usepackage{tocloft}		% Format the Table of Contents
+%\usepackage{tocbibind}		
+\usepackage{makeidx}
+%\usepackage[index]{acro}
+%\usepackage[]{acro}
+\usepackage{enumitem}
+\usepackage{float}			% More float commands
+\usepackage{sectsty}		% Format section and chapter headings
+\usepackage{graphicx}		% Insert images in eps or pdf format
+\usepackage{setspace}		% Line-spacing
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage[ampersand]{easylist}
+\usepackage{url}
+\usepackage[linktocpage=true]{hyperref}
+%\usepackage[american,english]{babel}
+%\usepackage[indexcrossrefs=true,acronym,symbols,nogroupskip,nonumberlist]{glossaries-extra}
+%\usepackage[acronym,symbols,nogroupskip]{glossaries-extra}
+\usepackage[acronym]{glossaries}
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage[bottom]{footmisc}
+%\usepackage{xcolor}
+\usepackage{color,colortbl}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage[natbibapa,nodoi]{apacite}
+%\usepackage[none,bottom,light]{draftcopy}
+%\usepackage{showframe}
+%\usepackage{fancyhdr}
+\usepackage[disable]{todonotes}
+%\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+%\usepackage{pgfgantt}
+\usepackage{forest}
+%\usepackage{chronology}
+\usepackage{subsupscripts}
+\usepackage[justification=centering]{caption}
+
+% Potentially useful packages:
+% \usepackage{epsfig}			% For EPS figures
+% \usepackage{subfigure}		% For side-by-side figures
+% \usepackage{sidecap}		% Put captions on the side of figures
+% \usepackage{rotating}		% Rotatiion of figures and tables
+% \usepackage{multirow}		% Column and row spanning in tables
+% \usepackage{chapterbib}		% Insert bibliograhpy with a simple include command
+
+\definecolor{RoyalBlue}{RGB}{65,105,255}
+\definecolor{OliveGreen}{RGB}{85,107,47}
+\definecolor{Maroon}{RGB}{125,0,0}
+
+\definecolor{violet}{rgb}{0.56, 0.0, 1.0}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\definecolor{ltgray}{RGB}{217,217,217}
+\definecolor{lltgray}{RGB}{242,242,242}
+
+\definecolor{amber}{rgb}{1.0, 0.75, 0.0} % goals of paper
+\definecolor{bluebell}{rgb}{0.64, 0.64, 0.82}
+\definecolor{lavendergray}{rgb}{0.77, 0.76, 0.82}
+\definecolor{lavendermist}{rgb}{0.9, 0.9, 0.98}
+\definecolor{glightcoral}{rgb}{0.94, 0.5, 0.5}
+\definecolor{cherryblossompink}{rgb}{1.0, 0.72, 0.77}
+\definecolor{bubbles}{rgb}{0.91, 1.0, 1.0}
+\definecolor{bblue}{RGB}{51, 51, 255}
+
+%greens
+\definecolor{lgreen1}{RGB}{204, 255, 204}
+\definecolor{lgreen2}{RGB}{153, 255, 153}
+\definecolor{lgreen3}{RGB}{128, 255, 128}
+
+%blues
+\definecolor{lblue1}{RGB}{204, 238, 255}
+\definecolor{lblue2}{RGB}{179, 230, 255}
+\definecolor{lblue3}{RGB}{153, 221, 255}
+
+%yellows
+\definecolor{lyellow1}{RGB}{255, 255, 204}
+\definecolor{lyellow2}{RGB}{255, 255, 153}
+\definecolor{lyellow3}{RGB}{255, 255, 102}
+
+%reds
+\definecolor{lred1}{RGB}{255, 204, 204}
+\definecolor{lred2}{RGB}{255, 179, 179}
+\definecolor{lred3}{RGB}{255, 153, 153}
+
+%coral
+\definecolor{lcoral1}{RGB}{250, 209, 209}
+\definecolor{lcoral2}{RGB}{247, 186, 186}
+\definecolor{lcoral3}{RGB}{244, 164, 164}
+
+%violet
+\definecolor{lviolet1}{RGB}{230, 210, 249}
+\definecolor{lviolet2}{RGB}{218, 188, 240}
+\definecolor{lviolet3}{RGB}{205, 165, 243}
+
+
+%\newganttlinktypealias{sta-to-sta}{s-s}
+%\newganttlinktypealias{fin-to-fin}{f-f}
+%\setganttlinklabel{fin-to-fin}{f2f}
+
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{graphdrawing,graphs} 
+\usegdlibrary{layered}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+%\usetikzlibrary{shapes.geometric}
+%\usetikzlibrary{automata}
+
+%\usegdlibrary{layered}
+
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+
+\newtheorem{czjthm}{Theorem}
+\newtheorem{czjdef}{Definition}
+\newtheorem{czjex}{Example}
+\newtheorem{czjprop}{Proposition}
+\newtheorem{czjop}{Operator}
+\newtheorem{czjcon}{Conjecture}
+
+
+%\tikzset{%
+%  >={Latex[width=1mm,length=1mm]},
+%  % Specifications for style of nodes:
+%            base/.style = {rectangle, rounded corners, draw=black,
+%                           minimum width=.05cm, minimum height=.05cm,
+%                           text centered, font=\sffamily},
+%  activityStarts/.style = {base, fill=blue!30},
+%       startstop/.style = {base, fill=red!30},
+%    activityRuns/.style = {base, fill=green!30},
+%         process/.style = {base, minimum width=1cm, fill=orange!15,
+%                           font=\ttfamily},
+%}
+
+\hypersetup{
+  plainpages=false,
+  breaklinks=true,
+  pdftitle={ggerules proposal},
+  pdfauthor={George Gerules},
+  pdfsubject={Genetic Programming, ADFs, Type Constraints, Scalability},             % subject of the document
+  pdfkeywords={Genetic Programmming, Typing, ADFs, ACGP, CGP, Scalability}, % list of keywords
+  colorlinks=true,
+  %linkcolor=brickred,                   % color of internal links
+%  linkcolor=bblue,                   % color of internal links
+%  citecolor=blue,                       % color of links to bibliography
+%  filecolor=black,                      % color of file links
+%  urlcolor=violet,                       % color of external links
+  linktoc=all,
+  linkcolor=black,                      % Boring colors. Note, 'black' is
+  citecolor=black,                      % blacker than 'Black'.
+  filecolor=black,
+  urlcolor=black
+}%
+
+%\pagestyle{fancy}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mBlue}{rgb}{0,0.0,0.6}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+%\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+\definecolor{backgroundColour}{rgb}{1.0,1.0,1.0}
+
+\lstdefinestyle{CStyle}{
+  backgroundcolor=\color{backgroundColour},   
+  commentstyle=\color{mGreen},
+  keywordstyle=\color{mBlue},
+  numberstyle=\tiny\color{mGray},
+  stringstyle=\color{mPurple},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  %numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  language=C
+}
+
+\largerSkips
+%\newcommand{\fss}[5]{\fourscripts{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\tss}[4]{\fourscripts{#1}{#2}{}{#3}{#4}}
+\newcommand{\fss}[4]{\fourscripts{#1}{#2}{}{#3}{#4}}
+
+\newcommand{\pcite}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+\newcommand{\npcite}[1]{\citeauthor{#1}'s}
+\newcommand{\ncite}[1]{\citeauthor{#1}}
+
+\newcommand{\ngis}{ \includegraphics[width=3in]}
+\newcommand{\ngisb}{ \includegraphics[width=3.5in]}
+\newcommand{\ngib}{ \includegraphics[width=4in]}
+\newcommand{\ngibb}{ \includegraphics[width=4.5in]}
+\newcommand{\ngibbb}{ \includegraphics[width=5.0in]}
+
+
+%\input{command_mods}	% Lots of special formatting to make the ToC adhere to MU requirements
+
+%\setcounter{page}{1}
+
+% Generate a table of contents
+%\newpage
+%\singlespacing
+%\tableofcontents
+
+%\newglossary[tlg]{terms}{tld}{tdn}{Terms}
+%\newglossary[tla]{acros}{tlf}{tdo}{List of Acronyms}
+%\newglossary[tlh]{syms}{tle}{tdm}{List of Symbols}
+%\newglossary[tlg]{terms}{tld}{tdn}{List of Terms}
+
+%\makeglossaries
+%\input{glossary}
+
+\begin{document}
+
+%\doublespacing % Double line-spacing ( or specify something like \setspacing{1.8} )
+\onehalfspacing % one and half spacing
+\allsectionsfont{\singlespacing} % Only body text needs double spacing, titles can be single spaced
+
+%\todototoc
+%\listoftodos
+%\newpage
+
+\setcounter{page}{1}    
+\pagenumbering{roman}
+
+%\addcontentsline{toc}{chapter}{TITLE PAGE}
+%\input{titlepage}	% Input the Title Page (no page number, but counts as roman numeral 'i')
+%\input{approval}	% Input the Approval Page (no page number)
+%\input{acknowledge}	% Input the Acknowledgement Page (roman numeral page number 'ii')
+
+\newpage
+\singlespacing
+%\setcounter{tocdepth}{3}
+%\setcounter{tocdepth}{5}
+%\setcounter{secnumdepth}{4}
+%\tableofcontents
+%\doublespacing
+
+% Generate a list of Abbreviations
+\newpage
+\singlespacing
+\pagenumbering{roman}
+%\setcounter{page}{2}
+%\addcontentsline{toc}{chapter}{ABBREVIATIONS}
+%\input{abbreviations}
+%\printglossary[type=\acronymtype,title=Abbreviations]
+%\printacronyms
+
+%\newpage
+%\addcontentsline{toc}{chapter}{ABBREVIATIONS}
+%\printglossary[type=acros]
+%
+%\newpage
+%\printglossary[type=syms,style=long,title={List of Symbols}]
+%
+%\newpage
+%\printglossary[type=terms,style=long,title={List of Terms}]
+%\addcontentsline{toc}{chapter}{TERMS}
+%\printglossary[type=terms]
+
+
+%\newpage
+%\addcontentsline{toc}{chapter}{ABSTRACT}
+%\input{abstract}
+
+% Generate a list of Tables and a list of Figures:
+%\newpage
+%\singlespacing
+%\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\singlespacing
+%\listoftables
+
+%\newpage
+%\singlespacing
+%\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+%\singlespacing
+%\listoffigures
+
+
+%\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+%\addtocontents{toc}{\protect \contentsline {chapter}{CHAPTERS}}
+%\addcontentsline{toc}{chapter}{CHAPTERS}
+
+\begin{sidewaystable}
+\input{./tables/runparamstable}
+\end{sidewaystable}
+
+\end{document}

@@ -1,0 +1,59 @@
+FTp ->  FTp -> created V3
+
+Tree[0]=MAIN:
+ Func[0] (prog2): frog 
+  Func[0] (prog2) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma adf1 frog Rvm adf0 left mow 
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma adf1 frog Rvm adf0 left mow 
+ Func[1] (vma): frog 
+  Func[1] (vma) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma adf1 frog Rvm adf0 left mow 
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma adf1 frog Rvm adf0 left mow 
+ Func[2] (adf1): frog 
+  Func[2] (adf1) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma adf1 frog Rvm adf0 left mow 
+ Func[3] (frog): frog 
+  Func[3] (frog) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma adf1 frog Rvm adf0 left mow 
+ F_Root names:frog 
+ T_Root names: prog2 vma adf1 frog Rvm adf0 left mow 
+Tree[1]=ADF0:
+ Func[0] (prog2): 
+  Func[0] (prog2) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vma Rvm left mow 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vma Rvm left mow 
+ Func[1] (vma): 
+  Func[1] (vma) args:
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vma Rvm left mow 
+  F_func[arg] names : 
+  T_func[arg] names : prog2 vma Rvm left mow 
+ F_Root names:
+ T_Root names: prog2 vma Rvm left mow 
+Tree[2]=ADF1:
+ Func[0] (prog2): frog 
+  Func[0] (prog2) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma frog Rvm a0 adf0 left mow 
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma frog Rvm a0 adf0 left mow 
+ Func[1] (vma): frog 
+  Func[1] (vma) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma frog Rvm a0 adf0 left mow 
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma frog Rvm a0 adf0 left mow 
+ Func[2] (frog): frog 
+  Func[2] (frog) args:
+  F_func[arg] names : frog 
+  T_func[arg] names : prog2 vma frog Rvm a0 adf0 left mow 
+ F_Root names:frog 
+ T_Root names: prog2 vma frog Rvm a0 adf0 left mow 

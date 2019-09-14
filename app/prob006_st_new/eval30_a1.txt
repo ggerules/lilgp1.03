@@ -1,0 +1,139 @@
+lilgp a0 = 0 a1 = 0 has eval value at 30, independent eval has it at 36
+for 2 as x
+(de adf0(a0 a1) (declare (-double-) a0) (declare (-double-) a1)
+ a1
+)
+(de main (x)
+ (fmul (fsub (fsub (fsub x x)
+                   (fmul x x)) x)
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul (fsub (fsub (fsub 2 2)
+                   (fmul x x)) x)
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul (fsub (fsub 0 
+                   (fmul 2 2)) x)
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul (fsub (fsub 0 
+                   4) x)
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul (fsub (fsub 0 4) 2)
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul (fsub -4 2)
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub (fsub (fsub x x)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub (fsub (fsub 2 2)
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub (fsub 0
+                   (fmul x x))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub (fsub 0
+                   (fmul 2 2))
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub (fsub 0
+                   4)
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub (fsub 0 4)
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4
+             (adf0 (fdiv x x)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4
+             (adf0 (fdiv 2 2)
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4
+             (adf0 1
+                   (adf0 x x))))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4
+             (adf0 1 (adf0 2 2))))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4
+             (adf0 1 2)))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4
+             2))
+)
+(de main (x)
+ (fmul -6
+       (fsub -4 2))
+)
+(de main (x)
+ (fmul -6
+       -6)
+)
+(de main (x)
+ (fmul -6 -6)
+)
+(de main (x)
+ (36)
+)

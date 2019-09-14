@@ -1,0 +1,6 @@
+./mg52/ /media/ggerules/My\ Passport/mg52/
+./mg104/ /media/ggerules/My\ Passport/mg104/
+./mg156/ /media/ggerules/My\ Passport/mg156/
+./mg208/ /media/ggerules/My\ Passport/mg208/
+./dissertation/ /media/ggerules/My\ Passport/dissertation/
+./reports/ /media/ggerules/My\ Passport/reports/
