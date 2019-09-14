@@ -1,5 +1,4 @@
-# Enhancing Scalability in Genetic Programming With Adaptable Constraints
-# Type Constraints and Automatically Defined Functions
+# Enhancing Scalability in Genetic Programming With Adaptable Constraints Type Constraints and Automatically Defined Functions
 
 
 Code for CGPF2.1 and ACGPF2.1 also modified original lilgp1.02 kernel
