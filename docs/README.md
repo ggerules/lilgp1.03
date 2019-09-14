@@ -9,11 +9,17 @@ Code for CGPF2.1 and ACGPF2.1 also modified original lilgp1.02 kernel
 Operating System Ubuntu 16.04
 
 gcc any modern flavor should work        -- compiler for lilgp
+
 GNU parallel version 20161222 or better  -- helps to push lilgp runs to as many cores as possible
+
 bash                                     -- lots of bash scripts that get the job done
+
 sqlite3 3.28.0                           -- holds stats for runs, fed into R
+
 R scripting front-end version 3.4.2 (2017-09-28) // stats processing
+
 autogen (GNU AutoGen) 5.18.7             -- help in creating consistent code for different gp problems
+
 lush (lisp) http://lush.sourceforge.net/ -- some text file wrangling 
 
 ### To build problems code for running problems 
@@ -32,10 +38,15 @@ cd into a subdirectory named starting with prefix prob
 ### Key Subdirectories 
 
 app                  -- holds experiments 
+
 app/mg52             -- holds results of data for 52 generations
+
 app/mg104            -- holds results of data for 104 generations
+
 app/mg156            -- holds results of data for 156 generations
+
 app/mg208            -- holds results of data for 208 generations
+
 
 ### Other information 
 
