@@ -9,9 +9,9 @@ lilgp1.02  population statistics were all saved as ints.  Integer overflows happ
  
 ### Software needed to run this
 
-Operating System Ubuntu 16.04
+Operating System Ubuntu 16.04 or better.  Not tested for Mac.  Won't run on Windows.  
 
-gcc any modern flavor should work        -- compiler for lilgp
+gcc any modern version should work       -- compiler for lilgp
 
 GNU parallel version 20161222 or better  -- helps to push lilgp runs to as many cores as possible
 
@@ -19,7 +19,7 @@ bash                                     -- lots of bash scripts that get the jo
 
 sqlite3 3.28.0                           -- holds stats for runs, fed into R
 
-R scripting front-end version 3.4.2 (2017-09-28) // stats processing
+R scripting version 3.4.2 (2017-09-28)   -- stats processing
 
 autogen (GNU AutoGen) 5.18.7             -- help in creating consistent code for different gp problems
 
