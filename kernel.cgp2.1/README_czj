@@ -1,0 +1,47 @@
+cgp-lil-gp 2.1.1/1.02 
+-----------------------------------------------------------------------
+by. c.z.janikow & s.deweese
+
+  Major changes vs. 1.02 (2.0 was never publicly released)
+    a) constraints
+       - interactive input has been slightly changed (makes constraint 
+         specification option, using default unconstrained case)
+       - constraints can be specified in a file using a friendly language
+         (added by Scott Deweese)
+    b) weights
+       - constraints can be weighted (can be entered interactively or
+         in the same constraint file)
+    c) overloaded functions
+       - a 'generic' type can be used (as implicit in version 1.02)
+       - types can be explicitly listed, and functions can be overloaded
+         for different types
+    d) extra parameters
+       - a few additional parameters to better control initialization/
+         mutation/crossover 
+    e) new operators
+       - collapse, as crossover, but on a single individual
+       - uniform_mutate, implements the uniform_mutation operator
+    f) resets index members for fset functions (changes lilgp) plus
+         sorting method was changed (changes lilgp)
+    g) crossover is reimplemented so that source trees are selected based 
+       on mutation set weights and the internal/external parameter
+
+    Change from cgp2.1:
+       initialization and mutation/uniform mutation modified to 
+       never generate trees (if possible due to constraints) shorher than the
+       min depth ramp (NOTE: only if the corresponding parameter depth_abs
+       is set to true
+
+Info can be found off my web page at:
+
+	http://www.cs.umsl.edu/~janikow
+
+cgp-lilgp is implemented in lil-gp
+(http://isl.cps.msu.edu/GA/software/lil-gp/). cgp-lilgp2.1/1.02 is based
+on lil-gp1.02. 
+cgp-lilgp is provided as a replacement kernel for that of lil-gp.
+
+The program is distributed under the terms of the GNU General Public License, 
+version 2, a copy of which is in the file "LICENSE" in the distribution.
+
+(c) Cezary Z. Janikow, 1997.
