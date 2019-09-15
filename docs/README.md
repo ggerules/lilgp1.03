@@ -1,8 +1,12 @@
 # Enhancing Scalability in Genetic Programming With Adaptable Constraints Type Constraints and Automatically Defined Functions
 
 
-Code for CGPF2.1 and ACGPF2.1 also modified original lilgp -- lilgp1.03 kernel
+Code for CGPF2.1 and ACGPF2.1 also modified original lilgp -- lilgp1.03 kernel to handle bigger problems
 
+### Why lilgp1.02 was changed
+
+lilgp1.02  population statistics were all saved as ints.  Integer overflows happened on large gp runs. So, population statistics were changed from int to long
+ 
 ### Software needed to run this
 
 Operating System Ubuntu 16.04
