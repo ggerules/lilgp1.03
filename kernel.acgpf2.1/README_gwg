@@ -1,0 +1,13 @@
+George Gerules, code created for my Ph.D.
+ggerules@gmail.com for further inquires
+
+20190914 gwgnotes: 
+- added this doc file, put comments at top of relevant files
+- first read README_czj 
+- this version combines acgp1.1.2, cgp2.1 and lilgp1.02 together
+- road to this version.
+  1) changed pop_stats variables in lilgp1.02 from int to long, integer overflow problems
+  2) added adfs, to cgp2.1 (it did not adfs) forming cgpf2.1
+  3) used cgpf2.1 and folded in acgp1.1.2 code forming acgpf2.1 framework
+  4) added generation ramp feature in gp.c.  See dissertation in doc folder
+  5) made use of gnu libsan to make sure no memory problems appear

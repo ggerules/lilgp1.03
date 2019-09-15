@@ -64,7 +64,6 @@ extern FILE *inputFP;
 //static int NumT;                         /* num typeII/III functions in fset */
 //static int NumFT;                                               /* NumF+NumT */
 //static int NumTypes;                                      /* number of types */
-//gwgfix: need to change into an array WghtsExt per tree?
 static float WghtsExt;    /* sum of wghts of cross-feasible leaves of a tree */
 static float WghtsInt;                        /* same for the internal nodes */
 //static char **TypeNames;         /* array of NumTypes ragged dynamic strings */
@@ -134,18 +133,6 @@ static void *getMoreVec(void *oldP, size_t bytes)
   return p;
 }
 
-#if 0 // gwgnote: function never used
-static int member(int e, int *vec, int start, int stop)
-/* return 1 if e is found in vec between start and stop inclusively */
-{
-  int i;
-  for (i=start; i<=stop; i++)
-    if (vec[i]==e)
-      return(1);
-  return(0);
-}
-#endif
-
 /*****************************************/
 static int funNumber(const char* funName, int treeNumber)
 /* given funName, return its index in fset[treeNumber] or -1 if not found */
@@ -162,7 +149,8 @@ static void displayHeader(void)
   printf("\n\n\t\tWELCOME TO cgp-lilgp 3.1/1.02\n");
   printf("\n\t\tdeveloped and implemented by\n");
   printf("\tGeorge Gerules as part of Ph.D work\n");
-  printf("\temailto:gwgkt2@mail.umsl.edu\n");
+//  printf("\temailto:gwgkt2@mail.umsl.edu\n");
+  printf("\temailto:ggerules@gmail.com\n");
   printf("\tAdvisor: Cezary Z. Janikow\n");
   printf("\n\t\tBased on CGP2.1 developed by\n");
   printf("\tCezary Z. Janikow\n");
@@ -492,7 +480,6 @@ static void readWeightsSetWheels(void)
         areFs=0;
         areTs=0;
         printf("Argument %d:\n",j);
-        //gwgfix!!!! if there are more than one type put in a for loop and increment where NumTypes is at......
         printf("\tF [%d members] =",MST_czj[tr][i][j][NumTypes].numF);
         for (k=0; k<MST_czj[tr][i][j][NumTypes].numF; k++)
           printf(" '%s'",fset[tr].cset[MST_czj[tr][i][j][NumTypes].mbs[k]].string);

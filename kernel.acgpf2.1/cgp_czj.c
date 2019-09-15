@@ -1,4 +1,12 @@
-﻿/* cgp_czj.c version 1.2 implements CGP preprocessing for lil-gp */
+﻿/* cgp_czj.c 
+ * gwgnote: 20190914 
+ * version acgpf2.1 (acgp with adfs and typing from cgp2.1)
+ * combines acgp1.1.2 
+ * combines cgp2.1
+ * adds genramp feature (bloat control)
+ * */
+
+/* cgp_czj.c version 1.2 implements CGP preprocessing for lil-gp */
 /* using lil-gp 1.02                                             */
 /* it also allows weights for mutation set members and adapts    */
 /* the weights based on distribution of counted F/T              */

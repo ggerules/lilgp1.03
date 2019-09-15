@@ -1,5 +1,5 @@
 /* cgp_czj.h provides prototypes for cgp_czj.c */
-/* gwg: modifications for making this work with ADFS */
+/* 2019 gwg: modifications for making cgp2.1 work with ADFS */
 #pragma once
 
 #define VERIFY_CROSSOVER_czj 0

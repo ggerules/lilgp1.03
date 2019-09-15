@@ -1,3 +1,4 @@
+/* cgp2_czj.c gwgnote: CGP lil-gp v2.1 with adfs */
 /* cgp2_czj.c for CGP lil-gp v2.0 */
 /* This file is the new interface for CGP v2.0  It provides an easy
    to use interface "language" to build the input file for CGP.
