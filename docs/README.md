@@ -21,14 +21,14 @@ autogen (GNU AutoGen) 5.18.7             -- help in creating consistent code for
 
 lush (lisp) http://lush.sourceforge.net/ -- some text file wrangling 
 
-### To all build code for running problems 
+### To build all code for running problems 
 
 Steps:
 1) cd into lilgp1.03/app
 2) ./runprob.bash
 3) Go get a cup of coffee.... it will take about 3 days to a week or more depending on your machine.
 
-### To run code for particular problem
+### To run code for a particular problem
 
 cd into a subdirectory named starting with prefix prob  
 ./start.bash         -- will run everything for a particular problem
