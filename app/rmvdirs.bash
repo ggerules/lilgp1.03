@@ -424,10 +424,10 @@ cd ./prob103_tb_md_17_mg52
  ./rmvDirs.bash
 cd ..
 
-d ./prob104_tb_genramptree_mg52
+cd ./prob104_tb_genramptree_mg52
 echo $PWD
 ./rmvDirs.bash
-d ..
+cd ..
 
 cd ./prob105_5d_tb_mk_17_mg52
  echo $PWD
